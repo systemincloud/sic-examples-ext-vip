@@ -1,2 +1,2 @@
-sic-examples-ext-vip
+System in Cloud - Video and Image Processing - Examples
 ====================
