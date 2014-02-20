@@ -31,6 +31,8 @@ import javax.swing.JTextField;
 import java.awt.FlowLayout;
 
 import javax.swing.Box;
+import javax.swing.JList;
+import javax.swing.JButton;
 
 public class WebcamClient implements ActionListener {
 
@@ -51,16 +53,28 @@ public class WebcamClient implements ActionListener {
     private final Box    credentialsBox    = Box.createVerticalBox();
     
     private final Box        accountNumberBox  = Box.createHorizontalBox();
-    private final JLabel     lblAccountNumber  = new JLabel("Account Number:");
+    private final JLabel     lblAccountNumber  = new JLabel("Account Number: ");
     private final JTextField textAccountNumber = new JTextField();
     
     private final Box        systemNameBox     = Box.createHorizontalBox();
-    private final JLabel     lblSystemName     = new JLabel("System Name:");
+    private final JLabel     lblSystemName     = new JLabel("System Name: ");
     private final JTextField textSystemName    = new JTextField();
     
     private final Box        systemKeyBox      = Box.createHorizontalBox();
-    private final JLabel     lblSystemKey      = new JLabel("System Key:");
+    private final JLabel     lblSystemKey      = new JLabel("System Key: ");
     private final JTextField textSystemKey     = new JTextField();
+    
+    private final JButton    btnReconnect      = new JButton("Reconnect");
+    
+    private final JPanel     machines          = new JPanel();
+    private final Box        machinesBox       = Box.createVerticalBox();
+    private final JList<?>   machinesList      = new JList<>();
+    private final JButton    btnNewMachine     = new JButton("New Machine");
+    
+    private final JPanel     instances         = new JPanel();
+    private final Box        instancesBox      = Box.createVerticalBox();
+    private final JList<?>   instancesList     = new JList<>();
+    private final JButton    btnNewInstance    = new JButton("New Instance");
     
     private JToggleButton onOffButton = new JToggleButton("On/Off");
     
@@ -131,7 +145,6 @@ public class WebcamClient implements ActionListener {
     }
     
     private void initLayout() {
-        
         videoIn.setPreferredSize(new Dimension(320, 240));
         videoIn.setMinimumSize(new Dimension(320,240));
         
@@ -152,12 +165,23 @@ public class WebcamClient implements ActionListener {
         credentialsBox.add(accountNumberBox);
         credentialsBox.add(systemNameBox);
         credentialsBox.add(systemKeyBox);
+        credentialsBox.add(btnReconnect);
         
         credentials.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
         credentials.add(credentialsBox);
         
+        machinesBox.add(machinesList);
+        machinesBox.add(btnNewMachine);
+        machines   .add(machinesBox);
+        
+        instancesBox.add(instancesList);
+        instancesBox.add(btnNewInstance);
+        instances.add(instancesBox);
+        
         controlPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
         controlPanel.add(credentials);
+        controlPanel.add(machines);
+        controlPanel.add(instances);
         controlPanel.add(onOffButton);
         
         mainPanel.setLayout(new BorderLayout());
