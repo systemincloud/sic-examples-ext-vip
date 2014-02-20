@@ -12,6 +12,8 @@ import java.awt.event.ItemListener;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -22,9 +24,13 @@ import javax.swing.JToggleButton;
 import javax.swing.Timer;
 
 import com.github.sarxos.webcam.Webcam;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import java.awt.GridLayout;
+
+import java.awt.FlowLayout;
+
+import javax.swing.Box;
 
 public class WebcamClient implements ActionListener {
 
@@ -32,16 +38,29 @@ public class WebcamClient implements ActionListener {
     
     private JFrame window = new JFrame("System in Cloud - Webcam Client");
     
-    private JPanel mainPanel = new JPanel();
+    private final JPanel mainPanel = new JPanel();
     
-    private JPanel videoPanels  = new JPanel();
-    private JPanel controlPanel = new JPanel();
+    private final JPanel videoPanels  = new JPanel();
     
     private JPanel videoIn;
     private JPanel videoOut;
+    
+    private final JPanel controlPanel = new JPanel();
    
-    private final JLabel     lblAccount  = new JLabel("Account:");
-    private final JTextField textAccount = new JTextField();
+    private final JPanel credentials = new JPanel();
+    private final Box    credentialsBox    = Box.createVerticalBox();
+    
+    private final Box        accountNumberBox  = Box.createHorizontalBox();
+    private final JLabel     lblAccountNumber  = new JLabel("Account Number:");
+    private final JTextField textAccountNumber = new JTextField();
+    
+    private final Box        systemNameBox     = Box.createHorizontalBox();
+    private final JLabel     lblSystemName     = new JLabel("System Name:");
+    private final JTextField textSystemName    = new JTextField();
+    
+    private final Box        systemKeyBox      = Box.createHorizontalBox();
+    private final JLabel     lblSystemKey      = new JLabel("System Key:");
+    private final JTextField textSystemKey     = new JTextField();
     
     private JToggleButton onOffButton = new JToggleButton("On/Off");
     
@@ -49,19 +68,14 @@ public class WebcamClient implements ActionListener {
     
     private BufferedImage in = null;
     private BufferedImage out = null;
-
-    
-    public WebcamClient() {
-        initSic();
-    }
     
     private void initSic() {
         
     }
 
     private void startUI() {
-        textAccount.setColumns(10);
         initPanels();
+        initFields();
         initButtons();
         initLayout();
         addStyles();
@@ -70,7 +84,6 @@ public class WebcamClient implements ActionListener {
         window.setLocation(100, 100);
         window.pack();
         window.setVisible(true);
-        
     }
     
     private void initPanels() {
@@ -95,15 +108,24 @@ public class WebcamClient implements ActionListener {
         };
     }
 
+    private void initFields() {
+        textAccountNumber.setColumns(15);
+        textSystemName   .setColumns(15);
+        textSystemKey    .setColumns(15);
+    }
+    
     private void initButtons() {
         onOffButton.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent itemEvent) {
                 int state = itemEvent.getStateChange();
                 if (state == ItemEvent.SELECTED) {
-                        // Send Data to specified system instance and port
-//                        sicConnection.send(instanceID, "RST", new Data(1));
-                        timer.start();
-                } else timer.stop();
+                    webcam.open();
+                    initSic();
+                    timer.start();
+                } else {
+                    webcam.close();
+                    timer.stop();
+                }
             }
         });
     }
@@ -119,10 +141,23 @@ public class WebcamClient implements ActionListener {
         videoPanels.setLayout(new BoxLayout(videoPanels, BoxLayout.X_AXIS));
         videoPanels.add(videoIn);
         videoPanels.add(videoOut);
+
+        accountNumberBox.add(lblAccountNumber);
+        accountNumberBox.add(textAccountNumber);
+        systemNameBox   .add(lblSystemName);
+        systemNameBox   .add(textSystemName);
+        systemKeyBox    .add(lblSystemKey);
+        systemKeyBox    .add(textSystemKey);
         
-        controlPanel.setLayout(new GridLayout(0, 4, 1, 1));
-        controlPanel.add(lblAccount);
-        controlPanel.add(textAccount);
+        credentialsBox.add(accountNumberBox);
+        credentialsBox.add(systemNameBox);
+        credentialsBox.add(systemKeyBox);
+        
+        credentials.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+        credentials.add(credentialsBox);
+        
+        controlPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+        controlPanel.add(credentials);
         controlPanel.add(onOffButton);
         
         mainPanel.setLayout(new BorderLayout());
@@ -139,33 +174,31 @@ public class WebcamClient implements ActionListener {
         videoOut.setBorder(BorderFactory.createLineBorder(Color.black, 2));
     }
 
+    @Override
+    public void actionPerformed(ActionEvent arg0) {
+        try {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            BufferedImage bi = webcam.getImage();
+            ImageIO.write(bi, "JPEG", baos);
+            byte[] bytesOut = baos.toByteArray();
+            //Send Data to specified system instance and port
+            List<Integer> dims = new ArrayList<>();
+            dims.add(1);
+//            sicConnection.send(instanceID, "Img In", new Data(DatatypeVip.JPEG, dims, bytesOut));
+            this.in = bi;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        videoIn.repaint();
+    }
+    
+    // Data received from the system instance
+//    @Override
+    public void receivedData(String instanceID, String portName, byte[] data) {
+    }
     
     public static void main(String[] args) {
         WebcamClient vc = new WebcamClient();
         vc.startUI();
     }
-
-    @Override
-    public void actionPerformed(ActionEvent arg0) {
-//        try {
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            System.out.println(webcam.getImage());
-//            ImageIO.write(webcam.getImage(), "JPEG", baos);
-//            byte[] bytesOut = baos.toByteArray();
-            // Send Data to specified system instance and port
-//            List<Integer> dims = new ArrayList<Integer>();
-//            dims.add(1);
-//            sicConnection.send(instanceID, "Img In", new Data(DatatypeVip.JPEG, dims, bytesOut));
-//            this.in = webcam.getImage();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        videoIn.repaint();
-    }
-    
-    // Data received from the system instance
-//    @Override
-//    public void receivedData(String instanceID, String portName, byte[] data) {
-//            
-//    }
 }
