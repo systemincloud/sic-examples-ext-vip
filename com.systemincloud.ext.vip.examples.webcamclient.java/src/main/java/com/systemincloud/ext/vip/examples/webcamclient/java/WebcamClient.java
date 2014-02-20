@@ -1,16 +1,16 @@
-package com.systemincloud.ext.vip.examples.videoclient.java;
+package com.systemincloud.ext.vip.examples.webcamclient.java;
 
 import javax.swing.JFrame;
 
 import com.github.sarxos.webcam.Webcam;
 
-public class VideoClient {
+public class WebcamClient {
 
     private Webcam webcam = Webcam.getDefault();
     
-    private JFrame window = new JFrame("System in Cloud - Video Client");
+    private JFrame window = new JFrame("System in Cloud - Webcam Client");
     
-    public VideoClient() {
+    public WebcamClient() {
         
     }
     
@@ -19,7 +19,7 @@ public class VideoClient {
     }
     
     public static void main(String[] args) {
-        VideoClient vc = new VideoClient();
+        WebcamClient vc = new WebcamClient();
         vc.startUI();
     }
 }

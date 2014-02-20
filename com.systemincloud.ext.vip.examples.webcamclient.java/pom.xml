@@ -2,8 +2,8 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <name>System in Cloud - Ext Vip - Examples - Video Client</name>
-    <artifactId>com.systemincloud.ext.vip.examples.videoclient</artifactId>
+    <name>System in Cloud - Ext Vip - Examples - Webcam Client</name>
+    <artifactId>com.systemincloud.ext.vip.examples.webcamclient</artifactId>
     <groupId>com.systemincloud.ext.vip.examples</groupId>
     <version>0.1.0-SNAPSHOT</version>
 
@@ -27,7 +27,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.systemincloud.ext.vip.examples.videoclient.java.VideoClient</mainClass>
+                            <mainClass>com.systemincloud.ext.vip.examples.webcamclient.java.WebcamClient</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs><descriptorRef>jar-with-dependencies</descriptorRef></descriptorRefs>
