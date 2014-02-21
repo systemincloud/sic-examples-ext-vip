@@ -93,6 +93,22 @@ public class WebcamClient implements ActionListener, SicListener {
     
     private JToggleButton onOffButton = new JToggleButton("On/Off");
     
+    private class NewMachineFrame extends JFrame { private static final long serialVersionUID = 1L;
+        
+    }
+    
+    private class DeleteMachineFrame extends JFrame { private static final long serialVersionUID = 1L;
+        
+    }
+    
+    private class NewInstanceFrame extends JFrame { private static final long serialVersionUID = 1L;
+        
+    }
+    
+    private class DeleteInstanceFrame extends JFrame { private static final long serialVersionUID = 1L;
+        
+    }
+    
     private Timer timer = new Timer(100, this);
     
     private BufferedImage in = null;
@@ -102,8 +118,8 @@ public class WebcamClient implements ActionListener, SicListener {
     
     public void startUI() {
         initPanels();
-        initFields();
-        initButtons();
+        initComponents();
+        initActions();
         initLayout();
         addStyles();
         
@@ -135,49 +151,30 @@ public class WebcamClient implements ActionListener, SicListener {
         };
     }
 
-    private void initFields() {
-        textAccountNumber.setColumns(15);
-        textSystemName   .setColumns(15);
-        textSystemKey    .setColumns(15);
-        machinesList     .setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        instancesList    .setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    private void initComponents() {
+        textAccountNumber  .setColumns(15);
+        textSystemName     .setColumns(15);
+        textSystemKey      .setColumns(15);
+        machinesList       .setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        btnRefreshMachines .setEnabled(false);
+        btnNewMachine      .setEnabled(false);
+        btnDeleteMachine   .setEnabled(false);
+        btnRefreshInstances.setEnabled(false);
+        btnNewInstance     .setEnabled(false);
+        btnDeleteInstance  .setEnabled(false);
+        onOffButton        .setEnabled(false);
+        instancesList      .setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     }
     
-    private void initButtons() {
-        btnReconnect.addActionListener(new ActionListener() {
-        	@Override public void actionPerformed(ActionEvent e) {
-        		initSystemInCloud();
-        		refreshMachines();
-        		refreshInstances();
-            }
-        });
-        btnRefreshMachines.addActionListener(new ActionListener() {
-        	@Override public void actionPerformed(ActionEvent e) { refreshMachines(); }
-        });
-        btnNewMachine.addActionListener(new ActionListener() {
-        	@Override public void actionPerformed(ActionEvent e) {
-        		
-        	}
-        });
-        btnDeleteMachine.addActionListener(new ActionListener() {
-        	@Override public void actionPerformed(ActionEvent e) {
-        		
-        	}
-        });
-        btnRefreshInstances.addActionListener(new ActionListener() {
-        	@Override public void actionPerformed(ActionEvent e) { refreshInstances(); }
-        });
-        btnNewInstance.addActionListener(new ActionListener() {
-        	@Override public void actionPerformed(ActionEvent e) {
-        		
-        	}
-        });
-        btnDeleteInstance.addActionListener(new ActionListener() {
-        	@Override public void actionPerformed(ActionEvent e) {
-        		
-        	}
-        });
-        onOffButton.addItemListener(new ItemListener() {
+    private void initActions() {
+        btnReconnect       .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { initSystemInCloud(); } });
+        btnRefreshMachines .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { refreshMachines(); } });
+        btnNewMachine      .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new NewMachineFrame()    .setVisible(true); } });
+        btnDeleteMachine   .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new DeleteMachineFrame() .setVisible(true); } });
+        btnRefreshInstances.addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { refreshInstances(); } });
+        btnNewInstance     .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new NewInstanceFrame()   .setVisible(true); } });
+        btnDeleteInstance  .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new DeleteInstanceFrame().setVisible(true); } });
+        onOffButton        .addItemListener  (new ItemListener() {
             public void itemStateChanged(ItemEvent itemEvent) {
                 int state = itemEvent.getStateChange();
                 if (state == ItemEvent.SELECTED) {
@@ -280,34 +277,44 @@ public class WebcamClient implements ActionListener, SicListener {
     }
     
     private void initSystemInCloud() {
-    	this.sicClient = SicClientFactory.createClient(textAccountNumber.getText(),
-    			                                       textSystemName.getText(),
-    			                                       textSystemKey.getText());
-    	if(sicClient.isTestPassed()) {
-      		lblStatus.setText("  OK");
-    		lblStatus.setForeground(Color.GREEN);
-    	} else {
-    		lblStatus.setText("  KO");
-    		lblStatus.setForeground(Color.RED);
-    	}
+        this.sicClient = SicClientFactory.createClient(textAccountNumber.getText(),
+                                                       textSystemName.getText(),
+                                                       textSystemKey.getText());
+        if(sicClient.isTestPassed()) {
+            lblStatus.setText("  OK");
+            lblStatus.setForeground(Color.GREEN);
+            refreshMachines();
+            refreshInstances();
+            btnRefreshMachines .setEnabled(true);
+            btnNewMachine      .setEnabled(true);
+            btnRefreshInstances.setEnabled(true);
+            btnNewInstance     .setEnabled(true);
+            
+        } else {
+            lblStatus.setText("  KO");
+            lblStatus.setForeground(Color.RED);
+            btnRefreshMachines .setEnabled(false);
+            btnNewMachine      .setEnabled(false);
+            btnDeleteMachine   .setEnabled(false);
+            btnRefreshInstances.setEnabled(false);
+            btnNewInstance     .setEnabled(false);
+            btnDeleteInstance  .setEnabled(false);
+            onOffButton        .setEnabled(false);
+        }
     }
     
-	private void refreshMachines() {
-		if(sicClient.isTestPassed()) {
-			
-		}
+    private void refreshMachines() {
+
     }
 
-	private void refreshInstances() {
-		if(sicClient.isTestPassed()) {
-			
-		}
+    private void refreshInstances() {
+
     }
     
     // Data received from the system instance
 //    @Override
     public void receivedData(String instanceID, String portName, byte[] data) {
-    	
+        
     }
     
     public static void main(String[] args) {
