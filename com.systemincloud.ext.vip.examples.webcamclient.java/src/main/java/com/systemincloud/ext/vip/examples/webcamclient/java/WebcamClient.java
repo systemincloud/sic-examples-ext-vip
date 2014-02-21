@@ -24,6 +24,9 @@ import javax.swing.JToggleButton;
 import javax.swing.Timer;
 
 import com.github.sarxos.webcam.Webcam;
+import com.systemincloud.sdk.java.SicClient;
+import com.systemincloud.sdk.java.SicClientFactory;
+import com.systemincloud.sdk.java.SicListener;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -34,7 +37,7 @@ import javax.swing.Box;
 import javax.swing.JList;
 import javax.swing.JButton;
 
-public class WebcamClient implements ActionListener {
+public class WebcamClient implements ActionListener, SicListener {
 
     private Webcam webcam = Webcam.getDefault();
     
@@ -64,7 +67,9 @@ public class WebcamClient implements ActionListener {
     private final JLabel     lblSystemKey      = new JLabel("System Key: ");
     private final JTextField textSystemKey     = new JTextField();
     
+    private final Box        reconnectionBox   = Box.createHorizontalBox();
     private final JButton    btnReconnect      = new JButton("Reconnect");
+    private final JLabel     lblStatus         = new JLabel("  --");
     
     private final JPanel     machines          = new JPanel();
     private final Box        machinesBox       = Box.createVerticalBox();
@@ -83,11 +88,9 @@ public class WebcamClient implements ActionListener {
     private BufferedImage in = null;
     private BufferedImage out = null;
     
-    private void initSic() {
-        
-    }
-
-    private void startUI() {
+    private SicClient sicClient;
+    
+    public void startUI() {
         initPanels();
         initFields();
         initButtons();
@@ -134,7 +137,6 @@ public class WebcamClient implements ActionListener {
                 int state = itemEvent.getStateChange();
                 if (state == ItemEvent.SELECTED) {
                     webcam.open();
-                    initSic();
                     timer.start();
                 } else {
                     webcam.close();
@@ -142,14 +144,17 @@ public class WebcamClient implements ActionListener {
                 }
             }
         });
+        btnReconnect.addActionListener(new ActionListener() {
+        	@Override public void actionPerformed(ActionEvent e) {
+        		initSystemInCloud();
+            }
+        });      
     }
     
     private void initLayout() {
         videoIn.setPreferredSize(new Dimension(320, 240));
-        videoIn.setMinimumSize(new Dimension(320,240));
         
         videoOut.setPreferredSize(new Dimension(320, 240));
-        videoOut.setMinimumSize(new Dimension(320,240));
         
         videoPanels.setLayout(new BoxLayout(videoPanels, BoxLayout.X_AXIS));
         videoPanels.add(videoIn);
@@ -165,7 +170,11 @@ public class WebcamClient implements ActionListener {
         credentialsBox.add(accountNumberBox);
         credentialsBox.add(systemNameBox);
         credentialsBox.add(systemKeyBox);
-        credentialsBox.add(btnReconnect);
+        
+        reconnectionBox.add(btnReconnect);
+        reconnectionBox.add(lblStatus);
+        
+        credentialsBox.add(reconnectionBox);
         
         credentials.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
         credentials.add(credentialsBox);
@@ -216,13 +225,27 @@ public class WebcamClient implements ActionListener {
         videoIn.repaint();
     }
     
+    private void initSystemInCloud() {
+    	this.sicClient = SicClientFactory.createClient(textAccountNumber.getText(),
+    			                                       textSystemName.getText(),
+    			                                       textSystemKey.getText());
+    	if(sicClient.testConnection().getStatus()) {
+      		lblStatus.setText("  OK");
+    		lblStatus.setForeground(Color.GREEN);
+    	} else {
+    		lblStatus.setText("  KO");
+    		lblStatus.setForeground(Color.RED);
+    	}
+    }
+    
     // Data received from the system instance
 //    @Override
     public void receivedData(String instanceID, String portName, byte[] data) {
+    	
     }
     
     public static void main(String[] args) {
-        WebcamClient vc = new WebcamClient();
-        vc.startUI();
+        WebcamClient wc = new WebcamClient();
+        wc.startUI();
     }
 }
