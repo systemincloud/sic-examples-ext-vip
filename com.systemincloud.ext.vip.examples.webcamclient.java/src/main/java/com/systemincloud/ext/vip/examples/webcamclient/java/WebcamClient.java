@@ -37,6 +37,7 @@ import javax.swing.Box;
 import javax.swing.JList;
 import javax.swing.JButton;
 import javax.swing.ListSelectionModel;
+import java.awt.Component;
 
 public class WebcamClient implements ActionListener, SicListener {
 
@@ -72,6 +73,7 @@ public class WebcamClient implements ActionListener, SicListener {
     private final JButton    btnReconnect        = new JButton("Reconnect");
     private final JLabel     lblStatus           = new JLabel("  --");
     
+    private final JLabel     lblMachines         = new JLabel("Machines:");
     private final JPanel     machines            = new JPanel();
     private final Box        machinesBox         = Box.createVerticalBox();
     private final JList<?>   machinesList        = new JList<>();
@@ -80,6 +82,7 @@ public class WebcamClient implements ActionListener, SicListener {
     private final JButton    btnNewMachine       = new JButton("New");
     private final JButton    btnDeleteMachine    = new JButton("Delete");
     
+    private final JLabel     lblInstances        = new JLabel("Instances:");
     private final JPanel     instances           = new JPanel();
     private final Box        instancesBox        = Box.createVerticalBox();
     private final JList<?>   instancesList       = new JList<>();
@@ -216,6 +219,8 @@ public class WebcamClient implements ActionListener, SicListener {
         credentials.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
         credentials.add(credentialsBox);
         
+        lblMachines.setAlignmentX(Component.RIGHT_ALIGNMENT);
+        machinesBox.add(lblMachines);
         machinesBox.add(machinesList);
         
         machinesBtnsBox.add(btnRefreshMachines);
@@ -225,6 +230,8 @@ public class WebcamClient implements ActionListener, SicListener {
         machinesBox.add(machinesBtnsBox);
         machines   .add(machinesBox);
         
+        lblInstances.setAlignmentX(Component.RIGHT_ALIGNMENT);
+        instancesBox.add(lblInstances);
         instancesBox.add(instancesList);
         
         instancesBtnsBox.add(btnRefreshInstances);
