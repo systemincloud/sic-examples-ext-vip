@@ -36,6 +36,7 @@ import java.awt.FlowLayout;
 import javax.swing.Box;
 import javax.swing.JList;
 import javax.swing.JButton;
+import javax.swing.ListSelectionModel;
 
 public class WebcamClient implements ActionListener, SicListener {
 
@@ -50,36 +51,42 @@ public class WebcamClient implements ActionListener, SicListener {
     private JPanel videoIn;
     private JPanel videoOut;
     
-    private final JPanel controlPanel = new JPanel();
+    private final JPanel     controlPanel        = new JPanel();
    
-    private final JPanel credentials = new JPanel();
-    private final Box    credentialsBox    = Box.createVerticalBox();
+    private final JPanel     credentials         = new JPanel();
+    private final Box        credentialsBox      = Box.createVerticalBox();
     
-    private final Box        accountNumberBox  = Box.createHorizontalBox();
-    private final JLabel     lblAccountNumber  = new JLabel("Account Number: ");
-    private final JTextField textAccountNumber = new JTextField();
+    private final Box        accountNumberBox    = Box.createHorizontalBox();
+    private final JLabel     lblAccountNumber    = new JLabel("Account Number: ");
+    private final JTextField textAccountNumber   = new JTextField();
     
-    private final Box        systemNameBox     = Box.createHorizontalBox();
-    private final JLabel     lblSystemName     = new JLabel("System Name: ");
-    private final JTextField textSystemName    = new JTextField();
+    private final Box        systemNameBox       = Box.createHorizontalBox();
+    private final JLabel     lblSystemName       = new JLabel("System Name: ");
+    private final JTextField textSystemName      = new JTextField();
     
-    private final Box        systemKeyBox      = Box.createHorizontalBox();
-    private final JLabel     lblSystemKey      = new JLabel("System Key: ");
-    private final JTextField textSystemKey     = new JTextField();
+    private final Box        systemKeyBox        = Box.createHorizontalBox();
+    private final JLabel     lblSystemKey        = new JLabel("System Key: ");
+    private final JTextField textSystemKey       = new JTextField();
     
-    private final Box        reconnectionBox   = Box.createHorizontalBox();
-    private final JButton    btnReconnect      = new JButton("Reconnect");
-    private final JLabel     lblStatus         = new JLabel("  --");
+    private final Box        reconnectionBox     = Box.createHorizontalBox();
+    private final JButton    btnReconnect        = new JButton("Reconnect");
+    private final JLabel     lblStatus           = new JLabel("  --");
     
-    private final JPanel     machines          = new JPanel();
-    private final Box        machinesBox       = Box.createVerticalBox();
-    private final JList<?>   machinesList      = new JList<>();
-    private final JButton    btnNewMachine     = new JButton("New Machine");
+    private final JPanel     machines            = new JPanel();
+    private final Box        machinesBox         = Box.createVerticalBox();
+    private final JList<?>   machinesList        = new JList<>();
+    private final Box        machinesBtnsBox     = Box.createHorizontalBox();
+    private final JButton    btnRefreshMachines  = new JButton("Refresh");
+    private final JButton    btnNewMachine       = new JButton("New");
+    private final JButton    btnDeleteMachine    = new JButton("Delete");
     
-    private final JPanel     instances         = new JPanel();
-    private final Box        instancesBox      = Box.createVerticalBox();
-    private final JList<?>   instancesList     = new JList<>();
-    private final JButton    btnNewInstance    = new JButton("New Instance");
+    private final JPanel     instances           = new JPanel();
+    private final Box        instancesBox        = Box.createVerticalBox();
+    private final JList<?>   instancesList       = new JList<>();
+    private final Box        instancesBtnsBox    = Box.createHorizontalBox();
+    private final JButton    btnRefreshInstances = new JButton("Refresh");
+    private final JButton    btnNewInstance      = new JButton("New");
+    private final JButton    btnDeleteInstance   = new JButton("Delete");
     
     private JToggleButton onOffButton = new JToggleButton("On/Off");
     
@@ -129,9 +136,44 @@ public class WebcamClient implements ActionListener, SicListener {
         textAccountNumber.setColumns(15);
         textSystemName   .setColumns(15);
         textSystemKey    .setColumns(15);
+        machinesList     .setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        instancesList    .setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     }
     
     private void initButtons() {
+        btnReconnect.addActionListener(new ActionListener() {
+        	@Override public void actionPerformed(ActionEvent e) {
+        		initSystemInCloud();
+        		refreshMachines();
+        		refreshInstances();
+            }
+        });
+        btnRefreshMachines.addActionListener(new ActionListener() {
+        	@Override public void actionPerformed(ActionEvent e) { refreshMachines(); }
+        });
+        btnNewMachine.addActionListener(new ActionListener() {
+        	@Override public void actionPerformed(ActionEvent e) {
+        		
+        	}
+        });
+        btnDeleteMachine.addActionListener(new ActionListener() {
+        	@Override public void actionPerformed(ActionEvent e) {
+        		
+        	}
+        });
+        btnRefreshInstances.addActionListener(new ActionListener() {
+        	@Override public void actionPerformed(ActionEvent e) { refreshInstances(); }
+        });
+        btnNewInstance.addActionListener(new ActionListener() {
+        	@Override public void actionPerformed(ActionEvent e) {
+        		
+        	}
+        });
+        btnDeleteInstance.addActionListener(new ActionListener() {
+        	@Override public void actionPerformed(ActionEvent e) {
+        		
+        	}
+        });
         onOffButton.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent itemEvent) {
                 int state = itemEvent.getStateChange();
@@ -144,11 +186,6 @@ public class WebcamClient implements ActionListener, SicListener {
                 }
             }
         });
-        btnReconnect.addActionListener(new ActionListener() {
-        	@Override public void actionPerformed(ActionEvent e) {
-        		initSystemInCloud();
-            }
-        });      
     }
     
     private void initLayout() {
@@ -180,11 +217,21 @@ public class WebcamClient implements ActionListener, SicListener {
         credentials.add(credentialsBox);
         
         machinesBox.add(machinesList);
-        machinesBox.add(btnNewMachine);
+        
+        machinesBtnsBox.add(btnRefreshMachines);
+        machinesBtnsBox.add(btnNewMachine);
+        machinesBtnsBox.add(btnDeleteMachine);
+        
+        machinesBox.add(machinesBtnsBox);
         machines   .add(machinesBox);
         
         instancesBox.add(instancesList);
-        instancesBox.add(btnNewInstance);
+        
+        instancesBtnsBox.add(btnRefreshInstances);
+        instancesBtnsBox.add(btnNewInstance);
+        instancesBtnsBox.add(btnDeleteInstance);
+        
+        instancesBox.add(instancesBtnsBox);
         instances.add(instancesBox);
         
         controlPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
@@ -201,8 +248,8 @@ public class WebcamClient implements ActionListener, SicListener {
     }
     
     private void addStyles() {
-        videoIn.setBackground(Color.LIGHT_GRAY);
-        videoIn.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        videoIn .setBackground(Color.LIGHT_GRAY);
+        videoIn .setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
         videoOut.setBackground(Color.LIGHT_GRAY);
         videoOut.setBorder(BorderFactory.createLineBorder(Color.black, 2));
     }
@@ -229,13 +276,25 @@ public class WebcamClient implements ActionListener, SicListener {
     	this.sicClient = SicClientFactory.createClient(textAccountNumber.getText(),
     			                                       textSystemName.getText(),
     			                                       textSystemKey.getText());
-    	if(sicClient.testConnection().getStatus()) {
+    	if(sicClient.isTestPassed()) {
       		lblStatus.setText("  OK");
     		lblStatus.setForeground(Color.GREEN);
     	} else {
     		lblStatus.setText("  KO");
     		lblStatus.setForeground(Color.RED);
     	}
+    }
+    
+	private void refreshMachines() {
+		if(sicClient.isTestPassed()) {
+			
+		}
+    }
+
+	private void refreshInstances() {
+		if(sicClient.isTestPassed()) {
+			
+		}
     }
     
     // Data received from the system instance
