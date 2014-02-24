@@ -14,6 +14,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -27,6 +28,7 @@ import com.github.sarxos.webcam.Webcam;
 import com.systemincloud.sdk.java.SicClient;
 import com.systemincloud.sdk.java.SicClientFactory;
 import com.systemincloud.sdk.java.SicListener;
+import com.systemincloud.sdk.java.msg.MachineInfo;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -37,6 +39,7 @@ import javax.swing.Box;
 import javax.swing.JList;
 import javax.swing.JButton;
 import javax.swing.ListSelectionModel;
+
 import java.awt.Component;
 
 public class WebcamClient implements ActionListener, SicListener {
@@ -164,6 +167,13 @@ public class WebcamClient implements ActionListener, SicListener {
         btnDeleteInstance  .setEnabled(false);
         onOffButton        .setEnabled(false);
         instancesList      .setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        
+        Properties config = new Properties();
+		try { config.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("credentials.properties"));
+		} catch (Exception e) { } 
+        if(config.getProperty("AccountNumber") != null) textAccountNumber.setText(config.getProperty("AccountNumber"));
+        if(config.getProperty("SystemName")    != null) textSystemName   .setText(config.getProperty("SystemName"));
+        if(config.getProperty("SystemKey")     != null) textSystemKey    .setText(config.getProperty("SystemKey"));
     }
     
     private void initActions() {
@@ -288,8 +298,6 @@ public class WebcamClient implements ActionListener, SicListener {
             btnRefreshMachines .setEnabled(true);
             btnNewMachine      .setEnabled(true);
             btnRefreshInstances.setEnabled(true);
-            btnNewInstance     .setEnabled(true);
-            
         } else {
             lblStatus.setText("  KO");
             lblStatus.setForeground(Color.RED);
@@ -304,7 +312,9 @@ public class WebcamClient implements ActionListener, SicListener {
     }
     
     private void refreshMachines() {
-
+    	for(MachineInfo mi : this.sicClient.getMachines()) {
+    		
+    	}
     }
 
     private void refreshInstances() {
