@@ -37,7 +37,6 @@ import javax.swing.JTextField;
 import java.awt.FlowLayout;
 
 import javax.swing.Box;
-import javax.swing.JList;
 import javax.swing.JButton;
 import javax.swing.ListSelectionModel;
 
@@ -83,7 +82,10 @@ public class WebcamClient implements ActionListener, SicListener {
     private final JLabel            lblMachines         = new JLabel("Machines:");
     private final JPanel            machines            = new JPanel();
     private final Box               machinesBox         = Box.createVerticalBox();
-    private final DefaultTableModel machinesModel       = new DefaultTableModel(new Object[][] { }, new String[] { "Id", "Provider", "Region", "Machine", "State"});
+    private final DefaultTableModel machinesModel       = new DefaultTableModel(new Object[][] { }, new String[] { "Id", "Provider", "Region", "Type", "State"}) {
+        private static final long serialVersionUID = 1L;
+        @Override public boolean isCellEditable(int row, int column) { return false; }
+    };
     private final JTable            machinesList        = new JTable(machinesModel);
     private final JScrollPane       jmachinesPanel      = new JScrollPane(machinesList);
     private final JPanel            machinesPanel       = new JPanel();
@@ -95,7 +97,10 @@ public class WebcamClient implements ActionListener, SicListener {
     private final JLabel            lblInstances        = new JLabel("Instances:");
     private final JPanel            instances           = new JPanel();
     private final Box               instancesBox        = Box.createVerticalBox();
-    private final DefaultTableModel instancesModel      = new DefaultTableModel(new Object[][] { }, new String[] { "", "", "", "", ""});
+    private final DefaultTableModel instancesModel      = new DefaultTableModel(new Object[][] { }, new String[] { "", "", "", "", ""}) {
+        private static final long serialVersionUID = 1L;
+        @Override public boolean isCellEditable(int row, int column) { return false; }
+    };
     private final JTable            instancesList       = new JTable(instancesModel);
     private final JScrollPane       jinstancesPanel     = new JScrollPane(instancesList);
     private final JPanel            instancesPanel      = new JPanel();
@@ -106,15 +111,7 @@ public class WebcamClient implements ActionListener, SicListener {
     
     private JToggleButton onOffButton = new JToggleButton("On/Off");
     
-    private class NewMachineFrame extends JFrame { private static final long serialVersionUID = 1L;
-        
-    }
-    
     private class DeleteMachineFrame extends JFrame { private static final long serialVersionUID = 1L;
-        
-    }
-    
-    private class NewInstanceFrame extends JFrame { private static final long serialVersionUID = 1L;
         
     }
     
@@ -169,10 +166,10 @@ public class WebcamClient implements ActionListener, SicListener {
         textSystemName     .setColumns(15);
         textSystemKey      .setColumns(15);
         
-        jmachinesPanel.setMaximumSize(new Dimension(400, 100));
-        jmachinesPanel       .setPreferredSize(new Dimension(400, 100));
-        jinstancesPanel.setMaximumSize(new Dimension(400, 100));
-        jinstancesPanel      .setPreferredSize(new Dimension(400, 100));
+        jmachinesPanel     .setMaximumSize(new Dimension(400, 100));
+        jmachinesPanel     .setPreferredSize(new Dimension(400, 100));
+        jinstancesPanel    .setMaximumSize(new Dimension(400, 100));
+        jinstancesPanel    .setPreferredSize(new Dimension(400, 100));
         machinesList       .setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         instancesList      .setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         
@@ -338,7 +335,7 @@ public class WebcamClient implements ActionListener, SicListener {
             machinesModel.addRow(new String [] { mi.getMachineId(), 
                                                  mi.getProvider(), 
                                                  mi.getRegion(), 
-                                                 mi.getMachine(), 
+                                                 mi.getMachineType(), 
                                                  mi.getStatus()});   
         }
     }
