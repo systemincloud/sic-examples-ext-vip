@@ -37,7 +37,7 @@ public class NewMachineFrame  extends JFrame {
     
     public NewMachineFrame() {
         setAlwaysOnTop(true);
-        setSize(500, 100);
+        setSize(700, 100);
         
         initLayout();
         initComponents();
@@ -83,11 +83,12 @@ public class NewMachineFrame  extends JFrame {
     }
 
     private void fillRegions(Provider provider) {
-        
+        comboRegion.removeAllItems();
+        for(Region r : Region.getForProvider(provider)) comboRegion.addItem(r.getName());
     }
     
     private void fillMachineTypes(Region byName) {
-        
+        comboType.removeAllItems();
     }
     
     private void initButtons() {
