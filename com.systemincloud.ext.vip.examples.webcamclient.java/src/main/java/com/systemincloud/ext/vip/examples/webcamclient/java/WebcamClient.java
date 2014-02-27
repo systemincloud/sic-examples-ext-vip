@@ -21,6 +21,7 @@ import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JToggleButton;
 import javax.swing.Timer;
 
@@ -42,6 +43,9 @@ import javax.swing.ListSelectionModel;
 
 import java.awt.Component;
 
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 public class WebcamClient implements ActionListener, SicListener {
 
     private Webcam webcam = Webcam.getDefault();
@@ -55,44 +59,50 @@ public class WebcamClient implements ActionListener, SicListener {
     private JPanel videoIn;
     private JPanel videoOut;
     
-    private final JPanel     controlPanel        = new JPanel();
+    private final JPanel            controlPanel        = new JPanel();
    
-    private final JPanel     credentials         = new JPanel();
-    private final Box        credentialsBox      = Box.createVerticalBox();
+    private final JPanel            credentials         = new JPanel();
+    private final Box               credentialsBox      = Box.createVerticalBox();
     
-    private final Box        accountNumberBox    = Box.createHorizontalBox();
-    private final JLabel     lblAccountNumber    = new JLabel("Account Number: ");
-    private final JTextField textAccountNumber   = new JTextField();
+    private final Box               accountNumberBox    = Box.createHorizontalBox();
+    private final JLabel            lblAccountNumber    = new JLabel("Account Number: ");
+    private final JTextField        textAccountNumber   = new JTextField();
     
-    private final Box        systemNameBox       = Box.createHorizontalBox();
-    private final JLabel     lblSystemName       = new JLabel("System Name: ");
-    private final JTextField textSystemName      = new JTextField();
+    private final Box               systemNameBox       = Box.createHorizontalBox();
+    private final JLabel            lblSystemName       = new JLabel("System Name: ");
+    private final JTextField        textSystemName      = new JTextField();
     
-    private final Box        systemKeyBox        = Box.createHorizontalBox();
-    private final JLabel     lblSystemKey        = new JLabel("System Key: ");
-    private final JTextField textSystemKey       = new JTextField();
+    private final Box               systemKeyBox        = Box.createHorizontalBox();
+    private final JLabel            lblSystemKey        = new JLabel("System Key: ");
+    private final JTextField        textSystemKey       = new JTextField();
     
-    private final Box        reconnectionBox     = Box.createHorizontalBox();
-    private final JButton    btnReconnect        = new JButton("Reconnect");
-    private final JLabel     lblStatus           = new JLabel("  --");
+    private final Box               reconnectionBox     = Box.createHorizontalBox();
+    private final JButton           btnReconnect        = new JButton("Reconnect");
+    private final JLabel            lblStatus           = new JLabel("  --");
     
-    private final JLabel     lblMachines         = new JLabel("Machines:");
-    private final JPanel     machines            = new JPanel();
-    private final Box        machinesBox         = Box.createVerticalBox();
-    private final JList<?>   machinesList        = new JList<>();
-    private final Box        machinesBtnsBox     = Box.createHorizontalBox();
-    private final JButton    btnRefreshMachines  = new JButton("Refresh");
-    private final JButton    btnNewMachine       = new JButton("New");
-    private final JButton    btnDeleteMachine    = new JButton("Delete");
+    private final JLabel            lblMachines         = new JLabel("Machines:");
+    private final JPanel            machines            = new JPanel();
+    private final Box               machinesBox         = Box.createVerticalBox();
+    private final DefaultTableModel machinesModel       = new DefaultTableModel(new Object[][] { }, new String[] { "Id", "Provider", "Region", "Machine", "State"});
+    private final JTable            machinesList        = new JTable(machinesModel);
+    private final JScrollPane       jmachinesPanel      = new JScrollPane(machinesList);
+    private final JPanel            machinesPanel       = new JPanel();
+    private final Box               machinesBtnsBox     = Box.createHorizontalBox();
+    private final JButton           btnRefreshMachines  = new JButton("Refresh");
+    private final JButton           btnNewMachine       = new JButton("New");
+    private final JButton           btnDeleteMachine    = new JButton("Delete");
     
-    private final JLabel     lblInstances        = new JLabel("Instances:");
-    private final JPanel     instances           = new JPanel();
-    private final Box        instancesBox        = Box.createVerticalBox();
-    private final JList<?>   instancesList       = new JList<>();
-    private final Box        instancesBtnsBox    = Box.createHorizontalBox();
-    private final JButton    btnRefreshInstances = new JButton("Refresh");
-    private final JButton    btnNewInstance      = new JButton("New");
-    private final JButton    btnDeleteInstance   = new JButton("Delete");
+    private final JLabel            lblInstances        = new JLabel("Instances:");
+    private final JPanel            instances           = new JPanel();
+    private final Box               instancesBox        = Box.createVerticalBox();
+    private final DefaultTableModel instancesModel      = new DefaultTableModel(new Object[][] { }, new String[] { "", "", "", "", ""});
+    private final JTable            instancesList       = new JTable(instancesModel);
+    private final JScrollPane       jinstancesPanel     = new JScrollPane(instancesList);
+    private final JPanel            instancesPanel      = new JPanel();
+    private final Box               instancesBtnsBox    = Box.createHorizontalBox();
+    private final JButton           btnRefreshInstances = new JButton("Refresh");
+    private final JButton           btnNewInstance      = new JButton("New");
+    private final JButton           btnDeleteInstance   = new JButton("Delete");
     
     private JToggleButton onOffButton = new JToggleButton("On/Off");
     
@@ -158,19 +168,27 @@ public class WebcamClient implements ActionListener, SicListener {
         textAccountNumber  .setColumns(15);
         textSystemName     .setColumns(15);
         textSystemKey      .setColumns(15);
+        
+        jmachinesPanel.setMaximumSize(new Dimension(400, 100));
+        jmachinesPanel       .setPreferredSize(new Dimension(400, 100));
+        jinstancesPanel.setMaximumSize(new Dimension(400, 100));
+        jinstancesPanel      .setPreferredSize(new Dimension(400, 100));
         machinesList       .setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        instancesList      .setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        
         btnRefreshMachines .setEnabled(false);
         btnNewMachine      .setEnabled(false);
         btnDeleteMachine   .setEnabled(false);
         btnRefreshInstances.setEnabled(false);
         btnNewInstance     .setEnabled(false);
         btnDeleteInstance  .setEnabled(false);
+        
         onOffButton        .setEnabled(false);
-        instancesList      .setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        
         
         Properties config = new Properties();
-		try { config.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("credentials.properties"));
-		} catch (Exception e) { } 
+        try { config.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("credentials.properties"));
+        } catch (Exception e) { } 
         if(config.getProperty("AccountNumber") != null) textAccountNumber.setText(config.getProperty("AccountNumber"));
         if(config.getProperty("SystemName")    != null) textSystemName   .setText(config.getProperty("SystemName"));
         if(config.getProperty("SystemKey")     != null) textSystemKey    .setText(config.getProperty("SystemKey"));
@@ -199,9 +217,8 @@ public class WebcamClient implements ActionListener, SicListener {
     }
     
     private void initLayout() {
-        videoIn.setPreferredSize(new Dimension(320, 240));
-        
-        videoOut.setPreferredSize(new Dimension(320, 240));
+        videoIn .setPreferredSize(new Dimension(500, 500));
+        videoOut.setPreferredSize(new Dimension(500, 500));
         
         videoPanels.setLayout(new BoxLayout(videoPanels, BoxLayout.X_AXIS));
         videoPanels.add(videoIn);
@@ -228,7 +245,8 @@ public class WebcamClient implements ActionListener, SicListener {
         
         lblMachines.setAlignmentX(Component.RIGHT_ALIGNMENT);
         machinesBox.add(lblMachines);
-        machinesBox.add(machinesList);
+        machinesPanel.add(jmachinesPanel);
+        machinesBox.add(machinesPanel);
         
         machinesBtnsBox.add(btnRefreshMachines);
         machinesBtnsBox.add(btnNewMachine);
@@ -239,13 +257,14 @@ public class WebcamClient implements ActionListener, SicListener {
         
         lblInstances.setAlignmentX(Component.RIGHT_ALIGNMENT);
         instancesBox.add(lblInstances);
-        instancesBox.add(instancesList);
+        instancesBox.add(instancesPanel);
         
         instancesBtnsBox.add(btnRefreshInstances);
         instancesBtnsBox.add(btnNewInstance);
         instancesBtnsBox.add(btnDeleteInstance);
         
         instancesBox.add(instancesBtnsBox);
+        instancesPanel.add(jinstancesPanel);
         instances.add(instancesBox);
         
         controlPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
@@ -301,6 +320,8 @@ public class WebcamClient implements ActionListener, SicListener {
         } else {
             lblStatus.setText("  KO");
             lblStatus.setForeground(Color.RED);
+            for(int i = 0; i < machinesModel .getRowCount(); i++) machinesModel .removeRow(0);
+            for(int i = 0; i < instancesModel.getRowCount(); i++) instancesModel.removeRow(0);
             btnRefreshMachines .setEnabled(false);
             btnNewMachine      .setEnabled(false);
             btnDeleteMachine   .setEnabled(false);
@@ -312,13 +333,18 @@ public class WebcamClient implements ActionListener, SicListener {
     }
     
     private void refreshMachines() {
-    	for(MachineInfo mi : this.sicClient.getMachines()) {
-    		
-    	}
+        for(int i = 0; i < machinesModel.getRowCount(); i++) machinesModel.removeRow(0);
+        for(MachineInfo mi : this.sicClient.getMachines()) {
+            machinesModel.addRow(new String [] { mi.getMachineId(), 
+                                                 mi.getProvider(), 
+                                                 mi.getRegion(), 
+                                                 mi.getMachine(), 
+                                                 mi.getStatus()});   
+        }
     }
 
     private void refreshInstances() {
-
+        for(int i = 0; i < instancesModel.getRowCount(); i++) instancesModel.removeRow(0);
     }
     
     // Data received from the system instance
