@@ -45,7 +45,8 @@ import java.awt.Component;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class WebcamClient implements ActionListener, SicListener {
+public class WebcamClient implements ActionListener, SicListener, NewMachineFrameListener,
+                                                                  NewInstanceFrameListener {
 
     private Webcam webcam = Webcam.getDefault();
     
@@ -194,10 +195,10 @@ public class WebcamClient implements ActionListener, SicListener {
     private void initActions() {
         btnReconnect       .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { initSystemInCloud(); } });
         btnRefreshMachines .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { refreshMachines(); } });
-        btnNewMachine      .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new NewMachineFrame()    .setVisible(true); } });
+        btnNewMachine      .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new NewMachineFrame(sicClient, WebcamClient.this).setVisible(true); } });
         btnDeleteMachine   .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new DeleteMachineFrame() .setVisible(true); } });
         btnRefreshInstances.addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { refreshInstances(); } });
-        btnNewInstance     .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new NewInstanceFrame()   .setVisible(true); } });
+        btnNewInstance     .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new NewInstanceFrame(sicClient, WebcamClient.this).setVisible(true); } });
         btnDeleteInstance  .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new DeleteInstanceFrame().setVisible(true); } });
         onOffButton        .addItemListener  (new ItemListener() {
             public void itemStateChanged(ItemEvent itemEvent) {
@@ -343,6 +344,9 @@ public class WebcamClient implements ActionListener, SicListener {
     private void refreshInstances() {
         for(int i = 0; i < instancesModel.getRowCount(); i++) instancesModel.removeRow(0);
     }
+    
+    @Override public void machineCreated()  { refreshMachines(); }
+    @Override public void instanceCreated() { refreshInstances(); }
     
     // Data received from the system instance
 //    @Override

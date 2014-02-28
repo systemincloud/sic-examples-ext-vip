@@ -16,6 +16,8 @@ import javax.swing.JButton;
 import com.systemincloud.sdk.java.MachineType;
 import com.systemincloud.sdk.java.Provider;
 import com.systemincloud.sdk.java.Region;
+import com.systemincloud.sdk.java.SicClient;
+import com.systemincloud.sdk.java.SicException;
 
 public class NewMachineFrame  extends JFrame {
     
@@ -35,7 +37,12 @@ public class NewMachineFrame  extends JFrame {
     private final JButton           btnCreate     = new JButton("Create");
     private final JButton           btnCancel     = new JButton("Cancel");
     
-    public NewMachineFrame() {
+    private SicClient sicClient;
+    private NewMachineFrameListener listener;
+    
+    public NewMachineFrame(SicClient sicClient, NewMachineFrameListener listener) {
+        this.sicClient = sicClient;
+        this.listener = listener;
         setAlwaysOnTop(true);
         setSize(700, 100);
         
@@ -97,10 +104,13 @@ public class NewMachineFrame  extends JFrame {
     
     private void initButtons() {
         btnCreate.addActionListener(new ActionListener() { 
-            @Override public void actionPerformed(ActionEvent e) { 
-                
+            @Override public void actionPerformed(ActionEvent event) {
+                try {
+                    sicClient.newMachine((String) comboRegion.getSelectedItem(), (String) comboType.getSelectedItem());
+                } catch(SicException e) { return; }
+                listener.machineCreated();
             }
         });
-        btnCancel.addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { NewMachineFrame.this.dispose(); } });
+        btnCancel.addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent event) { NewMachineFrame.this.dispose(); } });
     }
 }
