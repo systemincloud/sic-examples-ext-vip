@@ -19,6 +19,7 @@ import java.util.Properties;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
+import javax.swing.DefaultListSelectionModel;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -43,6 +44,8 @@ import javax.swing.ListSelectionModel;
 import java.awt.Component;
 
 import javax.swing.JTable;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 public class WebcamClient implements ActionListener, SicListener, NewMachineFrameListener,
@@ -194,14 +197,28 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
     
     private void initActions() {
         btnReconnect       .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { initSystemInCloud(); } });
+        
+        machinesList       .getSelectionModel().addListSelectionListener(new ListSelectionListener() { 
+            @Override public void valueChanged(ListSelectionEvent event) { 
+                if(((DefaultListSelectionModel) event.getSource()).isSelectionEmpty()) btnDeleteMachine.setEnabled(false);
+                else                                                                   btnDeleteMachine.setEnabled(true);
+            }});
+        
         btnRefreshMachines .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { refreshMachines(); } });
         btnNewMachine      .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new NewMachineFrame(sicClient, WebcamClient.this).setVisible(true); } });
         btnDeleteMachine   .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new DeleteMachineFrame() .setVisible(true); } });
+        
+        instancesList      .getSelectionModel().addListSelectionListener(new ListSelectionListener() { 
+            @Override public void valueChanged(ListSelectionEvent event) { 
+                if(((DefaultListSelectionModel) event.getSource()).isSelectionEmpty()) btnDeleteInstance.setEnabled(false);
+                else                                                                   btnDeleteInstance.setEnabled(true);
+            }});
+        
         btnRefreshInstances.addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { refreshInstances(); } });
         btnNewInstance     .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new NewInstanceFrame(sicClient, WebcamClient.this).setVisible(true); } });
         btnDeleteInstance  .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new DeleteInstanceFrame().setVisible(true); } });
         onOffButton        .addItemListener  (new ItemListener() {
-            public void itemStateChanged(ItemEvent itemEvent) {
+            @Override public void itemStateChanged(ItemEvent itemEvent) {
                 int state = itemEvent.getStateChange();
                 if (state == ItemEvent.SELECTED) {
                     webcam.open();
@@ -210,8 +227,7 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
                     webcam.close();
                     timer.stop();
                 }
-            }
-        });
+            }});
     }
     
     private void initLayout() {
