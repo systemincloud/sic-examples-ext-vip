@@ -318,8 +318,8 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
         } else {
             lblStatus.setText("  KO");
             lblStatus.setForeground(Color.RED);
-            for(int i = 0; i < machinesModel .getRowCount(); i++) machinesModel .removeRow(0);
-            for(int i = 0; i < instancesModel.getRowCount(); i++) instancesModel.removeRow(0);
+            while(machinesModel .getRowCount() != 0) machinesModel .removeRow(0);
+            while(instancesModel.getRowCount() != 0) instancesModel.removeRow(0);
             btnRefreshMachines .setEnabled(false);
             btnNewMachine      .setEnabled(false);
             btnDeleteMachine   .setEnabled(false);
@@ -331,7 +331,7 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
     }
     
     private void refreshMachines() {
-        for(int i = 0; i < machinesModel.getRowCount(); i++) machinesModel.removeRow(0);
+        while(machinesModel.getRowCount() != 0) machinesModel.removeRow(0);
         for(MachineInfo mi : this.sicClient.getMachines()) {
             machinesModel.addRow(new String [] { mi.getMachineId(), 
                                                  mi.getProvider(), 
@@ -342,7 +342,7 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
     }
 
     private void refreshInstances() {
-        for(int i = 0; i < instancesModel.getRowCount(); i++) instancesModel.removeRow(0);
+        while(instancesModel.getRowCount() != 0) instancesModel.removeRow(0);
     }
     
     @Override public void machineCreated()  { refreshMachines(); }

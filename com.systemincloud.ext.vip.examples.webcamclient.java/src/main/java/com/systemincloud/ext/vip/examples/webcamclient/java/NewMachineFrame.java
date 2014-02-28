@@ -112,6 +112,7 @@ public class NewMachineFrame  extends JFrame {
                     JOptionPane.showMessageDialog(null, e.getMessage(), "Exception", JOptionPane.ERROR_MESSAGE);
                 }
                 listener.machineCreated();
+                NewMachineFrame.this.dispose();
             }
         });
         btnCancel.addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent event) { NewMachineFrame.this.dispose(); } });
