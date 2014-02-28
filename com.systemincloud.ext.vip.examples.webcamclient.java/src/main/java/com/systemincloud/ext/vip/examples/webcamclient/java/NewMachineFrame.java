@@ -10,6 +10,7 @@ import java.awt.event.ItemListener;
 
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
@@ -107,7 +108,9 @@ public class NewMachineFrame  extends JFrame {
             @Override public void actionPerformed(ActionEvent event) {
                 try {
                     sicClient.newMachine((String) comboRegion.getSelectedItem(), (String) comboType.getSelectedItem());
-                } catch(SicException e) { return; }
+                } catch(SicException e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage(), "Exception", JOptionPane.ERROR_MESSAGE);
+                }
                 listener.machineCreated();
             }
         });
