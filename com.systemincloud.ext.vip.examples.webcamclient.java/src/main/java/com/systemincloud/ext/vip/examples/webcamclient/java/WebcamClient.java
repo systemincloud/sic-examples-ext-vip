@@ -21,6 +21,7 @@ import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultListSelectionModel;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JToggleButton;
@@ -29,6 +30,7 @@ import javax.swing.Timer;
 import com.github.sarxos.webcam.Webcam;
 import com.systemincloud.sdk.java.SicClient;
 import com.systemincloud.sdk.java.SicClientFactory;
+import com.systemincloud.sdk.java.SicException;
 import com.systemincloud.sdk.java.SicListener;
 import com.systemincloud.sdk.java.msg.MachineInfo;
 
@@ -115,14 +117,6 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
     
     private JToggleButton onOffButton = new JToggleButton("On/Off");
     
-    private class DeleteMachineFrame extends JFrame { private static final long serialVersionUID = 1L;
-        
-    }
-    
-    private class DeleteInstanceFrame extends JFrame { private static final long serialVersionUID = 1L;
-        
-    }
-    
     private Timer timer = new Timer(100, this);
     
     private BufferedImage in = null;
@@ -206,7 +200,20 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
         
         btnRefreshMachines .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { refreshMachines(); } });
         btnNewMachine      .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new NewMachineFrame(sicClient, WebcamClient.this).setVisible(true); } });
-        btnDeleteMachine   .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new DeleteMachineFrame() .setVisible(true); } });
+        btnDeleteMachine   .addActionListener(new ActionListener() {
+            @Override public void actionPerformed(ActionEvent event) {
+                String machineId =  (String) machinesList.getValueAt(machinesList.getSelectedRow(), 0);
+                int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure to remove machine " + machineId + "\n" +
+                                                                       "All intances on that machine will be also removed");
+                if(dialogResult == JOptionPane.YES_OPTION) {
+                    try { sicClient.deleteMachine(machineId);
+                    } catch(SicException e) {
+                        JOptionPane.showMessageDialog(null, e.getMessage(), "Exception", JOptionPane.ERROR_MESSAGE);
+                    }
+                    refreshMachines();
+                }
+                
+            }});
         
         instancesList      .getSelectionModel().addListSelectionListener(new ListSelectionListener() { 
             @Override public void valueChanged(ListSelectionEvent event) { 
@@ -216,7 +223,10 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
         
         btnRefreshInstances.addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { refreshInstances(); } });
         btnNewInstance     .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new NewInstanceFrame(sicClient, WebcamClient.this).setVisible(true); } });
-        btnDeleteInstance  .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new DeleteInstanceFrame().setVisible(true); } });
+        btnDeleteInstance  .addActionListener(new ActionListener() { 
+            @Override public void actionPerformed(ActionEvent e) {
+                
+            }});
         onOffButton        .addItemListener  (new ItemListener() {
             @Override public void itemStateChanged(ItemEvent itemEvent) {
                 int state = itemEvent.getStateChange();
@@ -235,36 +245,29 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
         videoOut.setPreferredSize(new Dimension(500, 500));
         
         videoPanels.setLayout(new BoxLayout(videoPanels, BoxLayout.X_AXIS));
-        videoPanels.add(videoIn);
-        videoPanels.add(videoOut);
+        videoPanels.add(videoIn); videoPanels.add(videoOut);
 
-        accountNumberBox.add(lblAccountNumber);
-        accountNumberBox.add(textAccountNumber);
-        systemNameBox   .add(lblSystemName);
-        systemNameBox   .add(textSystemName);
-        systemKeyBox    .add(lblSystemKey);
-        systemKeyBox    .add(textSystemKey);
+        accountNumberBox.add(lblAccountNumber); accountNumberBox.add(textAccountNumber);
+        systemNameBox   .add(lblSystemName);    systemNameBox   .add(textSystemName);
+        systemKeyBox    .add(lblSystemKey);     systemKeyBox    .add(textSystemKey);
         
         credentialsBox.add(accountNumberBox);
         credentialsBox.add(systemNameBox);
         credentialsBox.add(systemKeyBox);
         
-        reconnectionBox.add(btnReconnect);
-        reconnectionBox.add(lblStatus);
+        reconnectionBox.add(btnReconnect); reconnectionBox.add(lblStatus);
         
         credentialsBox.add(reconnectionBox);
         
         credentials.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
         credentials.add(credentialsBox);
         
-        lblMachines.setAlignmentX(Component.RIGHT_ALIGNMENT);
-        machinesBox.add(lblMachines);
+        lblMachines  .setAlignmentX(Component.RIGHT_ALIGNMENT);
+        machinesBox  .add(lblMachines);
         machinesPanel.add(jmachinesPanel);
-        machinesBox.add(machinesPanel);
+        machinesBox  .add(machinesPanel);
         
-        machinesBtnsBox.add(btnRefreshMachines);
-        machinesBtnsBox.add(btnNewMachine);
-        machinesBtnsBox.add(btnDeleteMachine);
+        machinesBtnsBox.add(btnRefreshMachines); machinesBtnsBox.add(btnNewMachine); machinesBtnsBox.add(btnDeleteMachine);
         
         machinesBox.add(machinesBtnsBox);
         machines   .add(machinesBox);
@@ -273,13 +276,11 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
         instancesBox.add(lblInstances);
         instancesBox.add(instancesPanel);
         
-        instancesBtnsBox.add(btnRefreshInstances);
-        instancesBtnsBox.add(btnNewInstance);
-        instancesBtnsBox.add(btnDeleteInstance);
+        instancesBtnsBox.add(btnRefreshInstances); instancesBtnsBox.add(btnNewInstance); instancesBtnsBox.add(btnDeleteInstance);
         
-        instancesBox.add(instancesBtnsBox);
+        instancesBox  .add(instancesBtnsBox);
         instancesPanel.add(jinstancesPanel);
-        instances.add(instancesBox);
+        instances     .add(instancesBox);
         
         controlPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
         controlPanel.add(credentials);
