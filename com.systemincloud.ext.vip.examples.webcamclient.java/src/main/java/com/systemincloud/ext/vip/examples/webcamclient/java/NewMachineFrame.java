@@ -13,9 +13,9 @@ import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
-import com.systemincloud.sdk.java.msg.MachineType;
-import com.systemincloud.sdk.java.msg.Provider;
-import com.systemincloud.sdk.java.msg.Region;
+import com.systemincloud.sdk.java.MachineType;
+import com.systemincloud.sdk.java.Provider;
+import com.systemincloud.sdk.java.Region;
 
 public class NewMachineFrame  extends JFrame {
     
@@ -80,22 +80,26 @@ public class NewMachineFrame  extends JFrame {
                 }
             }
         });
+        fillMachineTypes(Region.getByName((String) comboRegion.getSelectedItem()));
     }
 
     private void fillRegions(Provider provider) {
         comboRegion.removeAllItems();
-        for(Region r : Region.getForProvider(provider)) comboRegion.addItem(r.getName());
+        if(Provider.DEFAULT.equals(provider)) comboRegion.addItem(Region.DEFAULT.getName());
+        else for(Region r : Region.getForProvider(provider)) comboRegion.addItem(r.getName());
     }
     
-    private void fillMachineTypes(Region byName) {
+    private void fillMachineTypes(Region region) {
         comboType.removeAllItems();
+        if(Region.DEFAULT.equals(region)) comboType.addItem(MachineType.DEFAULT.getName());
+        else for(MachineType mt : MachineType.getForRegion(region)) comboType.addItem(mt.getName());
     }
     
     private void initButtons() {
         btnCreate.addActionListener(new ActionListener() { 
             @Override public void actionPerformed(ActionEvent e) { 
                 
-            } 
+            }
         });
         btnCancel.addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { NewMachineFrame.this.dispose(); } });
     }
