@@ -19,8 +19,9 @@ import com.systemincloud.sdk.java.Provider;
 import com.systemincloud.sdk.java.Region;
 import com.systemincloud.sdk.java.SicClient;
 import com.systemincloud.sdk.java.SicException;
+import com.systemincloud.sdk.java.msg.MachineInfo;
 
-public class NewMachineFrame  extends JFrame {
+public class NewMachineFrame extends JFrame {
     
     private static final long serialVersionUID = 1L;
     
@@ -106,12 +107,13 @@ public class NewMachineFrame  extends JFrame {
     private void initButtons() {
         btnCreate.addActionListener(new ActionListener() { 
             @Override public void actionPerformed(ActionEvent event) {
+                MachineInfo mi = null;
                 try {
-                    sicClient.newMachine((String) comboRegion.getSelectedItem(), (String) comboType.getSelectedItem());
+                    mi = sicClient.newMachine((String) comboRegion.getSelectedItem(), (String) comboType.getSelectedItem());
                 } catch(SicException e) {
                     JOptionPane.showMessageDialog(null, e.getMessage(), "Exception", JOptionPane.ERROR_MESSAGE);
                 }
-                listener.machineCreated();
+                listener.machineCreated(mi);
                 NewMachineFrame.this.dispose();
             }
         });

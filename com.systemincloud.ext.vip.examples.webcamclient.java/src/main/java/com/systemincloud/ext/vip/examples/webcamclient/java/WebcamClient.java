@@ -362,8 +362,12 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
         while(instancesModel.getRowCount() != 0) instancesModel.removeRow(0);
     }
     
-    @Override public void machineCreated()  { refreshMachines(); }
-    @Override public void instanceCreated() { refreshInstances(); }
+    @Override public void machineCreated(MachineInfo mi) { machinesModel.addRow(new String [] { mi.getMachineId(), 
+                                                                                                mi.getProvider(), 
+                                                                                                mi.getRegion(), 
+                                                                                                mi.getMachineType(), 
+                                                                                                mi.getStatus()}); }
+    @Override public void instanceCreated()              { refreshInstances(); }
     
     // Data received from the system instance
 //    @Override
