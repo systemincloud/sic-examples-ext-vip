@@ -43,6 +43,7 @@ public class NewMachineFrame extends JFrame {
     private NewMachineFrameListener listener;
     
     public NewMachineFrame(SicClient sicClient, NewMachineFrameListener listener) {
+        this.setTitle("New Machine");
         this.sicClient = sicClient;
         this.listener = listener;
         setAlwaysOnTop(true);
