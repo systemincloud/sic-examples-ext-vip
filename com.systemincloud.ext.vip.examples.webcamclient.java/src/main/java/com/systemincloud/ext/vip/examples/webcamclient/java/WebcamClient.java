@@ -7,8 +7,14 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -190,12 +196,18 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
     }
     
     private void initActions() {
+        mainPanel          .addMouseListener(new MouseAdapter()    { @Override public void mouseClicked(MouseEvent e)     { machinesList.clearSelection(); } });
         btnReconnect       .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { initSystemInCloud(); } });
-        
         machinesList       .getSelectionModel().addListSelectionListener(new ListSelectionListener() { 
             @Override public void valueChanged(ListSelectionEvent event) { 
-                if(((DefaultListSelectionModel) event.getSource()).isSelectionEmpty()) btnDeleteMachine.setEnabled(false);
-                else                                                                   btnDeleteMachine.setEnabled(true);
+                if(((DefaultListSelectionModel) event.getSource()).isSelectionEmpty()) {
+                    btnDeleteMachine.setEnabled(false);
+                    btnNewInstance  .setEnabled(false);
+                } else {
+                    btnDeleteMachine.setEnabled(true);
+                    btnNewInstance  .setEnabled(true);
+                    // Filter instances
+                }
             }});
         
         btnRefreshMachines .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { refreshMachines(); } });
@@ -207,12 +219,9 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
                                                                        "All intances on that machine will be also removed");
                 if(dialogResult == JOptionPane.YES_OPTION) {
                     try { sicClient.deleteMachine(machineId);
-                    } catch(SicException e) {
-                        JOptionPane.showMessageDialog(null, e.getMessage(), "Exception", JOptionPane.ERROR_MESSAGE);
-                    }
+                    } catch(SicException e) { JOptionPane.showMessageDialog(null, e.getMessage(), "Exception", JOptionPane.ERROR_MESSAGE); }
                     refreshMachines();
                 }
-                
             }});
         
         instancesList      .getSelectionModel().addListSelectionListener(new ListSelectionListener() { 
@@ -222,7 +231,12 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
             }});
         
         btnRefreshInstances.addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { refreshInstances(); } });
-        btnNewInstance     .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { new NewInstanceFrame(sicClient, WebcamClient.this).setVisible(true); } });
+        btnNewInstance     .addActionListener(new ActionListener() { 
+            @Override public void actionPerformed(ActionEvent e) {
+                String machineId = (String) machinesModel.getValueAt(machinesList.getSelectedRow(), 0);
+                new NewInstanceFrame(sicClient, WebcamClient.this, machineId).setVisible(true); 
+            }});
+        
         btnDeleteInstance  .addActionListener(new ActionListener() { 
             @Override public void actionPerformed(ActionEvent e) {
                 
@@ -354,7 +368,7 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
                                                  mi.getProvider(), 
                                                  mi.getRegion(), 
                                                  mi.getMachineType(), 
-                                                 mi.getStatus()});   
+                                                 mi.getStatus()});
         }
     }
 
