@@ -84,15 +84,23 @@ public class NewInstanceFrame extends JFrame {
     private void initButtons() {
         btnCreate.addActionListener(new ActionListener() { 
             @Override public void actionPerformed(ActionEvent event) {
-                try {
-//                    sicClient.newInstance();
-                } catch(SicException e) {
-                    JOptionPane.showMessageDialog(null, e.getMessage(), "Exception", JOptionPane.ERROR_MESSAGE);
-                }
-                listener.instanceCreated();
-                NewInstanceFrame.this.dispose();
+                if(allParametersFilled()) {
+                    try {
+    //                    sicClient.newInstance();
+                    } catch(SicException e) {
+                        JOptionPane.showMessageDialog(null, e.getMessage(), "Exception", JOptionPane.ERROR_MESSAGE);
+                    }
+                    listener.instanceCreated();
+                    NewInstanceFrame.this.dispose();
+                } else JOptionPane.showMessageDialog(null, "Some parameters not filled", "Exception", JOptionPane.ERROR_MESSAGE);
             }
         });
         btnCancel.addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent event) { NewInstanceFrame.this.dispose(); } });
+    }
+    
+    private boolean allParametersFilled() {
+        for(int i = 0; i < tblParameters.getRowCount(); i++)
+            if("".equals(tblParameters.getValueAt(i, 1))) return false;
+        return true;
     }
 }
