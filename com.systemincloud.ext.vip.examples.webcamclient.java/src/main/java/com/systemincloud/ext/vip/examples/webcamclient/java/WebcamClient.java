@@ -2,19 +2,17 @@ package com.systemincloud.ext.vip.examples.webcamclient.java;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -24,14 +22,23 @@ import java.util.Properties;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultListSelectionModel;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.JToggleButton;
+import javax.swing.ListSelectionModel;
 import javax.swing.Timer;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
 
 import com.github.sarxos.webcam.Webcam;
 import com.systemincloud.sdk.java.SicClient;
@@ -40,22 +47,6 @@ import com.systemincloud.sdk.java.SicException;
 import com.systemincloud.sdk.java.SicListener;
 import com.systemincloud.sdk.java.msg.InstanceInfo;
 import com.systemincloud.sdk.java.msg.MachineInfo;
-
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-
-import java.awt.FlowLayout;
-
-import javax.swing.Box;
-import javax.swing.JButton;
-import javax.swing.ListSelectionModel;
-
-import java.awt.Component;
-
-import javax.swing.JTable;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-import javax.swing.table.DefaultTableModel;
 
 public class WebcamClient implements ActionListener, SicListener, NewMachineFrameListener,
                                                                   NewInstanceFrameListener {
@@ -186,7 +177,6 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
         btnDeleteInstance  .setEnabled(false);
         
         onOffButton        .setEnabled(false);
-        
         
         Properties config = new Properties();
         try { config.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("credentials.properties"));
@@ -375,6 +365,11 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
 
     private void refreshInstances() {
         while(instancesModel.getRowCount() != 0) instancesModel.removeRow(0);
+        for(InstanceInfo ii : this.sicClient.getInstances()) {
+            instancesModel.addRow(new String [] { ii.getInstanceId(), 
+                                                  ii.getMachineId(), 
+                                                  ii.getModelUploaded()});
+        }
     }
     
     @Override public void machineCreated(MachineInfo mi) { machinesModel.addRow(new String [] { mi.getMachineId(), 
