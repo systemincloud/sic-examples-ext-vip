@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,6 +15,7 @@ import javax.swing.JScrollPane;
 
 import com.systemincloud.sdk.java.SicClient;
 import com.systemincloud.sdk.java.SicException;
+import com.systemincloud.sdk.java.msg.InstanceInfo;
 
 import javax.swing.JLabel;
 import javax.swing.JTable;
@@ -85,12 +88,17 @@ public class NewInstanceFrame extends JFrame {
         btnCreate.addActionListener(new ActionListener() { 
             @Override public void actionPerformed(ActionEvent event) {
                 if(allParametersFilled()) {
+                    InstanceInfo ii = null;
                     try {
-    //                    sicClient.newInstance();
+                        Map<String, String> parameters = new HashMap<>();
+                        for(int i = 0; i < tblParameters.getRowCount(); i++) parameters.put((String) tblParameters.getValueAt(i, 0), 
+                                                                                            (String) tblParameters.getValueAt(i, 1));
+                        ii = sicClient.newInstance(machineId, parameters);
                     } catch(SicException e) {
                         JOptionPane.showMessageDialog(null, e.getMessage(), "Exception", JOptionPane.ERROR_MESSAGE);
+                        return;
                     }
-                    listener.instanceCreated();
+                    listener.instanceCreated(ii);
                     NewInstanceFrame.this.dispose();
                 } else JOptionPane.showMessageDialog(null, "Some parameters not filled", "Exception", JOptionPane.ERROR_MESSAGE);
             }

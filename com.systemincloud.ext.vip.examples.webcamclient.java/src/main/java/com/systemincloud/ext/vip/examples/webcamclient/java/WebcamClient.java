@@ -38,6 +38,7 @@ import com.systemincloud.sdk.java.SicClient;
 import com.systemincloud.sdk.java.SicClientFactory;
 import com.systemincloud.sdk.java.SicException;
 import com.systemincloud.sdk.java.SicListener;
+import com.systemincloud.sdk.java.msg.InstanceInfo;
 import com.systemincloud.sdk.java.msg.MachineInfo;
 
 import javax.swing.JLabel;
@@ -109,7 +110,7 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
     private final JLabel            lblInstances        = new JLabel("Instances:");
     private final JPanel            instances           = new JPanel();
     private final Box               instancesBox        = Box.createVerticalBox();
-    private final DefaultTableModel instancesModel      = new DefaultTableModel(new Object[][] { }, new String[] { "", "", "", "", ""}) {
+    private final DefaultTableModel instancesModel      = new DefaultTableModel(new Object[][] { }, new String[] { "Id", "Machine", "Model Upload Time"}) {
         private static final long serialVersionUID = 1L;
         @Override public boolean isCellEditable(int row, int column) { return false; }
     };
@@ -381,7 +382,9 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
                                                                                                 mi.getRegion(), 
                                                                                                 mi.getMachineType(), 
                                                                                                 mi.getStatus()}); }
-    @Override public void instanceCreated()              { refreshInstances(); }
+    @Override public void instanceCreated(InstanceInfo ii) { instancesModel.addRow(new String [] { ii.getInstanceId(), 
+                                                                                                   ii.getMachineId(), 
+                                                                                                   ii.getModelUploaded() }); }
     
     // Data received from the system instance
 //    @Override
