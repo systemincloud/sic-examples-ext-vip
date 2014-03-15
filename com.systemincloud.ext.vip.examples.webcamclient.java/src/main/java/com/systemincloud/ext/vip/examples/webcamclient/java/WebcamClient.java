@@ -206,7 +206,7 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
         btnDeleteMachine   .addActionListener(new ActionListener() {
             @Override public void actionPerformed(ActionEvent event) {
                 String machineId =  (String) machinesList.getValueAt(machinesList.getSelectedRow(), 0);
-                int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure to remove machine " + machineId + "\n" +
+                int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure to delete machine " + machineId + "\n" +
                                                                        "All intances on that machine will be also removed");
                 if(dialogResult == JOptionPane.YES_OPTION) {
                     try { sicClient.deleteMachine(machineId);
@@ -229,9 +229,16 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
             }});
         
         btnDeleteInstance  .addActionListener(new ActionListener() { 
-            @Override public void actionPerformed(ActionEvent e) {
-                
+            @Override public void actionPerformed(ActionEvent event) {
+                String instanceId =  (String) instancesList.getValueAt(instancesList.getSelectedRow(), 0);
+                int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure to delete instance " + instanceId);
+                if(dialogResult == JOptionPane.YES_OPTION) {
+                    try { sicClient.deleteInstance(instanceId);
+                    } catch(SicException e) { JOptionPane.showMessageDialog(null, e.getMessage(), "Exception", JOptionPane.ERROR_MESSAGE); }
+                    refreshMachines();
+                }
             }});
+        
         onOffButton        .addItemListener  (new ItemListener() {
             @Override public void itemStateChanged(ItemEvent itemEvent) {
                 int state = itemEvent.getStateChange();
