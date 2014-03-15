@@ -113,6 +113,7 @@ public class NewMachineFrame extends JFrame {
                     mi = sicClient.newMachine((String) comboRegion.getSelectedItem(), (String) comboType.getSelectedItem());
                 } catch(SicException e) {
                     JOptionPane.showMessageDialog(null, e.getMessage(), "Exception", JOptionPane.ERROR_MESSAGE);
+                    return;
                 }
                 listener.machineCreated(mi);
                 NewMachineFrame.this.dispose();
