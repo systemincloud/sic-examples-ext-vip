@@ -187,7 +187,7 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
     }
     
     private void initActions() {
-        mainPanel          .addMouseListener(new MouseAdapter()    { @Override public void mouseClicked(MouseEvent e)     { machinesList.clearSelection(); } });
+        mainPanel          .addMouseListener(new MouseAdapter()    { @Override public void mouseClicked(MouseEvent e)     { machinesList.clearSelection(); instancesList.clearSelection(); } });
         btnReconnect       .addActionListener(new ActionListener() { @Override public void actionPerformed(ActionEvent e) { initSystemInCloud(); } });
         machinesList       .getSelectionModel().addListSelectionListener(new ListSelectionListener() { 
             @Override public void valueChanged(ListSelectionEvent event) { 
@@ -212,6 +212,7 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
                     try { sicClient.deleteMachine(machineId);
                     } catch(SicException e) { JOptionPane.showMessageDialog(null, e.getMessage(), "Exception", JOptionPane.ERROR_MESSAGE); }
                     refreshMachines();
+                    refreshInstances();
                 }
             }});
         
@@ -235,7 +236,7 @@ public class WebcamClient implements ActionListener, SicListener, NewMachineFram
                 if(dialogResult == JOptionPane.YES_OPTION) {
                     try { sicClient.deleteInstance(instanceId);
                     } catch(SicException e) { JOptionPane.showMessageDialog(null, e.getMessage(), "Exception", JOptionPane.ERROR_MESSAGE); }
-                    refreshMachines();
+                    refreshInstances();
                 }
             }});
         
