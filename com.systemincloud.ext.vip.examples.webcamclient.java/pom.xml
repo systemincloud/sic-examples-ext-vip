@@ -10,7 +10,7 @@
     <repositories>
         <repository><id>system-in-cloud-release</id>  <url>https://s3.amazonaws.com/com-systemincloud-s3-m2/releases/</url> </repository>
         <repository><id>system-in-cloud-snapshots</id><url>https://s3.amazonaws.com/com-systemincloud-s3-m2/snapshots/</url></repository>
-        <repository><id>com.nativelibs4java-repo</id> <url>http://repo.typesafe.com/typesafe/repo</url></repository>
+        <repository><id>sonatype-snapshots</id>       <url>https://oss.sonatype.org/content/repositories/snapshots/</url>   </repository>
     </repositories>
 
     <dependencies>
