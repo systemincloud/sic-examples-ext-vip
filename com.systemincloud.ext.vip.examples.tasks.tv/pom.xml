@@ -26,7 +26,7 @@
   <repositories>
     <repository>
       <id>System in Cloud</id>
-      <url>https://s3-eu-west-1.amazonaws.com/com-systemincloud-s3-m2/releases</url>
+      <url>https://s3.amazonaws.com/com-systemincloud-s3-m2/releases</url>
     </repository>
   </repositories>
   <build>
