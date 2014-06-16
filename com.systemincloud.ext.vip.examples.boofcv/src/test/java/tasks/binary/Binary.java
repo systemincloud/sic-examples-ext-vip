@@ -1,3 +1,7 @@
+/**
+ * Based on:
+ * https://github.com/lessthanoptimal/BoofCV/blob/v0.16/examples/src/boofcv/examples/imageprocessing/ExampleBinaryOps.java
+ */
 package tasks.binary;
 
 import java.awt.image.BufferedImage;
