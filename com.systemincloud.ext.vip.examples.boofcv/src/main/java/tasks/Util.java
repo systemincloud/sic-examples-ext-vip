@@ -2,8 +2,10 @@ package tasks;
 
 import boofcv.alg.color.ColorHsv;
 import boofcv.alg.color.ColorYuv;
+import boofcv.alg.transform.fft.DiscreteFourierTransformOps;
 import boofcv.struct.image.ImageFloat32;
 import boofcv.struct.image.ImageUInt8;
+import boofcv.struct.image.InterleavedF32;
 import boofcv.struct.image.MultiSpectral;
 
 import com.systemincloud.ext.vip.modeler.api.javatask.data.Image;
@@ -26,6 +28,21 @@ public class Util {
         return ret;
     }
 
+    public static ImageFloat32 toImageFloat32(Image img) {
+        int w = img.getW(); int h = img.getH();
+        int[] inData = img.getValues();
+        ImageFloat32 ret = new ImageFloat32(w, h);
+        int k = 0;
+        for(int j = 0; j < h; j++) {
+            for(int i = 0; i < w; i++) {
+                int pixel = inData[k++];
+                int r = (pixel >> 16 & 0xff); int g = (pixel >> 8 & 0xff); int b = (pixel & 0xff);
+                ret.set(i, j, (r + g + b)/3);
+            }
+        }
+        return ret;
+    }
+    
     public static MultiSpectral<ImageUInt8> toMultiSpectralRGBImageUInt8(Image img) {
         int w = img.getW(); int h = img.getH();
         int[] inData = img.getValues();
@@ -93,17 +110,21 @@ public class Util {
         return new Image(outData, h, w);
     }
     
-    public static Data fromImageFloat32(ImageFloat32 img) {
+    public static Data fromImageFloat32(ImageFloat32 img, int scale) {
         int w = img.getWidth(); int h = img.getHeight();
         int[] outData = new int[w*h];
         int k = 0;
         for(int j = 0; j < h; j++) {
             for(int i = 0; i < w; i++) {
-                int p = (int) img.get(i, j);
+                int p = (int) (img.get(i, j) * scale);
                 outData[k++] = (p << 16) | (p << 8) | p;
             }
         }
         return new Image(outData, h, w);
+    }
+    
+    public static Data fromImageFloat32(ImageFloat32 img) {
+        return fromImageFloat32(img, 1);
     }
 
     public static Data fromBinary(ImageUInt8 img) {
@@ -119,5 +140,17 @@ public class Util {
             }
         }
         return new Image(outData, h, w);
+    }
+
+    public static void getMagnituteAndPhaseFromDFT(InterleavedF32 transform, ImageFloat32 magnitude, ImageFloat32 phase) {
+        // Make a copy so that you don't modify the input
+        InterleavedF32 tmp = transform.clone();
+ 
+        // shift the zero-frequency into the image center, as is standard in image processing
+        DiscreteFourierTransformOps.shiftZeroFrequency(tmp, true);
+ 
+        // Compute the transform's magnitude and phase
+        DiscreteFourierTransformOps.magnitude(tmp, magnitude);
+        DiscreteFourierTransformOps.phase(tmp, phase);
     }
 }
