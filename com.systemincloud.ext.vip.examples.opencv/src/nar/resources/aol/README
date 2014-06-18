@@ -1,0 +1,6 @@
+Put here for example:
+amd64-Linxu-gpp
+ |_ lib
+ |   |_ libopencv_java249.so
+ |_ share
+     |_ opencv-249.jar
