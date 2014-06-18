@@ -1,3 +1,6 @@
+/**
+ * based on http://docs.opencv.org/doc/tutorials/introduction/desktop_java/java_dev_intro.html
+ */
 package tasks;
 
 import org.opencv.core.Core;
