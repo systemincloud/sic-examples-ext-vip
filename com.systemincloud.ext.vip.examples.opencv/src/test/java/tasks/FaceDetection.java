@@ -42,6 +42,7 @@ public class FaceDetection extends JavaTask {
                         MatOfRect faceDetections = new MatOfRect();
                         faceDetector.detectMultiScale(image, faceDetections);
                         if(faceDetections.toArray().length > 0) FaceDetection.this.faceDetections = faceDetections;
+                        else FaceDetection.this.faceDetections = null;
                     }
                     try { Thread.sleep(500);
                     } catch (InterruptedException e) { break; }
@@ -57,7 +58,11 @@ public class FaceDetection extends JavaTask {
         
         if(faceDetections != null) {
             for(Rect rect : faceDetections.toArray()) {
-                Core.rectangle(image, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height), new Scalar(0, 255, 0));
+                Core.rectangle(image, 
+                               new Point(rect.x, rect.y), 
+                               new Point(rect.x + rect.width, rect.y + rect.height), 
+                               new Scalar(0, 255, 0),
+                               2);
             }
         }
         
