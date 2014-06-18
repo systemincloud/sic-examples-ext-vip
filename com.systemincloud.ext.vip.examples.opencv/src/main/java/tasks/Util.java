@@ -19,16 +19,6 @@ public class Util {
         byte[] array = byteBuffer.array();
         mat.put(0, 0, array);
         return mat;
-//        byte[] data;
-//        Mat mat = new Mat(img.getH(), img.getW(), CvType.CV_8UC3);
-//        data = new byte[img.getNumberOfElements() * (int) mat.elemSize()];
-//        int[] dataBuff = img.getValues();
-//        for(int i = 0; i < dataBuff.length; i++) {
-//            data[i*3]     = (byte) ((dataBuff[i] >> 16) & 0xFF);
-//            data[i*3 + 1] = (byte) ((dataBuff[i] >> 8) & 0xFF);
-//            data[i*3 + 2] = (byte) ((dataBuff[i] >> 0) & 0xFF);
-//        }
-//        return mat;
     }
 
     public static Image fromMat(Mat mat) {
