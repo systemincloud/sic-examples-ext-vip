@@ -27,18 +27,10 @@ public class Blur extends JavaTask {
         CvMat src = Util.toCvMat(inData);
         CvMat dest = CvMat.create(src.rows(), src.cols(), src.depth(), 4);
 
-        CvMat kernel = cvCreateMat(3, 3, CV_32F);
-        kernel.put(0, 0, 0.11);
-        kernel.put(1, 0, 0.11);
-        kernel.put(2, 0, 0.11);
-        kernel.put(0, 1, 0.11);
-        kernel.put(1, 1, 0.12);
-        kernel.put(2, 1, 0.11);
-        kernel.put(0, 2, 0.11);
-        kernel.put(1, 2, 0.11);
-        kernel.put(2, 2, 0.11);
+        CvMat kernel = cvCreateMat(5, 5, CV_32F);
+        for(int i = 0; i < 25; i++) kernel.put(i, 0.04);
 
-        cvFilter2D(src, dest, kernel, cvPoint(-1, -1));
+        cvFilter2D(src, dest, kernel);
         
         out.putData(Util.fromCvMat(dest));
     }
