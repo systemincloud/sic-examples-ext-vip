@@ -35,6 +35,13 @@ public class Util {
     }
 
     public static Image fromCvMat(CvMat mat) {
+//        int[] array = new int[mat.width() * mat.height()];
+//        int idx = 0;
+//        for(int i = 0; i < array.length; i++) {
+//            array[i] = (((int) mat.get(idx++)) << 16) | (((int) mat.get(idx++)) << 8) | ((int)(mat.get(idx++)));
+//        }
+//        return new Image(array, mat.height(), mat.width());
+        
         IntBuffer intBuf = mat.getByteBuffer()
                                      .order(ByteOrder.BIG_ENDIAN)
                                      .asIntBuffer();
