@@ -12,6 +12,7 @@
     <dependency><groupId>junit</groupId>                                           <artifactId>junit</artifactId>                                               <version>4.11</version> </dependency>
     <dependency><groupId>com.systemincloud.modeler.tasks.javatask</groupId>        <artifactId>com.systemincloud.modeler.tasks.javatask.api</artifactId>        <version>0.1.0</version></dependency>
     <dependency><groupId>com.systemincloud.ext.vip.modeler.tasks.javatask</groupId><artifactId>com.systemincloud.ext.vip.modeler.tasks.javatask.api</artifactId><version>0.1.0</version></dependency>
+    <dependency><groupId>org.bytedeco</groupId>                                    <artifactId>javacv</artifactId>                                              <version>0.8</version></dependency>
   </dependencies>
   <repositories>
     <repository><id>System in Cloud</id><url>https://s3.amazonaws.com/com-systemincloud-s3-m2/releases</url></repository>
