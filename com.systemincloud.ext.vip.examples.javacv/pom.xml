@@ -4,7 +4,7 @@
 
   <groupId>com.systemincloud.ext.vip.examples</groupId>
   <artifactId>com.systemincloud.ext.vip.examples.javacv</artifactId>
-  <version>1.1.0-SNAPSHOT</version>
+  <version>1.1.0</version>
 
   <name>System in Cloud - JavaCV</name>
   
