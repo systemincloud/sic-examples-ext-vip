@@ -1190,7 +1190,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="console_0_1_0:Console" id="Box View" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.0">
+    <task xsi:type="console_0_1_0:Console" id="Box View" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.1">
       <inputPort id="In" parent="/1/@task.5">
         <dataType xsi:type="dt:Text"/>
       </inputPort>
