@@ -4,14 +4,14 @@
 
   <groupId>com.systemincloud.ext.vip.examples</groupId>
   <artifactId>com.systemincloud.ext.vip.examples.opencv</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
   <packaging>nar</packaging>
 
   <name>System in Cloud - OpenCV</name>
   
   <dependencies>
     <dependency><groupId>junit</groupId>                                           <artifactId>junit</artifactId>                                               <version>4.11</version> </dependency>
-    <dependency><groupId>com.systemincloud.modeler.tasks.javatask</groupId>        <artifactId>com.systemincloud.modeler.tasks.javatask.api</artifactId>        <version>0.1.0</version></dependency>
+    <dependency><groupId>com.systemincloud.modeler.tasks.javatask</groupId>        <artifactId>com.systemincloud.modeler.tasks.javatask.api</artifactId>        <version>0.2.0</version></dependency>
     <dependency><groupId>com.systemincloud.ext.vip.modeler.tasks.javatask</groupId><artifactId>com.systemincloud.ext.vip.modeler.tasks.javatask.api</artifactId><version>0.1.0</version></dependency>
 <!--     <dependency><groupId>com.systemincloud.ext.vip.examples.opencv</groupId>       <artifactId>com.systemincloud.ext.vip.examples.opencv.java</artifactId>      <version>2.4.9</version> -->
 <!--                 <scope>system</scope><systemPath>${basedir}/lib/opencv-249.jar</systemPath></dependency> -->

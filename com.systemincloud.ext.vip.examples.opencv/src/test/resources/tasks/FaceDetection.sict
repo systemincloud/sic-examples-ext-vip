@@ -194,18 +194,18 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.1.0">
-    <task xsi:type="vip_webcam_0_1_0:Webcam" id="My Webcam" generator="true" bundleName="com.systemincloud.ext.vip.modeler.tasks.webcam" version="0.1.0" cameraName="Laptop_Integrated_Webcam_2HDM /dev/video0" resolution="320x240" interval="100">
+  <sic:MainTask initialized="true" version="0.2.0">
+    <task xsi:type="vip_webcam_0_1_0:Webcam" id="My Webcam" generator="true" bundleName="com.systemincloud.ext.vip.modeler.tasks.webcam" version="0.1.1" cameraName="Laptop_Integrated_Webcam_2HDM /dev/video0" resolution="320x240" interval="100">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="Out" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.0">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="Out" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.1">
       <inputPort id="In" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.1.0" implementationClass="tasks.FaceDetection">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.0" implementationClass="tasks.FaceDetection">
       <outputPort id="Out" parent="/1/@task.2">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -213,7 +213,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.0">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.1">
       <inputPort id="In" parent="/1/@task.3">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
