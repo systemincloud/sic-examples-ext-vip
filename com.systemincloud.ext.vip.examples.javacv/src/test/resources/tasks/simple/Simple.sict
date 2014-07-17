@@ -156,7 +156,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_webcam_0_1_0:Webcam" id="My Webcam" generator="true" bundleName="com.systemincloud.ext.vip.modeler.tasks.webcam" version="0.1.0" cameraName="Laptop_Integrated_Webcam_2HDM /dev/video0" resolution="640x480" interval="100">
+    <task xsi:type="vip_webcam_0_1_0:Webcam" id="My Webcam" generator="true" bundleName="com.systemincloud.ext.vip.modeler.tasks.webcam" version="0.1.1" cameraName="Laptop_Integrated_Webcam_2HDM /dev/video0" resolution="640x480" interval="100">
       <outputPort id="Out" parent="/1/@task.2">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
