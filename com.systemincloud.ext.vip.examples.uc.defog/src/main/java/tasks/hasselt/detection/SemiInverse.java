@@ -26,12 +26,11 @@ public class SemiInverse extends JavaTask {
             int r = (inRGB >> 16 & 0xff);
             int g = (inRGB >> 8 & 0xff);
             int b = (inRGB & 0xff);
-            if(r > 128) r = 255 - r;
-            if(g > 128) g = 255 - g;
-            if(b > 255) b = 255 - b;
+            if(r < 128) r = 255 - r;
+            if(g < 128) g = 255 - g;
+            if(b < 128) b = 255 - b;
             outValues[i] = (r << 16) | (g << 8) | b;
         }
         out.putData(new Image(outValues, img.getH(), img.getW()));
 	}
-
 }

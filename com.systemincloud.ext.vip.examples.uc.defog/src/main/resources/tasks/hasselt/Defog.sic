@@ -113,7 +113,6 @@
         <dataType xsi:type="vip_dt:Image"/>
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
-      <parameters key="tau" value="10"/>
     </task>
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@inputPort.0" targetRef="/1/@task.0/@inputPort.0"/>
   </sic:MainTask>
