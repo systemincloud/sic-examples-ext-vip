@@ -1,4 +1,4 @@
-package tasks.hasselt;
+package tasks.hasselt.detection;
 
 import com.systemincloud.modeler.tasks.javatask.api.InputPort;
 import com.systemincloud.modeler.tasks.javatask.api.JavaTask;
