@@ -24,7 +24,6 @@ public class I_i extends JavaTask {
 
 	@Override
 	public void execute() {
-		System.out.println(":)");
 		float c = c_i.getData(Float32.class).getValue();
 		int[] a8Values = a8.getData(Int32.class).getValues();
 		Image iData = i.getData(Image.class);
