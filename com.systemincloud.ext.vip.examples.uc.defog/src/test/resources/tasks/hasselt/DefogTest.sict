@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:dt="http://systemincloud.com/dt" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_imagefromfile_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/imagefromfile/0_1_0" xmlns:vip_tv_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/tv/0_1_0" xmi:version="2.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:dt="http://systemincloud.com/dt" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_imagefromfile_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/imagefromfile/0_1_0" xmlns:vip_tv_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/tv/0_1_0">
   <pi:Diagram visible="true" gridUnit="-1" diagramTypeId="SystemInCloud" name="DefogTest" pictogramLinks="/0/@link /0/@children.0/@link /0/@children.1/@link /0/@children.0/@children.0/@link /0/@children.0/@children.1/@link /0/@children.0/@children.2/@link /0/@children.0/@children.3/@link /0/@children.2/@link /0/@children.3/@link /0/@children.2/@children.0/@link /0/@children.2/@children.1/@link /0/@connections.0/@link /0/@children.4/@link /0/@children.5/@link /0/@children.4/@children.0/@link /0/@children.4/@children.1/@link /0/@connections.1/@link" version="0.11.0">
     <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
     <link businessObjects="/1"/>
@@ -147,10 +148,6 @@
         <dataType xsi:type="dt:Bool"/>
       </outputPort>
       <inputPort id="In" parent="/1/@task.0">
-        <dataType xsi:type="vip_dt:Image"/>
-        <dataType xsi:type="vip_dt:Image"/>
-        <dataType xsi:type="vip_dt:Image"/>
-        <dataType xsi:type="vip_dt:Image"/>
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
