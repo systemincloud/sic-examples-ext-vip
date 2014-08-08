@@ -258,8 +258,8 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.2.2">
-    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.1" implementationClass="tasks.hasselt.I_i">
+  <sic:MainTask initialized="true" version="0.2.3">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.hasselt.I_i">
       <outputPort id="I_i" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>

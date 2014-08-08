@@ -1154,13 +1154,13 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.2.2">
+  <sic:MainTask initialized="true" version="0.2.3">
     <task xsi:type="vip_webcam_0_1_0:Webcam" id="Webcam" generator="true" bundleName="com.systemincloud.ext.vip.modeler.tasks.webcam" version="0.1.1" cameraName="Laptop_Integrated_Webcam_2HDM /dev/video0" resolution="640x480" interval="100">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="DFT Image" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.1" implementationClass="tasks.fourier.DFT">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="DFT Image" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.fourier.DFT">
       <outputPort id="Magnitude" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -1194,7 +1194,7 @@
         <dataType xsi:type="dt:Text"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="DFT Filter" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.1" implementationClass="tasks.fourier.DFT">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="DFT Filter" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.fourier.DFT">
       <outputPort id="Magnitude" parent="/1/@task.6">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -1208,7 +1208,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="IDTF" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.1" implementationClass="tasks.fourier.IDFT">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="IDTF" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.fourier.IDFT">
       <outputPort id="Out" parent="/1/@task.7">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -1216,12 +1216,12 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Filter" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.1" implementationClass="tasks.fourier.Box">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Filter" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.fourier.Box">
       <outputPort id="Out" parent="/1/@task.8">
         <dataType xsi:type="dt:Float32"/>
       </outputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Prepare Filter Image" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.1" implementationClass="tasks.fourier.PrepareFilterImage">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Prepare Filter Image" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.fourier.PrepareFilterImage">
       <outputPort id="Out" parent="/1/@task.9">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -1235,7 +1235,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Size" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.1" implementationClass="tasks.fourier.Sizes">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Size" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.fourier.Sizes">
       <outputPort id="H" parent="/1/@task.10">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -1246,7 +1246,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Multiply" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.1" implementationClass="tasks.fourier.MultiplyDFTs">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Multiply" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.fourier.MultiplyDFTs">
       <outputPort id="Out" parent="/1/@task.11">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -1269,7 +1269,7 @@
       </outputPort>
       <dataType xsi:type="dt:Control"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="And" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.1" implementationClass="tasks.fourier.Trigged">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="And" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.fourier.Trigged">
       <outputPort id="Out" parent="/1/@task.13"/>
       <inputPort id="In2" parent="/1/@task.13"/>
       <inputPort id="Trigger" parent="/1/@task.13"/>
