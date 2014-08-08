@@ -453,10 +453,10 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.2.2">
+  <sic:MainTask initialized="true" version="0.2.3">
     <inputPort id="Img"/>
     <outputPort id="Mask"/>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Create Mask" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.1" implementationClass="tasks.hasselt.detection.CreateMask">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Create Mask" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.hasselt.detection.CreateMask">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="dt:Bool"/>
       </outputPort>
@@ -476,7 +476,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Hue" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.1" implementationClass="tasks.hasselt.detection.Hue">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Hue" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.hasselt.detection.Hue">
       <outputPort id="Out" parent="/1/@task.2">
         <dataType xsi:type="dt:Float64"/>
       </outputPort>
@@ -484,7 +484,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Hue " bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.1" implementationClass="tasks.hasselt.detection.Hue">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Hue " bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.hasselt.detection.Hue">
       <outputPort id="Out" parent="/1/@task.3">
         <dataType xsi:type="dt:Float64"/>
       </outputPort>
@@ -492,7 +492,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Intesity Gain" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.1" implementationClass="tasks.hasselt.IntensityGain">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Intesity Gain" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.hasselt.IntensityGain">
       <outputPort id="Out" parent="/1/@task.4">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>

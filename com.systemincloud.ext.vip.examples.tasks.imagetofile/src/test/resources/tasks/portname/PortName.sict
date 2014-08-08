@@ -142,7 +142,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.2.2">
+  <sic:MainTask initialized="true" version="0.2.3">
     <task xsi:type="vip_imagetofile_0_1_0:ImageToFile" id="My Image To File" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagetofile" version="0.1.0" directory="workspace:/com.systemincloud.ext.vip.examples.tasks.imagetofile/target" filenameInPort="true" format="PNG">
       <inputPort id="In" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
