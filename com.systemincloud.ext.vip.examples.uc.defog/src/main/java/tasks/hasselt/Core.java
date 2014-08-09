@@ -8,6 +8,7 @@ import com.systemincloud.modeler.tasks.javatask.api.annotations.InputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.JavaTaskInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameters;
+import com.systemincloud.modeler.tasks.javatask.api.data.Control;
 import com.systemincloud.modeler.tasks.javatask.api.data.Float32;
 
 @JavaTaskInfo
@@ -18,20 +19,31 @@ public class Core extends JavaTask {
 	
 	@InputPortInfo(name = "In", dataType = Image.class)
 	public InputPort in;
+	@InputPortInfo(name = "Ack", dataType = Control.class, asynchronus=true)
+	public InputPort ack;
 	
 	@OutputPortInfo(name = "c_i", dataType = Float32.class)
 	public OutputPort c_i;
+	@OutputPortInfo(name = "end", dataType = Control.class)
+	public OutputPort end;
+	
+	private int nb_lay;
+	private int nb_ack;
+	
+	private float dc;
+	private int i = 0;
+	
+	@Override
+	public void executeAsync(InputPort asynchIn) {
+		if(++nb_ack == nb_lay) end.putData(new Control());
+		else c_i.putData(new Float32((i++)*dc));
+	};
 	
 	@Override
 	public void execute() {
-		int nb   = Integer.parseInt(getParameter(NB_OF_LAYERS));
-		float dc = 1 / (float) nb;
-		for(int i = 1; i <= nb; i++) {
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) { }
-			c_i.putData(new Float32(i*dc));
-		}
+		this.nb_ack = 0;
+		this.nb_lay = Integer.parseInt(getParameter(NB_OF_LAYERS));
+		this.dc = 1 / (float) nb_lay;
+		c_i.putData(new Float32((i++)*dc));
 	};
-	
 }
