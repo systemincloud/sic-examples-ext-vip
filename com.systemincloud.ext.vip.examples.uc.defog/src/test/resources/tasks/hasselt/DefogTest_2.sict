@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_imagefromfile_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/imagefromfile/0_1_0" xmlns:vip_tv_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/tv/0_1_0">
-  <pi:Diagram visible="true" gridUnit="-1" diagramTypeId="SystemInCloud" name="DefogTest_6" pictogramLinks="/0/@link /0/@children.0/@link /0/@children.1/@link /0/@children.0/@children.0/@link /0/@children.0/@children.1/@link /0/@children.0/@children.2/@link /0/@children.0/@children.3/@link /0/@children.2/@link /0/@children.3/@link /0/@children.2/@children.0/@link /0/@children.2/@children.1/@link /0/@connections.0/@link /0/@children.4/@link /0/@children.5/@link /0/@children.4/@children.0/@link /0/@children.4/@children.1/@link /0/@connections.1/@link /0/@children.6/@link /0/@children.7/@link /0/@children.6/@children.0/@link /0/@children.6/@children.1/@link /0/@connections.2/@link /0/@connections.3/@link" version="0.11.0">
+  <pi:Diagram visible="true" gridUnit="-1" diagramTypeId="SystemInCloud" name="DefogTest_2" pictogramLinks="/0/@link /0/@children.0/@link /0/@children.1/@link /0/@children.0/@children.0/@link /0/@children.0/@children.1/@link /0/@children.0/@children.2/@link /0/@children.0/@children.3/@link /0/@children.2/@link /0/@children.3/@link /0/@children.2/@children.0/@link /0/@children.2/@children.1/@link /0/@connections.0/@link /0/@children.4/@link /0/@children.5/@link /0/@children.4/@children.0/@link /0/@children.4/@children.1/@link /0/@connections.1/@link /0/@children.6/@link /0/@children.7/@link /0/@children.6/@children.0/@link /0/@children.6/@children.1/@link /0/@connections.2/@link /0/@connections.3/@link" version="0.11.0">
     <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
     <link businessObjects="/1"/>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
@@ -109,7 +109,7 @@
       <link businessObjects="/1/@task.2 /0/@children.4"/>
     </children>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
-      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="50" height="50" x="236" y="215">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="50" height="50" x="262" y="230">
         <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="50" height="50" style="/0/@styles.0" cornerHeight="20" cornerWidth="20"/>
         <graphicsAlgorithmChildren xsi:type="al:Image" lineWidth="1" transparency="0.0" width="44" height="44" x="3" y="3" id="IMG_TV_DIAGRAM" stretchH="false" stretchV="false" proportional="false"/>
       </graphicsAlgorithm>
@@ -132,14 +132,14 @@
     </children>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
       <properties key="label" value="true"/>
-      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="16" height="20" x="254" y="267">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="16" height="20" x="280" y="282">
         <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="16" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_TOP" value="In"/>
       </graphicsAlgorithm>
       <link businessObjects="/1/@task.3 /0/@children.6"/>
     </children>
     <children visible="true" active="true">
       <properties key="SIMPLE_CONNECTION_POINT" value="true"/>
-      <graphicsAlgorithm xsi:type="al:Ellipse" background="/0/@colors.2" foreground="/0/@colors.2" lineWidth="1" filled="true" transparency="0.0" width="9" height="9" x="193" y="145"/>
+      <graphicsAlgorithm xsi:type="al:Ellipse" background="/0/@colors.2" foreground="/0/@colors.2" lineWidth="1" filled="true" transparency="0.0" width="9" height="9" x="191" y="145"/>
       <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="/0/@connections.2 /0/@connections.3" incomingConnections="/0/@connections.0"/>
     </children>
     <styles background="/0/@colors.1" foreground="/0/@colors.2" id="TASK"/>
@@ -187,7 +187,7 @@
           <points x="-8" before="3" after="3"/>
         </graphicsAlgorithm>
       </connectionDecorators>
-      <bendpoints x="197" y="238"/>
+      <bendpoints x="195" y="255"/>
     </connections>
     <colors red="227" green="238" blue="249"/>
     <colors red="255" green="255" blue="255"/>
@@ -204,7 +204,7 @@
       </inputPort>
       <parameters key="nb-of-layers" value="${nb-of-layers}"/>
     </task>
-    <task xsi:type="vip_imagefromfile_0_1_0:ImageFromFile" id="Img in" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagefromfile" version="0.1.0" path="workspace:/com.systemincloud.ext.vip.examples.uc.defog/src/test/resources/imgs/6_flickr_CC.jpg">
+    <task xsi:type="vip_imagefromfile_0_1_0:ImageFromFile" id="Img in" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagefromfile" version="0.1.0" path="workspace:/com.systemincloud.ext.vip.examples.uc.defog/src/test/resources/imgs/2_flickr_CC.jpg">
       <outputPort id="Out" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -222,6 +222,6 @@
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.1/@outputPort.0" targetRef="/1/@task.0/@inputPort.0"/>
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.0/@outputPort.0" targetRef="/1/@task.2/@inputPort.0"/>
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.1/@outputPort.0" targetRef="/1/@task.3/@inputPort.0"/>
-    <parameters key="nb-of-layers" value="10"/>
+    <parameters key="nb-of-layers" value="5"/>
   </sic:MainTask>
 </xmi:XMI>

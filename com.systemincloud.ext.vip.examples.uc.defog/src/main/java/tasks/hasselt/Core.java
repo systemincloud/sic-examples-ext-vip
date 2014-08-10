@@ -36,14 +36,14 @@ public class Core extends JavaTask {
 	@Override
 	public void executeAsync(InputPort asynchIn) {
 		if(++nb_ack == nb_lay) end.putData(new Control());
-		else c_i.putData(new Float32((i++)*dc));
+		else c_i.putData(new Float32((++i)*dc));
 	};
 	
 	@Override
 	public void execute() {
 		this.nb_ack = 0;
 		this.nb_lay = Integer.parseInt(getParameter(NB_OF_LAYERS));
-		this.dc = 1 / (float) nb_lay;
-		c_i.putData(new Float32((i++)*dc));
+		this.dc = 1 / (float) (nb_lay);
+		c_i.putData(new Float32((++i)*dc));
 	};
 }

@@ -2,6 +2,7 @@ package tasks.hasselt;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 
 import com.systemincloud.modeler.tasks.javatask.api.InputPort;
 import com.systemincloud.modeler.tasks.javatask.api.JavaTask;
@@ -12,6 +13,7 @@ import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
 import com.systemincloud.ext.vip.modeler.api.javatask.data.Image;
 import com.systemincloud.modeler.tasks.javatask.api.data.Control;
 import com.systemincloud.modeler.tasks.javatask.api.data.Bool;
+import com.systemincloud.modeler.tasks.javatask.api.data.Float32;
 import com.systemincloud.modeler.tasks.javatask.api.data.Int32;
 
 @JavaTaskInfo
@@ -24,7 +26,9 @@ public class Defog extends JavaTask {
 	
 	@InputPortInfo(name = "Mask", dataType = Bool.class)
 	public InputPort m;
-
+	@InputPortInfo(name = "c_i", dataType = Float32.class)
+	public InputPort c_i;
+	
 	@InputPortInfo(name = "end", dataType = Control.class, asynchronus = true)
 	public InputPort end;
 	
@@ -35,7 +39,8 @@ public class Defog extends JavaTask {
 	@OutputPortInfo(name = "Out", dataType = Image.class)
 	public OutputPort out;
 
-	private List<Bool> layers = new LinkedList<>();
+	private List<Bool>  masks = new LinkedList<>();
+	private List<Float> cs    = new LinkedList<>();
 	
 	private boolean initialized = false;
 	private Image   img;
@@ -46,7 +51,8 @@ public class Defog extends JavaTask {
 	@Override
 	public void execute() {
 		if(!initialized) init();
-		layers.add(m.getData(Bool.class));
+		masks.add(m.getData(Bool.class));
+		cs   .add(c_i.getData(Float32.class).getValue());
 		ack.putData(new Control());
 	}
 
@@ -62,8 +68,82 @@ public class Defog extends JavaTask {
 	
 	@Override
 	public void executeAsync(InputPort asynchIn) {
-		System.out.println(layers.size());
+
+		int[] inValues = img.getValues();
 		
+		int[] r = new int[img.getNumberOfElements()];
+		int[] g = new int[img.getNumberOfElements()];
+		int[] b = new int[img.getNumberOfElements()];
+		
+		for(int i = masks.size() - 2; i >= 0; i--) {
+			boolean[] fog1 = masks.get(i + 1).getValues();
+			boolean[] fog2 = masks.get(i).getValues();
+			float c = cs.get(i).floatValue();
+			System.out.println(c);
+			for(int j = 0; j < r.length; j++) {
+				if(fog2[j] && !fog1[j]) {
+					int pixel = inValues[j];
+					r[j] = (int) (((pixel >> 16 & 0xff) - c*ar)*(1/(1-c)));
+					g[j] = (int) (((pixel >>  8 & 0xff) - c*ar)*(1/(1-c)));
+					b[j] = (int) (((pixel & 0xff) - c*ar)*(1/(1-c)));
+	                if(r[j] < 0) r[j] = 0;
+	                if(g[j] < 0) g[j] = 0;
+	                if(b[j] < 0) b[j] = 0;
+	                if(r[j] > 255) r[j] = 255;
+	                if(g[j] > 255) g[j] = 255;
+	                if(b[j] > 255) b[j] = 255;
+				}
+			}
+		}
+		
+		boolean[] noFog = masks.get(0).getValues();
+		for(int i = 0; i < r.length; i++) {
+			if(!noFog[i]) {
+				int pixel = inValues[i];
+				r[i] = (pixel >> 16 & 0xff);
+				g[i] = (pixel >>  8 & 0xff);
+				b[i] = (pixel & 0xff);
+			}
+		}
+		
+//		ListIterator<Bool>  mi = masks.listIterator(masks.size());
+//		ListIterator<Float> ci = cs.listIterator(cs.size());
+//		int x = 0;
+		
+//		while(mi.hasPrevious()) {
+//			if(x++ == 2) break;
+//			boolean[] m = mi.previous().getValues();
+//			float     c = ci.previous().floatValue();
+//			for(int i = 0; i < r.length; i++) {
+				
+//				if(m[i]) {
+//					int pixel = inValues[i];
+//					r[i] = (int) (r[i] + (pixel >> 16 & 0xff) - c*ar);
+//					g[i] = (int) (g[i] + (pixel >>  8 & 0xff) - c*ag);
+//					b[i] = (int) (b[i] + (pixel & 0xff) - c*ab);
+
+//					r[i] = r[i] + (int)(c*ar*(pixel >> 16 & 0xff));
+//					g[i] = g[i] + (int)(c*ag*(pixel >> 8 & 0xff));
+//					b[i] = b[i] + (int)(c*ab*(pixel & 0xff));
+//				}
+//			}
+			
+//				int pixel = inPixels[i];
+////                r[i] = (pixel >> 16 & 0xff);
+////                g[i] = (pixel >> 8 & 0xff);
+////                b[i] = (pixel & 0xff);
+//                r[i] = (int) ((pixel >> 16 & 0xff) - (Math.pow(0.4, (1/c)))*ar);
+//                g[i] = (int) ((pixel >> 8 & 0xff)  - (Math.pow(0.4, (1/c)))*ag);
+//                b[i] = (int) ((pixel & 0xff)       - (Math.pow(0.4, (1/c)))*ab);
+
+//			} else 
+//		}
+//		}
+		
+		int[] outValues = new int[r.length];
+		for(int i = 0; i < outValues.length; i++)
+        	outValues[i] = (r[i] << 16) | (g[i] << 8) | b[i];
+		out.putData(new Image(outValues, img.getH(), img.getW()));
 		this.initialized = false;
 	}
 	
