@@ -49,7 +49,7 @@ public class Hue extends JavaTask {
             if     (b_>100)  b_= 100;
             else if(b_<-100) b_= -100;
 
-            outValues[i] = 57.29*arctan(a,b)/(Math.PI*2);
+            outValues[i] = 57.29*arctan(a,b_)/(Math.PI*2);
         }
         out.putData(new Float64(img.getDimensions(), outValues));
 	}
