@@ -14,9 +14,11 @@ public class Hue extends JavaTask {
 
 	@InputPortInfo(name = "In", dataType = Image.class)
 	public InputPort in;
-	@OutputPortInfo(name = "Out", dataType = Float64.class)
-	public OutputPort out;
-
+	@OutputPortInfo(name = "a", dataType = Float64.class)
+	public OutputPort a;
+	@OutputPortInfo(name = "b", dataType = Float64.class)
+	public OutputPort b;
+	
     private static final double x_wp = .950456;
     private static final double y_wp = 1;
     private static final double z_wp = 1.088754;
@@ -26,8 +28,9 @@ public class Hue extends JavaTask {
 	public void execute() {
 		Image img = in.getData(Image.class);
         int[] inValues = img.getValues();
-        double[] outValues = new double[img.getNumberOfElements()];
-        for(int i = 0; i < outValues.length; i++) {
+        double[] aValues = new double[img.getNumberOfElements()];
+        double[] bValues = new double[img.getNumberOfElements()];
+        for(int i = 0; i < aValues.length; i++) {
             int inRGB = inValues[i];
             int r = (inRGB >> 16 & 0xff);
             int g = (inRGB >> 8 & 0xff);
@@ -48,26 +51,17 @@ public class Hue extends JavaTask {
             else if(a <-100) a = -100;
             if     (b_>100)  b_= 100;
             else if(b_<-100) b_= -100;
-
-            outValues[i] = 57.29*arctan(a,b)/(Math.PI*2);
+            //
+            // Hue = arctan(b/a)/(Math.PI*2)
+            //
+            aValues[i] = a;
+            bValues[i] = b;
         }
-        out.putData(new Float64(img.getDimensions(), outValues));
+        a.putData(new Float64(img.getDimensions(), aValues));
+        b.putData(new Float64(img.getDimensions(), bValues));
 	}
 	
     private static double f(double x) {
         return x > th ? Math.pow(x,1./3) : 7.787*x+16./116;
-    }
-    
-    private static double arctan(double a, double b) {
-        double an;
-        if(a == 0) {
-            if     (b > 0) an = Math.PI/2;
-            else if(b < 0) an = Math.PI*3./2;
-            else           an = 0;
-        } else if(a >= 0)  an =  Math.atan(b/a);
-        else               an = Math.PI + Math.atan(b/a);
-        
-        if(an < 0) an += 2*Math.PI;
-        return an;
     }
 }

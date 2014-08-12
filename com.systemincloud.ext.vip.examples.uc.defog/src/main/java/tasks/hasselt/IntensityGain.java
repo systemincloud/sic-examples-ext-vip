@@ -6,16 +6,17 @@ import com.systemincloud.modeler.tasks.javatask.api.OutputPort;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.InputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.JavaTaskInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
-import com.systemincloud.modeler.tasks.javatask.api.data.Float32;
+import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameters;
 import com.systemincloud.ext.vip.modeler.api.javatask.data.Image;
 
 @JavaTaskInfo
+@SicParameters(names=IntensityGain.XI)
 public class IntensityGain extends JavaTask {
 
+	protected static final String XI = "Xi";
+	
 	@InputPortInfo(name = "In", dataType = Image.class)
 	public InputPort in;
-	@InputPortInfo(name = "Xi", dataType = Float32.class)
-	public InputPort xi;
 	
 	@OutputPortInfo(name = "Out", dataType = Image.class)
 	public OutputPort out;
@@ -23,7 +24,7 @@ public class IntensityGain extends JavaTask {
 	@Override
 	public void execute() {
         Image img = in.getData(Image.class);
-        float gain = xi.getData(Float32.class).getValue();
+        float gain = Float.parseFloat(getParameter(XI));
         if(gain == 0) out.putData(img);
         else {
             int[] inValues = img.getValues();
