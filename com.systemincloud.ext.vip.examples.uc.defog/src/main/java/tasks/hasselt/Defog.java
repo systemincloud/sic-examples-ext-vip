@@ -69,42 +69,53 @@ public class Defog extends JavaTask {
 	@Override
 	public void executeAsync(InputPort asynchIn) {
 
-		int[] inValues = img.getValues();
-		
-		int[] r = new int[img.getNumberOfElements()];
-		int[] g = new int[img.getNumberOfElements()];
-		int[] b = new int[img.getNumberOfElements()];
-		
-		for(int i = masks.size() - 2; i >= 0; i--) {
-			boolean[] fog1 = masks.get(i + 1).getValues();
-			boolean[] fog2 = masks.get(i).getValues();
-			float c = cs.get(i).floatValue();
-			System.out.println(c);
-			for(int j = 0; j < r.length; j++) {
-				if(fog2[j] && !fog1[j]) {
-					int pixel = inValues[j];
-					r[j] = (int) (((pixel >> 16 & 0xff) - c*ar)*(1/(1-c)));
-					g[j] = (int) (((pixel >>  8 & 0xff) - c*ar)*(1/(1-c)));
-					b[j] = (int) (((pixel & 0xff) - c*ar)*(1/(1-c)));
-	                if(r[j] < 0) r[j] = 0;
-	                if(g[j] < 0) g[j] = 0;
-	                if(b[j] < 0) b[j] = 0;
-	                if(r[j] > 255) r[j] = 255;
-	                if(g[j] > 255) g[j] = 255;
-	                if(b[j] > 255) b[j] = 255;
-				}
+//		out.putData(masks.get(0));
+//		System.out.println(cs.get(0));
+		ListIterator<Bool> li = masks.listIterator(masks.size() - 1);
+		while(li.hasPrevious()) {
+			out.putData(li.previous());
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
 		}
 		
-		boolean[] noFog = masks.get(0).getValues();
-		for(int i = 0; i < r.length; i++) {
-			if(!noFog[i]) {
-				int pixel = inValues[i];
-				r[i] = (pixel >> 16 & 0xff);
-				g[i] = (pixel >>  8 & 0xff);
-				b[i] = (pixel & 0xff);
-			}
-		}
+//		int[] inValues = img.getValues();
+//		
+//		int[] r = new int[img.getNumberOfElements()];
+//		int[] g = new int[img.getNumberOfElements()];
+//		int[] b = new int[img.getNumberOfElements()];
+//		
+//		for(int i = masks.size() - 2; i >= 0; i--) {
+//			boolean[] fog1 = masks.get(i + 1).getValues();
+//			boolean[] fog2 = masks.get(i).getValues();
+//			float c = cs.get(i).floatValue();
+//			for(int j = 0; j < r.length; j++) {
+//				if(fog2[j] && !fog1[j]) {
+//					int pixel = inValues[j];
+//					r[j] = (int) (((pixel >> 16 & 0xff) - c*ar)*(1/(1-c)));
+//					g[j] = (int) (((pixel >>  8 & 0xff) - c*ar)*(1/(1-c)));
+//					b[j] = (int) (((pixel & 0xff) - c*ar)*(1/(1-c)));
+//	                if(r[j] < 0) r[j] = 0;
+//	                if(g[j] < 0) g[j] = 0;
+//	                if(b[j] < 0) b[j] = 0;
+//	                if(r[j] > 255) r[j] = 255;
+//	                if(g[j] > 255) g[j] = 255;
+//	                if(b[j] > 255) b[j] = 255;
+//				}
+//			}
+//		}
+//		
+//		boolean[] noFog = masks.get(0).getValues();
+//		for(int i = 0; i < r.length; i++) {
+//			if(!noFog[i]) {
+//				int pixel = inValues[i];
+//				r[i] = (pixel >> 16 & 0xff);
+//				g[i] = (pixel >>  8 & 0xff);
+//				b[i] = (pixel & 0xff);
+//			}
+//		}
 		
 //		ListIterator<Bool>  mi = masks.listIterator(masks.size());
 //		ListIterator<Float> ci = cs.listIterator(cs.size());
@@ -140,11 +151,11 @@ public class Defog extends JavaTask {
 //		}
 //		}
 		
-		int[] outValues = new int[r.length];
-		for(int i = 0; i < outValues.length; i++)
-        	outValues[i] = (r[i] << 16) | (g[i] << 8) | b[i];
-		out.putData(new Image(outValues, img.getH(), img.getW()));
-		this.initialized = false;
+//		int[] outValues = new int[r.length];
+//		for(int i = 0; i < outValues.length; i++)
+//        	outValues[i] = (r[i] << 16) | (g[i] << 8) | b[i];
+//		out.putData(new Image(outValues, img.getH(), img.getW()));
+//		this.initialized = false;
 	}
 	
 	
