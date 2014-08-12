@@ -222,6 +222,6 @@
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.1/@outputPort.0" targetRef="/1/@task.0/@inputPort.0"/>
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.0/@outputPort.0" targetRef="/1/@task.2/@inputPort.0"/>
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.1/@outputPort.0" targetRef="/1/@task.3/@inputPort.0"/>
-    <parameters key="nb-of-layers" value="10"/>
+    <parameters key="nb-of-layers" value="15"/>
   </sic:MainTask>
 </xmi:XMI>
