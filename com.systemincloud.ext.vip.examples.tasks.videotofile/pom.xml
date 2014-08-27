@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.examples</groupId>
+  <artifactId>example</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>System in Cloud - Example</name>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+    </dependency>
+    <dependency>
+      <groupId>com.systemincloud.modeler.tasks.javatask</groupId>
+      <artifactId>com.systemincloud.modeler.tasks.javatask.api</artifactId>
+      <version>0.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.systemincloud.ext.vip.modeler.tasks.javatask</groupId>
+      <artifactId>com.systemincloud.ext.vip.modeler.tasks.javatask.api</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+  </dependencies>
+  <repositories>
+    <repository>
+      <id>System in Cloud</id>
+      <url>https://s3.amazonaws.com/com-systemincloud-s3-m2/releases</url>
+    </repository>
+  </repositories>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
