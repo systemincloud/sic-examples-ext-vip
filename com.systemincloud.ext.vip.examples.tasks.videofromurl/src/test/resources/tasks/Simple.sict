@@ -83,7 +83,7 @@
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
   <sic:MainTask initialized="true" version="0.3.0">
-    <task xsi:type="vip_videofromurl_0_1_0:VideoFromUrl" id="My Video From Url" bundleName="com.systemincloud.ext.vip.modeler.tasks.videofromurl" version="0.1.0" url="https://ia700504.us.archive.org/13/items/CEP146/CEP146_512kb.mp4" cachedVideoCodecInfo="H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10" cachedResolutionInfo="240x320" cachedFrameRateInfo="29.97" cachedAudioCodecInfo="Advanced Audio Coding" cachedChannelsInfo="2" cachedSampleRateInfo="48000" cachedBitrateInfo="3384" cachedDurationInfo="00:00:14">
+    <task xsi:type="vip_videofromurl_0_1_0:VideoFromUrl" id="My Video From Url" bundleName="com.systemincloud.ext.vip.modeler.tasks.videofromurl" version="0.1.0" url="https://ia700504.us.archive.org/13/items/CEP146/CEP146_512kb.mp4" frameRate="29.97" cachedVideoCodecInfo="H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10" cachedResolutionInfo="240x320" cachedFrameRateInfo="29.97" cachedAudioCodecInfo="Advanced Audio Coding" cachedChannelsInfo="2" cachedSampleRateInfo="48000" cachedBitrateInfo="3384" cachedDurationInfo="00:00:14">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
