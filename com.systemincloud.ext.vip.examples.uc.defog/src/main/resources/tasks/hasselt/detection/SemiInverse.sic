@@ -112,7 +112,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.2.3">
+  <sic:MainTask initialized="true" version="0.3.0">
     <inputPort id="In"/>
     <outputPort id="Out"/>
     <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.hasselt.detection.SemiInverse">
