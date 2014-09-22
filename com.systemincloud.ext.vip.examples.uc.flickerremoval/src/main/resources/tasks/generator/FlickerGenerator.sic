@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt">
+  <pi:Diagram visible="true" gridUnit="-1" diagramTypeId="SystemInCloud" name="FlickerGenerator" pictogramLinks="/0/@link /0/@children.0/@link /0/@children.1/@link /0/@children.2/@link /0/@children.3/@link /0/@children.4/@link /0/@children.5/@link /0/@children.6/@link /0/@children.7/@link /0/@children.8/@link /0/@children.9/@link /0/@children.10/@link /0/@children.11/@link /0/@children.12/@link /0/@children.13/@link /0/@children.14/@link /0/@children.15/@link /0/@children.4/@children.0/@link /0/@children.4/@children.1/@link /0/@children.4/@children.2/@link /0/@children.4/@children.3/@link /0/@children.6/@children.0/@link /0/@children.6/@children.1/@link /0/@children.6/@children.2/@link /0/@children.6/@children.3/@link /0/@children.8/@children.0/@link /0/@children.8/@children.1/@link /0/@children.8/@children.2/@link /0/@children.8/@children.3/@link /0/@children.10/@children.0/@link /0/@children.10/@children.1/@link /0/@children.10/@children.2/@link /0/@children.10/@children.3/@link /0/@children.12/@children.0/@link /0/@children.12/@children.1/@link /0/@children.12/@children.2/@link /0/@children.12/@children.3/@link /0/@children.14/@children.0/@link /0/@children.14/@children.1/@link /0/@children.14/@children.2/@link /0/@children.14/@children.3/@link" version="0.11.0">
+    <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
+    <link businessObjects="/1"/>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="30" height="15" x="11" y="182">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="30" height="15" style="/0/@styles.1" cornerHeight="20" cornerWidth="20"/>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@inputPort.0 /0/@children.1"/>
+      <anchors xsi:type="pi:ChopboxAnchor"/>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <properties key="label" value="true"/>
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="16" height="20" x="19" y="199">
+        <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="16" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_TOP" value="In"/>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@inputPort.0 /0/@children.0"/>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="30" height="15" x="1041" y="196">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="2" transparency="0.0" width="30" height="15" style="/0/@styles.1" cornerHeight="20" cornerWidth="20"/>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@outputPort.0 /0/@children.3"/>
+      <anchors xsi:type="pi:ChopboxAnchor"/>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <properties key="label" value="true"/>
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="24" height="20" x="1045" y="213">
+        <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="24" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_TOP" value="Out"/>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@outputPort.0 /0/@children.2"/>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="120" height="70" x="85" y="64">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="120" height="70" style="/0/@styles.0" cornerHeight="20" cornerWidth="20"/>
+        <graphicsAlgorithmChildren xsi:type="al:Image" lineWidth="1" transparency="0.0" width="44" height="44" x="38" y="13" id="IMG_JAVATASK_DIAGRAM" stretchH="false" stretchV="false" proportional="false"/>
+        <graphicsAlgorithmChildren xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" width="120" height="26" y="44" style="/0/@styles.0" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="LocalMotions">
+          <properties key="icon-description" value="true"/>
+        </graphicsAlgorithmChildren>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@task.0 /0/@children.5"/>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <properties key="internal-port" value="true"/>
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" y="30" cornerHeight="5" cornerWidth="5">
+          <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="10" height="10" style="/0/@styles.3" cornerHeight="5" cornerWidth="5"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.0/@inputPort.0 /0/@children.4/@children.1"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true">
+        <properties key="port-label" value="true"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="20" x="10" y="27">
+          <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="14" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="In"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.0/@inputPort.0 /0/@children.4/@children.0"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <properties key="internal-port" value="true"/>
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="110" y="30" cornerHeight="5" cornerWidth="5">
+          <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="2" transparency="0.0" width="10" height="10" style="/0/@styles.3" cornerHeight="5" cornerWidth="5"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.0/@outputPort.0 /0/@children.4/@children.3"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true">
+        <properties key="port-label" value="true"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="23" height="20" x="88" y="27">
+          <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="22" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="Out"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.0/@outputPort.0 /0/@children.4/@children.2"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <properties key="label" value="true"/>
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="72" height="20" x="110" y="136">
+        <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="72" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_TOP" value="Local Motions"/>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@task.0 /0/@children.4"/>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="120" height="70" x="241" y="64">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="120" height="70" style="/0/@styles.0" cornerHeight="20" cornerWidth="20"/>
+        <graphicsAlgorithmChildren xsi:type="al:Image" lineWidth="1" transparency="0.0" width="44" height="44" x="38" y="13" id="IMG_JAVATASK_DIAGRAM" stretchH="false" stretchV="false" proportional="false"/>
+        <graphicsAlgorithmChildren xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" width="120" height="26" y="44" style="/0/@styles.0" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="HugeObject">
+          <properties key="icon-description" value="true"/>
+        </graphicsAlgorithmChildren>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@task.1 /0/@children.7"/>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <properties key="internal-port" value="true"/>
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" y="30" cornerHeight="5" cornerWidth="5">
+          <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="10" height="10" style="/0/@styles.3" cornerHeight="5" cornerWidth="5"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.1/@inputPort.0 /0/@children.6/@children.1"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true">
+        <properties key="port-label" value="true"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="20" x="10" y="27">
+          <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="14" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="In"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.1/@inputPort.0 /0/@children.6/@children.0"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <properties key="internal-port" value="true"/>
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="110" y="30" cornerHeight="5" cornerWidth="5">
+          <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="2" transparency="0.0" width="10" height="10" style="/0/@styles.3" cornerHeight="5" cornerWidth="5"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.1/@outputPort.0 /0/@children.6/@children.3"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true">
+        <properties key="port-label" value="true"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="23" height="20" x="88" y="27">
+          <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="22" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="Out"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.1/@outputPort.0 /0/@children.6/@children.2"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <properties key="label" value="true"/>
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="66" height="20" x="269" y="136">
+        <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="66" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_TOP" value="Huge Object"/>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@task.1 /0/@children.6"/>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="120" height="70" x="397" y="64">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="120" height="70" style="/0/@styles.0" cornerHeight="20" cornerWidth="20"/>
+        <graphicsAlgorithmChildren xsi:type="al:Image" lineWidth="1" transparency="0.0" width="44" height="44" x="38" y="13" id="IMG_JAVATASK_DIAGRAM" stretchH="false" stretchV="false" proportional="false"/>
+        <graphicsAlgorithmChildren xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" width="120" height="26" y="44" style="/0/@styles.0" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="CameraPan">
+          <properties key="icon-description" value="true"/>
+        </graphicsAlgorithmChildren>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@task.2 /0/@children.9"/>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <properties key="internal-port" value="true"/>
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" y="30" cornerHeight="5" cornerWidth="5">
+          <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="10" height="10" style="/0/@styles.3" cornerHeight="5" cornerWidth="5"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.2/@inputPort.0 /0/@children.8/@children.1"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true">
+        <properties key="port-label" value="true"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="20" x="10" y="27">
+          <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="14" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="In"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.2/@inputPort.0 /0/@children.8/@children.0"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <properties key="internal-port" value="true"/>
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="110" y="30" cornerHeight="5" cornerWidth="5">
+          <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="2" transparency="0.0" width="10" height="10" style="/0/@styles.3" cornerHeight="5" cornerWidth="5"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.2/@outputPort.0 /0/@children.8/@children.3"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true">
+        <properties key="port-label" value="true"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="23" height="20" x="88" y="27">
+          <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="22" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="Out"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.2/@outputPort.0 /0/@children.8/@children.2"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <properties key="label" value="true"/>
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="68" height="20" x="424" y="136">
+        <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="68" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_TOP" value="Camera Pan"/>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@task.2 /0/@children.8"/>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="120" height="70" x="546" y="64">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="120" height="70" style="/0/@styles.0" cornerHeight="20" cornerWidth="20"/>
+        <graphicsAlgorithmChildren xsi:type="al:Image" lineWidth="1" transparency="0.0" width="44" height="44" x="38" y="13" id="IMG_JAVATASK_DIAGRAM" stretchH="false" stretchV="false" proportional="false"/>
+        <graphicsAlgorithmChildren xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" width="120" height="26" y="44" style="/0/@styles.0" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="Zoom">
+          <properties key="icon-description" value="true"/>
+        </graphicsAlgorithmChildren>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@task.3 /0/@children.11"/>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <properties key="internal-port" value="true"/>
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" y="30" cornerHeight="5" cornerWidth="5">
+          <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="10" height="10" style="/0/@styles.3" cornerHeight="5" cornerWidth="5"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.3/@inputPort.0 /0/@children.10/@children.1"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true">
+        <properties key="port-label" value="true"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="20" x="10" y="27">
+          <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="14" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="In"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.3/@inputPort.0 /0/@children.10/@children.0"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <properties key="internal-port" value="true"/>
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="110" y="30" cornerHeight="5" cornerWidth="5">
+          <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="2" transparency="0.0" width="10" height="10" style="/0/@styles.3" cornerHeight="5" cornerWidth="5"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.3/@outputPort.0 /0/@children.10/@children.3"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true">
+        <properties key="port-label" value="true"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="23" height="20" x="88" y="27">
+          <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="22" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="Out"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.3/@outputPort.0 /0/@children.10/@children.2"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <properties key="label" value="true"/>
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="35" height="20" x="589" y="136">
+        <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="35" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_TOP" value="Zoom"/>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@task.3 /0/@children.10"/>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="120" height="70" x="704" y="64">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="120" height="70" style="/0/@styles.0" cornerHeight="20" cornerWidth="20"/>
+        <graphicsAlgorithmChildren xsi:type="al:Image" lineWidth="1" transparency="0.0" width="44" height="44" x="38" y="13" id="IMG_JAVATASK_DIAGRAM" stretchH="false" stretchV="false" proportional="false"/>
+        <graphicsAlgorithmChildren xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" width="120" height="26" y="44" style="/0/@styles.0" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="Flicker">
+          <properties key="icon-description" value="true"/>
+        </graphicsAlgorithmChildren>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@task.4 /0/@children.13"/>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <properties key="internal-port" value="true"/>
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" y="30" cornerHeight="5" cornerWidth="5">
+          <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="10" height="10" style="/0/@styles.3" cornerHeight="5" cornerWidth="5"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.4/@inputPort.0 /0/@children.12/@children.1"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true">
+        <properties key="port-label" value="true"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="20" x="10" y="27">
+          <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="14" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="In"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.4/@inputPort.0 /0/@children.12/@children.0"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <properties key="internal-port" value="true"/>
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="110" y="30" cornerHeight="5" cornerWidth="5">
+          <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="2" transparency="0.0" width="10" height="10" style="/0/@styles.3" cornerHeight="5" cornerWidth="5"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.4/@outputPort.0 /0/@children.12/@children.3"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true">
+        <properties key="port-label" value="true"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="23" height="20" x="88" y="27">
+          <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="22" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="Out"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.4/@outputPort.0 /0/@children.12/@children.2"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <properties key="label" value="true"/>
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="38" height="20" x="746" y="136">
+        <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="38" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_TOP" value="Flicker"/>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@task.4 /0/@children.12"/>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="120" height="70" x="865" y="64">
+        <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="120" height="70" style="/0/@styles.0" cornerHeight="20" cornerWidth="20"/>
+        <graphicsAlgorithmChildren xsi:type="al:Image" lineWidth="1" transparency="0.0" width="44" height="44" x="38" y="13" id="IMG_JAVATASK_DIAGRAM" stretchH="false" stretchV="false" proportional="false"/>
+        <graphicsAlgorithmChildren xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" width="120" height="26" y="44" style="/0/@styles.0" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="Blotches">
+          <properties key="icon-description" value="true"/>
+        </graphicsAlgorithmChildren>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@task.5 /0/@children.15"/>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <properties key="internal-port" value="true"/>
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" y="30" cornerHeight="5" cornerWidth="5">
+          <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="10" height="10" style="/0/@styles.3" cornerHeight="5" cornerWidth="5"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.5/@inputPort.0 /0/@children.14/@children.1"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true">
+        <properties key="port-label" value="true"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="20" x="10" y="27">
+          <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="14" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="In"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.5/@inputPort.0 /0/@children.14/@children.0"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <properties key="internal-port" value="true"/>
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="110" y="30" cornerHeight="5" cornerWidth="5">
+          <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="2" transparency="0.0" width="10" height="10" style="/0/@styles.3" cornerHeight="5" cornerWidth="5"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.5/@outputPort.0 /0/@children.14/@children.3"/>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true">
+        <properties key="port-label" value="true"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="23" height="20" x="88" y="27">
+          <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="22" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="Out"/>
+        </graphicsAlgorithm>
+        <link businessObjects="/1/@task.5/@outputPort.0 /0/@children.14/@children.2"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <properties key="label" value="true"/>
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="47" height="20" x="902" y="136">
+        <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="47" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_TOP" value="Blotches"/>
+      </graphicsAlgorithm>
+      <link businessObjects="/1/@task.5 /0/@children.14"/>
+    </children>
+    <styles background="/0/@colors.1" foreground="/0/@colors.2" id="TASK"/>
+    <styles background="/0/@colors.1" foreground="/0/@colors.2" id="PORT"/>
+    <styles background="/0/@colors.2" foreground="/0/@colors.2" lineWidth="1" id="BPMN-POLYGON-ARROW"/>
+    <styles background="/0/@colors.1" foreground="/0/@colors.2" id="INTERNAL_PORT_STYLE"/>
+    <colors red="227" green="238" blue="249"/>
+    <colors red="255" green="255" blue="255"/>
+    <colors/>
+    <fonts name="Arial" size="8"/>
+  </pi:Diagram>
+  <sic:MainTask initialized="true" version="0.4.0">
+    <inputPort id="In"/>
+    <outputPort id="Out"/>
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Local Motions" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.generator.LocalMotions">
+      <outputPort id="Out" parent="/1/@task.0">
+        <dataType xsi:type="vip_dt:Image"/>
+      </outputPort>
+      <inputPort id="In" parent="/1/@task.0">
+        <dataType xsi:type="vip_dt:Image"/>
+      </inputPort>
+      <parameters key="xx" value=""/>
+    </task>
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Huge Object" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.generator.HugeObject">
+      <outputPort id="Out" parent="/1/@task.1">
+        <dataType xsi:type="vip_dt:Image"/>
+      </outputPort>
+      <inputPort id="In" parent="/1/@task.1">
+        <dataType xsi:type="vip_dt:Image"/>
+      </inputPort>
+      <parameters key="xx" value=""/>
+    </task>
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Camera Pan" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.generator.CameraPan">
+      <outputPort id="Out" parent="/1/@task.2">
+        <dataType xsi:type="vip_dt:Image"/>
+      </outputPort>
+      <inputPort id="In" parent="/1/@task.2">
+        <dataType xsi:type="vip_dt:Image"/>
+      </inputPort>
+      <parameters key="xx" value=""/>
+    </task>
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Zoom" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.generator.Zoom">
+      <outputPort id="Out" parent="/1/@task.3">
+        <dataType xsi:type="vip_dt:Image"/>
+      </outputPort>
+      <inputPort id="In" parent="/1/@task.3">
+        <dataType xsi:type="vip_dt:Image"/>
+      </inputPort>
+      <parameters key="xx" value=""/>
+    </task>
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Flicker" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.generator.Flicker">
+      <outputPort id="Out" parent="/1/@task.4">
+        <dataType xsi:type="vip_dt:Image"/>
+      </outputPort>
+      <inputPort id="In" parent="/1/@task.4">
+        <dataType xsi:type="vip_dt:Image"/>
+      </inputPort>
+    </task>
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Blotches" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.generator.Blotches">
+      <outputPort id="Out" parent="/1/@task.5">
+        <dataType xsi:type="vip_dt:Image"/>
+      </outputPort>
+      <inputPort id="In" parent="/1/@task.5">
+        <dataType xsi:type="vip_dt:Image"/>
+      </inputPort>
+    </task>
+  </sic:MainTask>
+</xmi:XMI>
