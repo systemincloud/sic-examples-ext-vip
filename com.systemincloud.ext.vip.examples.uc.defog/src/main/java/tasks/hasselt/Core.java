@@ -19,7 +19,7 @@ public class Core extends JavaTask {
 	
 	@InputPortInfo(name = "In", dataType = Image.class)
 	public InputPort in;
-	@InputPortInfo(name = "Ack", dataType = Control.class, asynchronus=true)
+	@InputPortInfo(name = "Ack", dataType = Control.class, asynchronous=true)
 	public InputPort ack;
 	
 	@OutputPortInfo(name = "c_i", dataType = Float32.class)

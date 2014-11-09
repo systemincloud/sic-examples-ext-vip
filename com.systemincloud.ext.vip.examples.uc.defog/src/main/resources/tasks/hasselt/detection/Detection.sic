@@ -485,10 +485,10 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.3.0">
+  <sic:MainTask initialized="true" version="0.4.0">
     <inputPort id="Img"/>
     <outputPort id="Mask"/>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Create Mask" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.hasselt.detection.CreateMask">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Create Mask" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.hasselt.detection.CreateMask">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="dt:Bool"/>
       </outputPort>
@@ -506,7 +506,7 @@
       </inputPort>
       <parameters key="tau" value="10"/>
     </task>
-    <task xsi:type="sic:EmbeddedTask" id="Semi-inverse" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.2.1" implementationTask="src/main/resources/tasks/hasselt/detection/SemiInverse.sic">
+    <task xsi:type="sic:EmbeddedTask" id="Semi-inverse" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.2.2" implementationTask="src/main/resources/tasks/hasselt/detection/SemiInverse.sic">
       <outputPort id="Out" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -514,7 +514,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Hue" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.hasselt.detection.Hue">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Hue" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.hasselt.detection.Hue">
       <outputPort id="a" parent="/1/@task.2">
         <dataType xsi:type="dt:Float64"/>
       </outputPort>
@@ -525,7 +525,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Hue " bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.hasselt.detection.Hue">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Hue " bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.hasselt.detection.Hue">
       <outputPort id="a" parent="/1/@task.3">
         <dataType xsi:type="dt:Float64"/>
       </outputPort>
@@ -536,7 +536,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Intesity Gain" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.hasselt.IntensityGain">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Intesity Gain" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.hasselt.IntensityGain">
       <outputPort id="Out" parent="/1/@task.4">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
