@@ -741,18 +741,18 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.3.0">
-    <task xsi:type="vip_webcam_0_1_0:Webcam" id="Webcam" generator="true" bundleName="com.systemincloud.ext.vip.modeler.tasks.webcam" version="0.1.1" cameraName="Laptop_Integrated_Webcam_2HDM /dev/video0" resolution="176x144" interval="100">
+  <sic:MainTask initialized="true" version="0.4.0">
+    <task xsi:type="vip_webcam_0_1_0:Webcam" id="Webcam" bundleName="com.systemincloud.ext.vip.modeler.tasks.webcam" version="0.1.2" cameraName="Laptop_Integrated_Webcam_2HDM /dev/video0" resolution="176x144" interval="100">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="R" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.1">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="R" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.2">
       <inputPort id="In" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="RGB" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.colorspace.RGB">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="RGB" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.colorspace.RGB">
       <outputPort id="R" parent="/1/@task.2">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -766,32 +766,32 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.1">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.2">
       <inputPort id="In" parent="/1/@task.3">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="B" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.1">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="B" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.2">
       <inputPort id="In" parent="/1/@task.4">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="G" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.1">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="G" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.2">
       <inputPort id="In" parent="/1/@task.5">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="H" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.1">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="H" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.2">
       <inputPort id="In" parent="/1/@task.6">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="S" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.1">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="S" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.2">
       <inputPort id="In" parent="/1/@task.7">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="HSV" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.colorspace.HSV">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="HSV" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.colorspace.HSV">
       <outputPort id="H" parent="/1/@task.8">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -805,7 +805,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="YUV" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.2" implementationClass="tasks.colorspace.YUV">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="YUV" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.colorspace.YUV">
       <outputPort id="Y" parent="/1/@task.9">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -819,22 +819,22 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="V" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.1">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="V" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.2">
       <inputPort id="In" parent="/1/@task.10">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="Y" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.1">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="Y" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.2">
       <inputPort id="In" parent="/1/@task.11">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="U" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.1">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="U" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.2">
       <inputPort id="In" parent="/1/@task.12">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="V " bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.1">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="V " bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.2">
       <inputPort id="In" parent="/1/@task.13">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
