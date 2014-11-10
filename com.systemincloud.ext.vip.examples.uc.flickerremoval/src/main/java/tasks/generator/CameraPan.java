@@ -22,6 +22,7 @@ public class CameraPan extends JavaTask {
 
 	@Override
 	public void execute() {
+		out.putData(in.getData(Image.class));
 	}
 
 }
