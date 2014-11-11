@@ -24,7 +24,7 @@ public class MultiplyDFTs extends JavaTask {
 
     @InputPortInfo(name = "In1", dataType = Float32.class)
     public InputPort in1;
-    @InputPortInfo(name = "Filter", dataType = Float32.class, asynchronus = true)
+    @InputPortInfo(name = "Filter", dataType = Float32.class, asynchronous = true)
     public InputPort filter;
     @OutputPortInfo(name = "Out", dataType = Int32.class)
     public OutputPort out;

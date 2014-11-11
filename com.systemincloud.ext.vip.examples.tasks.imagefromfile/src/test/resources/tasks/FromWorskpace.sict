@@ -81,13 +81,13 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.3.0">
-    <task xsi:type="vip_imagefromfile_0_1_0:ImageFromFile" id="My Image From File" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagefromfile" version="0.1.0" path="workspace:/com.systemincloud.ext.vip.examples.tasks.imagefromfile/src/test/resources/tasks/banner.png">
+  <sic:MainTask initialized="true" version="0.4.0">
+    <task xsi:type="vip_imagefromfile_0_1_0:ImageFromFile" id="My Image From File" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagefromfile" version="0.1.1" path="workspace:/com.systemincloud.ext.vip.examples.tasks.imagefromfile/src/test/resources/tasks/banner.png">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="My Tv" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.1">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="My Tv" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.2">
       <inputPort id="In" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>

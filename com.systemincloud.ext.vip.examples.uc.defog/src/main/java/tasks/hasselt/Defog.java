@@ -28,7 +28,7 @@ public class Defog extends JavaTask {
 	@InputPortInfo(name = "c_i", dataType = Float32.class)
 	public InputPort c_i;
 	
-	@InputPortInfo(name = "end", dataType = Control.class, asynchronus = true)
+	@InputPortInfo(name = "end", dataType = Control.class, asynchronous = true)
 	public InputPort end;
 	
 	
