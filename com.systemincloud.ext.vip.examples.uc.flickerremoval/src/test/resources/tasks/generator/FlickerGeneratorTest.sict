@@ -386,6 +386,9 @@
       <parameters key="flicker" value="true"/>
       <parameters key="zoom" value="true"/>
       <parameters key="blotches" value="true"/>
+      <parameters key="lm-speed" value="5"/>
+      <parameters key="lm-size" value="50"/>
+      <parameters key="lm_number" value="10"/>
     </task>
     <task xsi:type="sic:EmbeddedTask" id="Gen" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.2.2" implementationTask="src/test/resources/tasks/generator/ImageGenerator.sict">
       <outputPort id="Out" parent="/1/@task.1">
@@ -414,7 +417,7 @@
     </task>
     <task xsi:type="javatask_0_1_0:JavaTask" id="to Grey" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.generator.ToGrey">
       <outputPort id="Out" parent="/1/@task.5">
-        <dataType xsi:type="vip_dt:Image"/>
+        <dataType xsi:type="dt:Int32"/>
       </outputPort>
       <inputPort id="In" parent="/1/@task.5">
         <dataType xsi:type="vip_dt:Image"/>
