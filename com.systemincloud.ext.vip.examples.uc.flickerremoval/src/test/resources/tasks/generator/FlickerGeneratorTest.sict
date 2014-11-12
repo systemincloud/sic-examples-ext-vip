@@ -392,6 +392,8 @@
       <parameters key="ho-speed" value="3"/>
       <parameters key="ho-color" value="100"/>
       <parameters key="cp-speed" value="10"/>
+      <parameters key="zm-speed" value="0.02"/>
+      <parameters key="zm-max" value="3"/>
     </task>
     <task xsi:type="sic:EmbeddedTask" id="Gen" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.2.2" implementationTask="src/test/resources/tasks/generator/ImageGenerator.sict">
       <outputPort id="Out" parent="/1/@task.1">

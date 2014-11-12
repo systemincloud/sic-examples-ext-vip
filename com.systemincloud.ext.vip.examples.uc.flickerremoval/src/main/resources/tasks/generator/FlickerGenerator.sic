@@ -2025,7 +2025,8 @@
       <inputPort id="In" parent="/1/@task.3">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
-      <parameters key="xx" value=""/>
+      <parameters key="max" value="${zm-max}"/>
+      <parameters key="speed" value="${zm-speed}"/>
     </task>
     <task xsi:type="javatask_0_1_0:JavaTask" id="Flicker" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.generator.Flicker">
       <outputPort id="Out" parent="/1/@task.4">
