@@ -2006,7 +2006,8 @@
       <inputPort id="In" parent="/1/@task.1">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
-      <parameters key="xx" value=""/>
+      <parameters key="speed" value="${ho-speed}"/>
+      <parameters key="color" value="${ho-color}"/>
     </task>
     <task xsi:type="javatask_0_1_0:JavaTask" id="Camera Pan" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.generator.CameraPan">
       <outputPort id="Out" parent="/1/@task.2">
