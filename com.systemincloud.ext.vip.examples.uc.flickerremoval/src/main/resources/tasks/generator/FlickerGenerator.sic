@@ -2016,7 +2016,7 @@
       <inputPort id="In" parent="/1/@task.2">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
-      <parameters key="xx" value=""/>
+      <parameters key="speed" value="${cp-speed}"/>
     </task>
     <task xsi:type="javatask_0_1_0:JavaTask" id="Zoom" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.generator.Zoom">
       <outputPort id="Out" parent="/1/@task.3">
