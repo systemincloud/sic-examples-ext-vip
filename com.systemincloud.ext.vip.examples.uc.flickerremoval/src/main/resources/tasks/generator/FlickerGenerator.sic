@@ -2035,6 +2035,9 @@
       <inputPort id="In" parent="/1/@task.4">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
+      <parameters key="non-linearity" value="${fl-nonlinearity}"/>
+      <parameters key="magnitude" value="${fl-magnitude}"/>
+      <parameters key="period" value="${fl-period}"/>
     </task>
     <task xsi:type="javatask_0_1_0:JavaTask" id="Blotches" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.generator.Blotches">
       <outputPort id="Out" parent="/1/@task.5">
