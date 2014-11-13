@@ -7,22 +7,72 @@ import com.systemincloud.modeler.tasks.javatask.api.annotations.InputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.JavaTaskInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameters;
-import com.systemincloud.ext.vip.modeler.api.javatask.data.Image;
+import com.systemincloud.modeler.tasks.javatask.api.data.Int32;
 
 @JavaTaskInfo
-@SicParameters(names = { CameraPan.XX })
+@SicParameters(names = { CameraPan.SPEED })
 public class CameraPan extends JavaTask {
 
-	protected static final String XX = "xx";
+	protected static final String SPEED = "speed";
 
-	@InputPortInfo(name = "In", dataType = Image.class)
+	@InputPortInfo(name = "In", dataType = Int32.class)
 	public InputPort in;
-	@OutputPortInfo(name = "Out", dataType = Image.class)
+	@OutputPortInfo(name = "Out", dataType = Int32.class)
 	public OutputPort out;
 
+	private int sp;
+	
+	private boolean initialized = false;
+	
+	private int x = 0;
+	private int y;
+	
+	private boolean goingRight = true;
+	
 	@Override
 	public void execute() {
-		out.putData(in.getData(Image.class));
+		if(!initialized) init();
+		
+		Int32 inData    = in.getData(Int32.class);
+		int[] inValues  = inData.getValues();
+		int   ne        = inData.getNumberOfElements();
+		int   h         = inData.getDimensions().get(0);
+		int   w         = inData.getDimensions().get(1);
+		
+		int[] outValues = new int[ne];
+
+		int[] tmp = new int[4*h*w];
+
+		int tmpH = 2*h;
+		int tmpW = 2*w;
+		int ptr = 0;
+		for(int i = 0; i < tmpH; i++)
+			for(int j = 0; j < tmpW; j++)
+				tmp[ptr++] = inValues[(i >> 1)*w + (j >> 1)];
+
+		y = h >> 1;
+
+		for(int i = 0; i < h; i++) {
+			int idx = y*tmpW + i*tmpW + x;
+			for(int j = 0; j < w; j++) outValues[i*w + j] = tmp[idx + j];
+		}
+
+		if(goingRight) x += sp;
+		else           x -= sp;
+
+		if(x > w) {
+			goingRight = false;
+			x = w;
+		} else if(x < 0){
+			goingRight = true;
+			x = 0;
+		}
+		
+		out.putData(new Int32(inData.getDimensions(), outValues));
 	}
 
+	private void init() {
+		sp = Integer.parseInt(getParameter(SPEED));
+		initialized = true;
+	}
 }
