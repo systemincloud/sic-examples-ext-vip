@@ -2046,6 +2046,9 @@
       <inputPort id="In" parent="/1/@task.5">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
+      <parameters key="color" value="${bl-color}"/>
+      <parameters key="number" value="${bl-number}"/>
+      <parameters key="size" value="${bl-size}"/>
     </task>
     <task xsi:type="constant_0_1_0:Constant" id="lm" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.1" value="${local-motions}">
       <outputPort id="Out" parent="/1/@task.6">
