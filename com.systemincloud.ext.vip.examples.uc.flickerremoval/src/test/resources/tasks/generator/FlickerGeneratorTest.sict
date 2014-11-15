@@ -388,7 +388,6 @@
       <parameters key="blotches" value="true"/>
       <parameters key="lm-speed" value="5"/>
       <parameters key="lm-size" value="50"/>
-      <parameters key="lm_number" value="10"/>
       <parameters key="ho-speed" value="3"/>
       <parameters key="ho-color" value="100"/>
       <parameters key="cp-speed" value="10"/>
@@ -400,6 +399,7 @@
       <parameters key="bl-size" value="10"/>
       <parameters key="bl-number" value="5"/>
       <parameters key="bl-color" value="10"/>
+      <parameters key="lm-number" value="5"/>
     </task>
     <task xsi:type="sic:EmbeddedTask" id="Gen" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.2.2" implementationTask="src/test/resources/tasks/generator/ImageGenerator.sict">
       <outputPort id="Out" parent="/1/@task.1">

@@ -1996,7 +1996,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
       <parameters key="speed" value="${lm-speed}"/>
-      <parameters key="number" value="${lm_number}"/>
+      <parameters key="number" value="${lm-number}"/>
       <parameters key="size" value="${lm-size}"/>
     </task>
     <task xsi:type="javatask_0_1_0:JavaTask" id="Huge Object" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.generator.HugeObject">
