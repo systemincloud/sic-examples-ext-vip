@@ -25,10 +25,14 @@ public class Zoom extends JavaTask {
 	private int   mx;
 	private float sp;
 	
-	private boolean initialized = false;
-	
 	private float   zoom    = 1;
 	private boolean goingIn = true;
+	
+	@Override
+	public void runnerStart() {
+		mx = Integer.parseInt(getParameter(MAX));
+		sp = Float.parseFloat(getParameter(SPEED));
+	}
 	
 	@Override
 	public void execute() {
@@ -40,8 +44,6 @@ public class Zoom extends JavaTask {
 		
 		int[] outValues = new int[ne];
 		
-		if(!initialized) init();
-
 		float inv_zoom = 1/zoom;
 		int tmpH = (int) (zoom*h);
 		int tmpW = (int) (zoom*w);
@@ -67,11 +69,5 @@ public class Zoom extends JavaTask {
 		else if(zoom <= 1) { goingIn = true; zoom = 1; }
 		
 		out.putData(new Int32(inData.getDimensions(), outValues));
-	}
-	
-	private void init() {
-		mx = Integer.parseInt(getParameter(MAX));
-		sp = Float.parseFloat(getParameter(SPEED));
-		initialized = true;
 	}
 }

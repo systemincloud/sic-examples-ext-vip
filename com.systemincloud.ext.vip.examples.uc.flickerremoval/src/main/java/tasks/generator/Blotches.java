@@ -32,7 +32,12 @@ public class Blotches extends JavaTask {
 	private int nb;
 	private int sz;
 	
-	private boolean initialized = false;
+	@Override
+	public void runnerStart() {
+		cl = Integer.parseInt(getParameter(COLOR));
+		nb = Integer.parseInt(getParameter(NUMBER));
+		sz = Integer.parseInt(getParameter(SIZE));
+	}
 	
 	@Override
 	public void execute() {
@@ -43,8 +48,6 @@ public class Blotches extends JavaTask {
 		int   w         = inData.getDimensions().get(1);
 		
 		int[] outValues = new int[ne];
-		
-		if(!initialized) init();
 		
 		for(int i = 0; i < ne; i++) outValues[i] = inValues[i];
 		
@@ -59,14 +62,6 @@ public class Blotches extends JavaTask {
 					outValues[y*w + j*w + x + k] = cl;
 		}
 		
-		
 		out.putData(new Int32(inData.getDimensions(), outValues));
-	}
-
-	private void init() {
-		cl = Integer.parseInt(getParameter(COLOR));
-		nb = Integer.parseInt(getParameter(NUMBER));
-		sz = Integer.parseInt(getParameter(SIZE));
-		initialized = true;
 	}
 }

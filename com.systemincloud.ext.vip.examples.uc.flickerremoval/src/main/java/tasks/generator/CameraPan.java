@@ -22,17 +22,18 @@ public class CameraPan extends JavaTask {
 
 	private int sp;
 	
-	private boolean initialized = false;
-	
 	private int x = 0;
 	private int y;
 	
 	private boolean goingRight = true;
 	
 	@Override
+	public void runnerStart() {
+		sp = Integer.parseInt(getParameter(SPEED));
+	}
+	
+	@Override
 	public void execute() {
-		if(!initialized) init();
-		
 		Int32 inData    = in.getData(Int32.class);
 		int[] inValues  = inData.getValues();
 		int   ne        = inData.getNumberOfElements();
@@ -69,10 +70,5 @@ public class CameraPan extends JavaTask {
 		}
 		
 		out.putData(new Int32(inData.getDimensions(), outValues));
-	}
-
-	private void init() {
-		sp = Integer.parseInt(getParameter(SPEED));
-		initialized = true;
 	}
 }

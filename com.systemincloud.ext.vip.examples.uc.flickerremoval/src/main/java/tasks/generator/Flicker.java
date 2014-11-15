@@ -30,9 +30,18 @@ public class Flicker extends JavaTask {
 	
 	private int[] data;
 	
-	private boolean initialized = false;
-	
 	private int frameCounter = 0;
+	
+	@Override
+	public void runnerStart() {
+		nl = Integer.parseInt(getParameter(NON_LINEARITY));
+		mg = Integer.parseInt(getParameter(MAGNITUDE));
+		pd = Integer.parseInt(getParameter(PERIOD));
+		
+		data = new int[pd];
+
+		for(int i = 0; i < pd; i++) data[i] = (int)(15*Math.sin(i));
+	}
 	
 	@Override
 	public void execute() {
@@ -41,8 +50,6 @@ public class Flicker extends JavaTask {
 		int   ne        = inData.getNumberOfElements();
 		
 		int[] outValues = new int[ne];
-		
-		if(!initialized) init();
 		
 		int beta = data[frameCounter];
 		if(nl != 0) beta = beta*(4 << nl);
@@ -64,17 +71,4 @@ public class Flicker extends JavaTask {
 		
 		out.putData(new Int32(inData.getDimensions(), outValues));
 	}
-
-	private void init() {
-		nl = Integer.parseInt(getParameter(NON_LINEARITY));
-		mg = Integer.parseInt(getParameter(MAGNITUDE));
-		pd = Integer.parseInt(getParameter(PERIOD));
-		
-		data = new int[pd];
-
-		for(int i = 0; i < pd; i++) data[i] = (int)(15*Math.sin(i));
-		
-		initialized = true;
-	}
-
 }
