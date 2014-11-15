@@ -312,26 +312,26 @@
     <task xsi:type="sic:EmbeddedTask" id="FG" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.2.2" implementationTask="src/main/resources/tasks/generator/FlickerGenerator.sic">
       <outputPort id="Out" parent="/1/@task.1"/>
       <inputPort id="In" parent="/1/@task.1"/>
-      <parameters key="local-motions" value="true"/>
-      <parameters key="camera-pan" value="true"/>
-      <parameters key="huge-object" value="true"/>
-      <parameters key="flicker" value="true"/>
-      <parameters key="zoom" value="true"/>
-      <parameters key="blotches" value="true"/>
-      <parameters key="lm-speed" value="5"/>
-      <parameters key="lm-size" value="50"/>
-      <parameters key="lm_number" value="10"/>
-      <parameters key="ho-speed" value="3"/>
-      <parameters key="ho-color" value="100"/>
-      <parameters key="cp-speed" value="10"/>
-      <parameters key="zm-speed" value="0.02"/>
-      <parameters key="zm-max" value="3"/>
-      <parameters key="fl-nonlinearity" value="0"/>
-      <parameters key="fl-magnitude" value="1"/>
-      <parameters key="fl-period" value="10"/>
-      <parameters key="bl-size" value="10"/>
-      <parameters key="bl-number" value="5"/>
-      <parameters key="bl-color" value="10"/>
+      <parameters key="local-motions" value="${local-motions}"/>
+      <parameters key="camera-pan" value="${camera-pan}"/>
+      <parameters key="huge-object" value="${huge-object}"/>
+      <parameters key="flicker" value="${flicker}"/>
+      <parameters key="zoom" value="${zoom}"/>
+      <parameters key="blotches" value="${blotches}"/>
+      <parameters key="lm-speed" value="${lm-speed}"/>
+      <parameters key="lm-size" value="${lm-size}"/>
+      <parameters key="ho-speed" value="${ho-speed}"/>
+      <parameters key="ho-color" value="${ho-color}"/>
+      <parameters key="cp-speed" value="${cp-speed}"/>
+      <parameters key="zm-speed" value="${zm-speed}"/>
+      <parameters key="zm-max" value="${zm-max}"/>
+      <parameters key="fl-nonlinearity" value="${fl-nonlinearity}"/>
+      <parameters key="fl-magnitude" value="${fl-magnitude}"/>
+      <parameters key="fl-period" value="${fl-period}"/>
+      <parameters key="bl-size" value="${bl-size}"/>
+      <parameters key="bl-number" value="${bl-number}"/>
+      <parameters key="bl-color" value="${bl-color}"/>
+      <parameters key="lm-number" value="${lm-number}"/>
     </task>
     <task xsi:type="javatask_0_1_0:JavaTask" id="to Grey" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.generator.ToGrey">
       <outputPort id="Out" parent="/1/@task.2">
@@ -351,5 +351,25 @@
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.3/@outputPort.0" targetRef="/1/@task.0/@inputPort.0"/>
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.0/@outputPort.0" targetRef="/1/@task.2/@inputPort.0"/>
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.2/@outputPort.0" targetRef="/1/@task.1/@inputPort.0"/>
+    <parameters key="lm-speed" value=""/>
+    <parameters key="zm-max" value=""/>
+    <parameters key="cp-speed" value=""/>
+    <parameters key="bl-number" value=""/>
+    <parameters key="fl-nonlinearity" value=""/>
+    <parameters key="fl-magnitude" value=""/>
+    <parameters key="fl-period" value=""/>
+    <parameters key="lm-number" value=""/>
+    <parameters key="zm-speed" value=""/>
+    <parameters key="camera-pan" value=""/>
+    <parameters key="flicker" value=""/>
+    <parameters key="zoom" value=""/>
+    <parameters key="huge-object" value="${huge-object}"/>
+    <parameters key="ho-color" value="${ho-color}"/>
+    <parameters key="local-motions" value=""/>
+    <parameters key="blotches" value=""/>
+    <parameters key="bl-size" value=""/>
+    <parameters key="lm-size" value=""/>
+    <parameters key="ho-speed" value=""/>
+    <parameters key="bl-color" value=""/>
   </sic:MainTask>
 </xmi:XMI>
