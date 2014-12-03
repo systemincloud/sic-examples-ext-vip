@@ -11,13 +11,16 @@ import com.systemincloud.modeler.tasks.javatask.api.OutputPort;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.InputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.JavaTaskInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
+import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameter;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameters;
 import com.systemincloud.modeler.tasks.javatask.api.data.Int32;
 
 @JavaTaskInfo
-@SicParameters(names = { LocalMotions.NUMBER, 
-		                 LocalMotions.SIZE,
-		                 LocalMotions.SPEED })
+@SicParameters({
+	@SicParameter(name=LocalMotions.NUMBER),
+	@SicParameter(name=LocalMotions.SIZE),
+	@SicParameter(name=LocalMotions.SPEED)
+})
 public class LocalMotions extends JavaTask {
 
 	protected static final String NUMBER = "number";

@@ -6,12 +6,15 @@ import com.systemincloud.modeler.tasks.javatask.api.OutputPort;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.InputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.JavaTaskInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
+import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameter;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameters;
 import com.systemincloud.modeler.tasks.javatask.api.data.Int32;
 
 @JavaTaskInfo
-@SicParameters(names = { HugeObject.COLOR, 
-		                 HugeObject.SPEED })
+@SicParameters({
+	@SicParameter(name=HugeObject.COLOR),
+	@SicParameter(name=HugeObject.SPEED)
+})
 public class HugeObject extends JavaTask {
 
 	protected static final String COLOR = "color";
