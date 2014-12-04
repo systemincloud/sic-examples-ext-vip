@@ -234,7 +234,7 @@
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="internal-port" value="true"/>
         <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="27" cornerHeight="5" cornerWidth="5">
-          <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" lineStyle="DOT" transparency="0.0" width="10" height="10" style="/0/@styles.2" cornerHeight="5" cornerWidth="5"/>
+          <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="10" height="10" style="/0/@styles.2" cornerHeight="5" cornerWidth="5"/>
         </graphicsAlgorithm>
         <link businessObjects="/1/@task.2/@inputPort.1 /0/@children.12/@children.3"/>
         <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.3"/>
@@ -249,7 +249,7 @@
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="internal-port" value="true"/>
         <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" x="27" y="97" cornerHeight="5" cornerWidth="5">
-          <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" lineStyle="DOT" transparency="0.0" width="10" height="10" style="/0/@styles.2" cornerHeight="5" cornerWidth="5"/>
+          <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="10" height="10" style="/0/@styles.2" cornerHeight="5" cornerWidth="5"/>
         </graphicsAlgorithm>
         <link businessObjects="/1/@task.2/@inputPort.2 /0/@children.12/@children.5"/>
         <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.4"/>
@@ -498,10 +498,10 @@
       <inputPort id="End" parent="/1/@task.2" asynchronous="true">
         <dataType xsi:type="dt:Control"/>
       </inputPort>
-      <inputPort id="ImgN" parent="/1/@task.2" asynchronous="true">
+      <inputPort id="ImgN" parent="/1/@task.2">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
-      <inputPort id="IdxN" parent="/1/@task.2" asynchronous="true">
+      <inputPort id="IdxN" parent="/1/@task.2">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
       <parameters key="size" value="15"/>

@@ -19,12 +19,13 @@ public class Core extends JavaTask {
 
 	protected static final String SIZE = "size";
 
+	@InputPortInfo(name = "ImgN", dataType = Int32.class)
+	public InputPort imgn;
+	@InputPortInfo(name = "IdxN", dataType = Int32.class)
+	public InputPort idxn;
 	@InputPortInfo(name = "End", dataType = Control.class, asynchronous = true)
 	public InputPort end;
-	@InputPortInfo(name = "ImgN", dataType = Int32.class, asynchronous = true)
-	public InputPort imgn;
-	@InputPortInfo(name = "IdxN", dataType = Int32.class, asynchronous = true)
-	public InputPort idxn;
+	
 	@OutputPortInfo(name = "ImgIdx", dataType = Int32.class)
 	public OutputPort imgidx;
 	@OutputPortInfo(name = "IdxIdx", dataType = Int32.class)
@@ -35,8 +36,19 @@ public class Core extends JavaTask {
 	public OutputPort imgtorestore;
 
 	@Override
-	public void executeAsync(InputPort asynchIn) {
+	public void execute() {
+		int n1 = imgn.getData(Int32.class).getValue();
+		int n2 = idxn.getData(Int32.class).getValue();
+		
+		log().trace("There are {} elements in Img register", n1);
+		log().trace("There are {} elements in Idx register", n2);
+		
 		
 	}
+	
+	
+	@Override
+	public void executeAsync(InputPort asynchIn) {
 
+	}
 }
