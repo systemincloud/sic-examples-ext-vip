@@ -1,4 +1,4 @@
-package tasks.generator;
+package tasks.removal;
 
 import com.systemincloud.modeler.tasks.javatask.api.InputPort;
 import com.systemincloud.modeler.tasks.javatask.api.JavaTask;

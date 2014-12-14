@@ -1,5 +1,7 @@
 package tasks.removal;
 
+import java.util.Arrays;
+
 import com.systemincloud.modeler.tasks.javatask.api.InputPort;
 import com.systemincloud.modeler.tasks.javatask.api.JavaTask;
 import com.systemincloud.modeler.tasks.javatask.api.OutputPort;
@@ -18,6 +20,14 @@ public class Viterbi extends JavaTask {
 
 	@Override
 	public void execute() {
+		log().debug("Viterbi");
+		Int32 inData = in.getData(Int32.class);
+		int[] inValues = inData.getValues();
+		
+		
+		
+		int[] outValues = new int[256];
+		out.putData(new Int32(Arrays.asList(256), outValues));
 	}
 
 }
