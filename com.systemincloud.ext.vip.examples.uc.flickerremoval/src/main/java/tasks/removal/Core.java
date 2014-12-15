@@ -32,8 +32,8 @@ public class Core extends JavaTask {
 	public OutputPort imgidx;
 	@OutputPortInfo(name = "IdxIdx", dataType = Int32.class)
 	public OutputPort idxidx;
-	@OutputPortInfo(name = "Dmx1", dataType = Int32.class)
-	public OutputPort dmx1;
+	@OutputPortInfo(name = "Dmx", dataType = Int32.class)
+	public OutputPort dmx;
 	@OutputPortInfo(name = "IdxF", dataType = Int32.class)
 	public OutputPort idxF;
 	@OutputPortInfo(name = "MeanCtrl", dataType = Control.class)
@@ -51,26 +51,24 @@ public class Core extends JavaTask {
 	public void execute() {
 		int n1 = imgn.getData(Int32.class).getValue();
 		int n2 = idxn.getData(Int32.class).getValue();
-		
+
 		log().debug("There are {} elements in Img register", n1);
 		log().debug("There are {} elements in Idx register", n2);
-		
-		exitRunner();
-		
+
 		if(n1 == size + 1) {
-			log().debug("Strart processing frame");
-//			dmx1  .putData(new Int32(1));
-//			imgidx.putData(new Int32(size));
-//			dmx1  .putData(new Int32(0));
-			
+			log().debug("Start processing frame");
+			dmx   .putData(new Int32(1));
+			log().debug("Dmx sent");
+			imgidx.putData(new Int32(size));
+			log().debug("Img idx sent");
+
 			for(int i = 0; i < size; i++) {
-//				imgidx.putData(new Int32(i));
-				
-				
+				dmx   .putData(new Int32(0));
+				imgidx.putData(new Int32(i));
 			}
-			
-			
-			
+
+
+
 //			std::list<util::SP<Library::Data> >::iterator it = elements.begin();
 //			for(unsigned int i = 0; i < core->imageToRestore; ++i ) ++it;
 //
@@ -78,8 +76,8 @@ public class Core extends JavaTask {
 //			core->putData("IdxOut", *(it));
 //			core->putData("IdxRegOut", core->getData("IdxRegIn"));
 //			core->putData("ImgRegOut", core->getData("ImgRegIn"));
-			
-//			idxidx.putData(new Int32(size));
+
+			idxidx.putData(new Int32(size));
 		}
 	}
 	
