@@ -29,7 +29,7 @@ public class SipoMock extends JavaTask {
 	
 	@Override
 	public void generate() {
-		sleep(5000);
+		sleep(1000);
 		out.putData(new Int32(i));
 		if(i < size) i++;
 	}

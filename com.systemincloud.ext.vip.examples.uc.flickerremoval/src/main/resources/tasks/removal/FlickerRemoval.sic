@@ -1097,7 +1097,7 @@
       <outputPort id="MeanCtrl" parent="/1/@task.2">
         <dataType xsi:type="dt:Control"/>
       </outputPort>
-      <outputPort id="Dmx" parent="/1/@task.2" waitFor="/1/@task.3/@outputPort.0">
+      <outputPort id="Dmx" parent="/1/@task.2" waitFor="/1/@task.4/@inputPort.0" skipFirst="true">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
       <inputPort id="End" parent="/1/@task.2" asynchronous="true">

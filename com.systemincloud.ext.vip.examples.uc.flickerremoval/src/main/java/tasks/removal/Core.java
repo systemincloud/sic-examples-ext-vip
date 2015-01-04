@@ -58,9 +58,7 @@ public class Core extends JavaTask {
 		if(n1 == size + 1) {
 			log().debug("Start processing frame");
 			dmx   .putData(new Int32(1));
-			log().debug("Dmx sent");
 			imgidx.putData(new Int32(size));
-			log().debug("Img idx sent");
 
 			for(int i = 0; i < size; i++) {
 				dmx   .putData(new Int32(0));
