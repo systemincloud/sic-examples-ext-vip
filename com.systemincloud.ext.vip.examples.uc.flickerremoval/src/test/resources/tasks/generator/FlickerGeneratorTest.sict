@@ -376,7 +376,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.4.0">
+  <sic:MainTask initialized="true" version="0.4.1">
     <task xsi:type="sic:EmbeddedTask" id="FG" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.2.2" implementationTask="src/main/resources/tasks/generator/FlickerGenerator.sic">
       <outputPort id="Out" parent="/1/@task.0"/>
       <inputPort id="In" parent="/1/@task.0"/>
@@ -388,7 +388,6 @@
       <parameters key="blotches" value="true"/>
       <parameters key="lm-speed" value="5"/>
       <parameters key="lm-size" value="50"/>
-      <parameters key="lm_number" value="10"/>
       <parameters key="ho-speed" value="3"/>
       <parameters key="ho-color" value="100"/>
       <parameters key="cp-speed" value="10"/>
@@ -400,6 +399,7 @@
       <parameters key="bl-size" value="10"/>
       <parameters key="bl-number" value="5"/>
       <parameters key="bl-color" value="10"/>
+      <parameters key="lm-number" value="5"/>
     </task>
     <task xsi:type="sic:EmbeddedTask" id="Gen" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.2.2" implementationTask="src/test/resources/tasks/generator/ImageGenerator.sict">
       <outputPort id="Out" parent="/1/@task.1">
@@ -413,7 +413,7 @@
       </outputPort>
       <dataType xsi:type="dt:Control"/>
     </task>
-    <task xsi:type="vip_videotofile_0_1_0:VideoToFile" id="to File" bundleName="com.systemincloud.ext.vip.modeler.tasks.videotofile" version="0.1.1" directory="workspace:/com.systemincloud.ext.vip.examples.uc.flickerremoval/target" filename="out.wmv" dimensionsAsInput="true" videoCodec="raw">
+    <task xsi:type="vip_videotofile_0_1_0:VideoToFile" id="to File" bundleName="com.systemincloud.ext.vip.modeler.tasks.videotofile" version="0.1.2" directory="workspace:/com.systemincloud.ext.vip.examples.uc.flickerremoval/target" filename="out.wmv" dimensionsAsInput="true" videoCodec="raw">
       <inputPort id="In" parent="/1/@task.3">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
@@ -426,7 +426,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="to Grey" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.generator.ToGrey">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="to Grey" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.generator.ToGrey">
       <outputPort id="Out" parent="/1/@task.5">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>

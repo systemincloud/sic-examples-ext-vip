@@ -8,13 +8,16 @@ import com.systemincloud.modeler.tasks.javatask.api.OutputPort;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.InputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.JavaTaskInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
+import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameter;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameters;
 import com.systemincloud.modeler.tasks.javatask.api.data.Int32;
 
 @JavaTaskInfo
-@SicParameters(names = { Blotches.COLOR, 
-		                 Blotches.SIZE,
-		                 Blotches.NUMBER })
+@SicParameters({
+	@SicParameter(name=Blotches.COLOR),
+	@SicParameter(name=Blotches.SIZE),
+	@SicParameter(name=Blotches.NUMBER)
+})
 public class Blotches extends JavaTask {
 
 	protected static final String COLOR  = "color";
@@ -32,7 +35,12 @@ public class Blotches extends JavaTask {
 	private int nb;
 	private int sz;
 	
-	private boolean initialized = false;
+	@Override
+	public void runnerStart() {
+		cl = Integer.parseInt(getParameter(COLOR));
+		nb = Integer.parseInt(getParameter(NUMBER));
+		sz = Integer.parseInt(getParameter(SIZE));
+	}
 	
 	@Override
 	public void execute() {
@@ -43,8 +51,6 @@ public class Blotches extends JavaTask {
 		int   w         = inData.getDimensions().get(1);
 		
 		int[] outValues = new int[ne];
-		
-		if(!initialized) init();
 		
 		for(int i = 0; i < ne; i++) outValues[i] = inValues[i];
 		
@@ -59,14 +65,6 @@ public class Blotches extends JavaTask {
 					outValues[y*w + j*w + x + k] = cl;
 		}
 		
-		
 		out.putData(new Int32(inData.getDimensions(), outValues));
-	}
-
-	private void init() {
-		cl = Integer.parseInt(getParameter(COLOR));
-		nb = Integer.parseInt(getParameter(NUMBER));
-		sz = Integer.parseInt(getParameter(SIZE));
-		initialized = true;
 	}
 }

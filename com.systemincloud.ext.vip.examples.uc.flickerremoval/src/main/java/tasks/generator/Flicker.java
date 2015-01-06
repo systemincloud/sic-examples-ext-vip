@@ -6,13 +6,16 @@ import com.systemincloud.modeler.tasks.javatask.api.OutputPort;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.InputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.JavaTaskInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
+import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameter;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameters;
 import com.systemincloud.modeler.tasks.javatask.api.data.Int32;
 
 @JavaTaskInfo
-@SicParameters(names = { Flicker.NON_LINEARITY, 
-		                 Flicker.MAGNITUDE,
-		                 Flicker.PERIOD })
+@SicParameters({
+	@SicParameter(name=Flicker.NON_LINEARITY),
+	@SicParameter(name=Flicker.MAGNITUDE),
+	@SicParameter(name=Flicker.PERIOD)
+})
 public class Flicker extends JavaTask {
 
 	protected static final String NON_LINEARITY  = "non-linearity";
@@ -30,9 +33,18 @@ public class Flicker extends JavaTask {
 	
 	private int[] data;
 	
-	private boolean initialized = false;
-	
 	private int frameCounter = 0;
+	
+	@Override
+	public void runnerStart() {
+		nl = Integer.parseInt(getParameter(NON_LINEARITY));
+		mg = Integer.parseInt(getParameter(MAGNITUDE));
+		pd = Integer.parseInt(getParameter(PERIOD));
+		
+		data = new int[pd];
+
+		for(int i = 0; i < pd; i++) data[i] = (int)(15*Math.sin(i));
+	}
 	
 	@Override
 	public void execute() {
@@ -41,8 +53,6 @@ public class Flicker extends JavaTask {
 		int   ne        = inData.getNumberOfElements();
 		
 		int[] outValues = new int[ne];
-		
-		if(!initialized) init();
 		
 		int beta = data[frameCounter];
 		if(nl != 0) beta = beta*(4 << nl);
@@ -64,17 +74,4 @@ public class Flicker extends JavaTask {
 		
 		out.putData(new Int32(inData.getDimensions(), outValues));
 	}
-
-	private void init() {
-		nl = Integer.parseInt(getParameter(NON_LINEARITY));
-		mg = Integer.parseInt(getParameter(MAGNITUDE));
-		pd = Integer.parseInt(getParameter(PERIOD));
-		
-		data = new int[pd];
-
-		for(int i = 0; i < pd; i++) data[i] = (int)(15*Math.sin(i));
-		
-		initialized = true;
-	}
-
 }

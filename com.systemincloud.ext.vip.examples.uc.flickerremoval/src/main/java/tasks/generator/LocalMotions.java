@@ -11,13 +11,16 @@ import com.systemincloud.modeler.tasks.javatask.api.OutputPort;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.InputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.JavaTaskInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
+import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameter;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameters;
 import com.systemincloud.modeler.tasks.javatask.api.data.Int32;
 
 @JavaTaskInfo
-@SicParameters(names = { LocalMotions.NUMBER, 
-		                 LocalMotions.SIZE,
-		                 LocalMotions.SPEED })
+@SicParameters({
+	@SicParameter(name=LocalMotions.NUMBER),
+	@SicParameter(name=LocalMotions.SIZE),
+	@SicParameter(name=LocalMotions.SPEED)
+})
 public class LocalMotions extends JavaTask {
 
 	protected static final String NUMBER = "number";
@@ -42,6 +45,15 @@ public class LocalMotions extends JavaTask {
 	private int[] mask;
 	
 	@Override
+	public void runnerStart() {
+		nb = Integer.parseInt(getParameter(NUMBER));
+		sz = Integer.parseInt(getParameter(SIZE));
+		sp = Integer.parseInt(getParameter(SPEED));
+		initPositions = new ArrayList<>(nb);
+		vectors       = new ArrayList<>(nb);
+	}
+	
+	@Override
 	public void execute() {
 		Int32 inData    = in.getData(Int32.class);
 		int[] inValues  = inData.getValues();
@@ -51,7 +63,7 @@ public class LocalMotions extends JavaTask {
 
 		int[] outValues = new int[ne];
 		
-		if(!initialized) init(h, w);
+		if(!initialized) initMask(h, w);
 		
 		for(int i = 0; i < ne; i++) outValues[i] = inValues[i];
 
@@ -86,13 +98,7 @@ public class LocalMotions extends JavaTask {
 		out.putData(new Int32(inData.getDimensions(), outValues));
 	}
 
-	private void init(int h, int w) {
-		nb = Integer.parseInt(getParameter(NUMBER));
-		sz = Integer.parseInt(getParameter(SIZE));
-		sp = Integer.parseInt(getParameter(SPEED));
-		initPositions = new ArrayList<>(nb);
-		vectors       = new ArrayList<>(nb);
-		
+	private void initMask(int h, int w) {
 		mask = new int[h*w];
 		for(int i = 1; i <= nb; i++) {
 			vectors.add(new Pair<Integer, Integer>(0, 0));

@@ -6,11 +6,14 @@ import com.systemincloud.modeler.tasks.javatask.api.OutputPort;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.InputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.JavaTaskInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
+import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameter;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameters;
 import com.systemincloud.modeler.tasks.javatask.api.data.Int32;
 
 @JavaTaskInfo
-@SicParameters(names = { CameraPan.SPEED })
+@SicParameters({
+	@SicParameter(name=CameraPan.SPEED)
+})
 public class CameraPan extends JavaTask {
 
 	protected static final String SPEED = "speed";
@@ -22,17 +25,18 @@ public class CameraPan extends JavaTask {
 
 	private int sp;
 	
-	private boolean initialized = false;
-	
 	private int x = 0;
 	private int y;
 	
 	private boolean goingRight = true;
 	
 	@Override
+	public void runnerStart() {
+		sp = Integer.parseInt(getParameter(SPEED));
+	}
+	
+	@Override
 	public void execute() {
-		if(!initialized) init();
-		
 		Int32 inData    = in.getData(Int32.class);
 		int[] inValues  = inData.getValues();
 		int   ne        = inData.getNumberOfElements();
@@ -69,10 +73,5 @@ public class CameraPan extends JavaTask {
 		}
 		
 		out.putData(new Int32(inData.getDimensions(), outValues));
-	}
-
-	private void init() {
-		sp = Integer.parseInt(getParameter(SPEED));
-		initialized = true;
 	}
 }

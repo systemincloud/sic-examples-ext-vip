@@ -410,7 +410,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.4.0">
+  <sic:MainTask initialized="true" version="0.4.1">
     <task xsi:type="sic:EmbeddedTask" id="My Embedded Task" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.2.2" implementationTask="src/main/resources/tasks/hasselt/CreateLayers.sic">
       <outputPort id="Masks" parent="/1/@task.0">
         <dataType xsi:type="dt:Bool"/>
@@ -455,7 +455,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Delay" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.hasselt.Delay">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Delay" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.hasselt.Delay">
       <outputPort id="Out" parent="/1/@task.5">
         <dataType xsi:type="dt:Control"/>
       </outputPort>

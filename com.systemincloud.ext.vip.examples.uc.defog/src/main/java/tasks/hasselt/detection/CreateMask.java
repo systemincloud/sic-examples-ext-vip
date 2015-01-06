@@ -9,10 +9,10 @@ import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameters;
 import com.systemincloud.modeler.tasks.javatask.api.data.Bool;
 import com.systemincloud.modeler.tasks.javatask.api.data.Float64;
+import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameter;
 
 @JavaTaskInfo
-@SicParameters(names=CreateMask.TAU)
-public class CreateMask extends JavaTask {
+@SicParameters({}) public class CreateMask extends JavaTask {
 
 	protected final static String TAU = "tau";
 	

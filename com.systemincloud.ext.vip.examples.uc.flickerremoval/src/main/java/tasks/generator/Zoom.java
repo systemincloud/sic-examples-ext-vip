@@ -6,12 +6,15 @@ import com.systemincloud.modeler.tasks.javatask.api.OutputPort;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.InputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.JavaTaskInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
+import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameter;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameters;
 import com.systemincloud.modeler.tasks.javatask.api.data.Int32;
 
 @JavaTaskInfo
-@SicParameters(names = { Zoom.MAX, 
-		                 Zoom.SPEED })
+@SicParameters({
+	@SicParameter(name=Zoom.MAX),
+	@SicParameter(name=Zoom.SPEED)
+})
 public class Zoom extends JavaTask {
 
 	protected static final String MAX   = "max";
@@ -25,10 +28,14 @@ public class Zoom extends JavaTask {
 	private int   mx;
 	private float sp;
 	
-	private boolean initialized = false;
-	
 	private float   zoom    = 1;
 	private boolean goingIn = true;
+	
+	@Override
+	public void runnerStart() {
+		mx = Integer.parseInt(getParameter(MAX));
+		sp = Float.parseFloat(getParameter(SPEED));
+	}
 	
 	@Override
 	public void execute() {
@@ -40,8 +47,6 @@ public class Zoom extends JavaTask {
 		
 		int[] outValues = new int[ne];
 		
-		if(!initialized) init();
-
 		float inv_zoom = 1/zoom;
 		int tmpH = (int) (zoom*h);
 		int tmpW = (int) (zoom*w);
@@ -67,11 +72,5 @@ public class Zoom extends JavaTask {
 		else if(zoom <= 1) { goingIn = true; zoom = 1; }
 		
 		out.putData(new Int32(inData.getDimensions(), outValues));
-	}
-	
-	private void init() {
-		mx = Integer.parseInt(getParameter(MAX));
-		sp = Float.parseFloat(getParameter(SPEED));
-		initialized = true;
 	}
 }
