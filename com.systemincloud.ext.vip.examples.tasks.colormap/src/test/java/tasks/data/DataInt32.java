@@ -24,7 +24,7 @@ public class DataInt32 extends JavaTask {
 		for(int i = 0; i < h; i++)
 			for(int j = 0; j < w; j++)
 				values[k++] = j;
-		out.putData(new Int32(Arrays.asList(new Integer[] {w, h}), values));
+		out.putData(new Int32(Arrays.asList(new Integer[] {h, w}), values));
 	}
 
 }
