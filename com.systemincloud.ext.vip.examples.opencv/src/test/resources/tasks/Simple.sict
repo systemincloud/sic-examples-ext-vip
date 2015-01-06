@@ -84,14 +84,14 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.4.0">
+  <sic:MainTask initialized="true" version="0.4.1">
     <task xsi:type="constant_0_1_0:Constant" id="Start" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.1" value="*">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="dt:Control"/>
       </outputPort>
       <dataType xsi:type="dt:Control"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="OpenCV" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.Simple">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="OpenCV" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.Simple">
       <inputPort id="In" parent="/1/@task.1">
         <dataType xsi:type="dt:Control"/>
       </inputPort>

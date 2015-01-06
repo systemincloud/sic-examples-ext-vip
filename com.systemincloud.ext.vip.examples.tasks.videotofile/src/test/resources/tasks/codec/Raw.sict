@@ -192,8 +192,8 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.4.0">
-    <task xsi:type="vip_videotofile_0_1_0:VideoToFile" id="My Video To File" bundleName="com.systemincloud.ext.vip.modeler.tasks.videotofile" version="0.1.1" directory="workspace:/com.systemincloud.ext.vip.examples.tasks.videotofile/target" filename="out.wmv" dimensionsAsInput="true" videoCodec="raw">
+  <sic:MainTask initialized="true" version="0.4.1">
+    <task xsi:type="vip_videotofile_0_1_0:VideoToFile" id="My Video To File" bundleName="com.systemincloud.ext.vip.modeler.tasks.videotofile" version="0.1.2" directory="workspace:/com.systemincloud.ext.vip.examples.tasks.videotofile/target" filename="out.wmv" dimensionsAsInput="true" videoCodec="raw">
       <inputPort id="In" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>

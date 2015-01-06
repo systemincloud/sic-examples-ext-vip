@@ -741,7 +741,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.4.0">
+  <sic:MainTask initialized="true" version="0.4.1">
     <task xsi:type="vip_webcam_0_1_0:Webcam" id="Webcam" bundleName="com.systemincloud.ext.vip.modeler.tasks.webcam" version="0.1.2" cameraName="Laptop_Integrated_Webcam_2HDM /dev/video0" resolution="176x144" interval="100">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
@@ -752,7 +752,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="RGB" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.colorspace.RGB">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="RGB" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.colorspace.RGB">
       <outputPort id="R" parent="/1/@task.2">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -791,7 +791,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="HSV" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.colorspace.HSV">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="HSV" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.colorspace.HSV">
       <outputPort id="H" parent="/1/@task.8">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -805,7 +805,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="YUV" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.3" implementationClass="tasks.colorspace.YUV">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="YUV" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.colorspace.YUV">
       <outputPort id="Y" parent="/1/@task.9">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>

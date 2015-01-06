@@ -10,10 +10,10 @@ import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameters;
 import com.systemincloud.modeler.tasks.javatask.api.data.Control;
 import com.systemincloud.modeler.tasks.javatask.api.data.Float32;
+import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameter;
 
 @JavaTaskInfo
-@SicParameters(names={Core.NB_OF_LAYERS})
-public class Core extends JavaTask {
+@SicParameters({@SicParameter(name=Core.NB_OF_LAYERS)}) public class Core extends JavaTask {
 
 	protected final static String NB_OF_LAYERS = "nb-of-layers";
 	

@@ -193,7 +193,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.4.0">
+  <sic:MainTask initialized="true" version="0.4.1">
     <task xsi:type="vip_imagefromfile_0_1_0:ImageFromFile" id="Img" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagefromfile" version="0.1.1" path="workspace:/com.systemincloud.ext.vip.examples.uc.defog/src/test/resources/imgs/2_flickr_CC.jpg">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>

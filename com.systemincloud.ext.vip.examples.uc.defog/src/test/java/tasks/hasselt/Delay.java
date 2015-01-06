@@ -8,10 +8,10 @@ import com.systemincloud.modeler.tasks.javatask.api.annotations.JavaTaskInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameters;
 import com.systemincloud.modeler.tasks.javatask.api.data.Control;
+import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameter;
 
 @JavaTaskInfo
-@SicParameters(names=Delay.DELAY)
-public class Delay extends JavaTask {
+@SicParameters({}) public class Delay extends JavaTask {
 
 	protected static final String DELAY = "delay";
 	
