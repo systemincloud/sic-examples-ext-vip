@@ -27,9 +27,9 @@ public class Flicker extends JavaTask {
 	@OutputPortInfo(name = "Out", dataType = Int32.class)
 	public OutputPort out;
 
-	private int nl;
-	private int mg;
-	private int pd;
+	private int   nl;
+	private float mg;
+	private int   pd;
 	
 	private int[] data;
 	
@@ -38,7 +38,7 @@ public class Flicker extends JavaTask {
 	@Override
 	public void runnerStart() {
 		nl = Integer.parseInt(getParameter(NON_LINEARITY));
-		mg = Integer.parseInt(getParameter(MAGNITUDE));
+		mg = Float.parseFloat(getParameter(MAGNITUDE));
 		pd = Integer.parseInt(getParameter(PERIOD));
 		
 		data = new int[pd];
@@ -63,10 +63,10 @@ public class Flicker extends JavaTask {
 				scale = 128 - scale;
 				scale = mg*0.2*Math.sin(scale*3.14/256)*beta;
 				outValues[i] = (int) (inValues[i] +  scale);
-			} else outValues[i] = inValues[i] + mg*beta;
+			} else outValues[i] = (int) (inValues[i] + mg*beta);
 			
 			if(outValues[i] > 255) outValues[i] = 255;
-			if(outValues[i] < 0 ) outValues[i] = 0;	
+			if(outValues[i] < 0 )  outValues[i] = 0;	
 		}
 
 		++frameCounter;
