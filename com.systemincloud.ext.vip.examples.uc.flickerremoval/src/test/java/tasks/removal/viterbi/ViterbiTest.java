@@ -149,10 +149,21 @@ public class ViterbiTest {
 		Pair<int[],  Integer> in  = loadSquareTableInt("verticalIn");
 		Pair<long[], Integer> tbl = loadSquareTableLong("verticalTbl");
 		long[] result = v.createTempTable(in.getValue0(), in.getValue1());
-		print(result, in.getValue1());
+//		print(result, in.getValue1());
 		assertTrue(compareTables(result, tbl.getValue0()));
 	}
 
+	@Test
+	public void testCreateTempTest7() {
+		Viterbi v = new Viterbi();
+		
+		Pair<int[],  Integer> in  = loadSquareTableInt("localMotionsIn");
+		Pair<long[], Integer> tbl = loadSquareTableLong("localMotionsTbl");
+		long[] result = v.createTempTable(in.getValue0(), in.getValue1());
+//		print(result, in.getValue1());
+		assertTrue(compareTables(result, tbl.getValue0()));
+	}
+	
 	@Test
 	public void testCreateOutTest1() {
 		Viterbi v = new Viterbi();
@@ -215,7 +226,18 @@ public class ViterbiTest {
 		Pair<long[], Integer> tbl = loadSquareTableLong("verticalTbl");
 		Pair<int[],  Integer> out = loadSquareTableInt ("verticalOut");
 		int[] result = v.generateF(tbl.getValue0(), tbl.getValue1());
-		print(result);
+//		print(result);
+		assertTrue(compareTables(result, out.getValue0()));
+	}
+	
+	@Test
+	public void testCreateOutTest7() {
+		Viterbi v = new Viterbi();
+		
+		Pair<long[], Integer> tbl = loadSquareTableLong("localMotionsTbl");
+		Pair<int[],  Integer> out = loadSquareTableInt ("localMotionsOut");
+		int[] result = v.generateF(tbl.getValue0(), tbl.getValue1());
+//		print(result);
 		assertTrue(compareTables(result, out.getValue0()));
 	}
 }
