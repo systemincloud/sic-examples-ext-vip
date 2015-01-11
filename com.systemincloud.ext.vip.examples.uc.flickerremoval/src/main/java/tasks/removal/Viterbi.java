@@ -66,13 +66,15 @@ public class Viterbi extends JavaTask {
 			int n = 0;
 			while(n < i && tmp[idx - n*size - size] == l) n++;
 			if(m != 0 && n != 0) {
-				for(int z = 0; z <= n; z++) {
-					int tmpJ = (int) (j - m + Math.ceil(z * (double) n / (double) m));
-					out[i - n + z] = tmpJ;
+				n++;
+				for(int z = 0; z < n; z++) {
+					int tmpJ = (int) (j - m + Math.floor(z * (double) m / (double) n));
+					out[i - n + z + 1] = tmpJ;
 				}
 				i -= n - 1;
 			} else if(n != 0) {
 				for(int z = 0; z <= n; z++) out[i--] = j;
+				i++;
 			} else if(m != 0) out[i] = j - m;
 			else out[i] = j;
 		}

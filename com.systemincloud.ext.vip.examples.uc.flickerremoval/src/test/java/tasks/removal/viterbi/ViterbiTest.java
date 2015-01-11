@@ -67,12 +67,12 @@ public class ViterbiTest {
 		
 	}
 	
-	protected void print(int[] values) {
+	public static void print(int[] values) {
 		for(int i = 0; i < values.length; i++)
 			System.out.print(values[i] + " ");
 	}
 	
-	protected void print(long[] values, Integer size) {
+	public static void print(long[] values, Integer size) {
 		for(int i = 0; i < values.length; i++) {
 			if(i%size == 0) System.out.print("\n");
 			System.out.print(values[i] + " ");
@@ -127,6 +127,28 @@ public class ViterbiTest {
 		Pair<int[],  Integer> in  = loadSquareTableInt("borderIn");
 		Pair<long[], Integer> tbl = loadSquareTableLong("borderTbl");
 		long[] result = v.createTempTable(in.getValue0(), in.getValue1());
+//		print(result, in.getValue1());
+		assertTrue(compareTables(result, tbl.getValue0()));
+	}
+	
+	@Test
+	public void testCreateTempTest5() {
+		Viterbi v = new Viterbi();
+		
+		Pair<int[],  Integer> in  = loadSquareTableInt("border2In");
+		Pair<long[], Integer> tbl = loadSquareTableLong("border2Tbl");
+		long[] result = v.createTempTable(in.getValue0(), in.getValue1());
+//		print(result, in.getValue1());
+		assertTrue(compareTables(result, tbl.getValue0()));
+	}
+	
+	@Test
+	public void testCreateTempTest6() {
+		Viterbi v = new Viterbi();
+		
+		Pair<int[],  Integer> in  = loadSquareTableInt("verticalIn");
+		Pair<long[], Integer> tbl = loadSquareTableLong("verticalTbl");
+		long[] result = v.createTempTable(in.getValue0(), in.getValue1());
 		print(result, in.getValue1());
 		assertTrue(compareTables(result, tbl.getValue0()));
 	}
@@ -170,6 +192,28 @@ public class ViterbiTest {
 		
 		Pair<long[], Integer> tbl = loadSquareTableLong("borderTbl");
 		Pair<int[],  Integer> out = loadSquareTableInt ("borderOut");
+		int[] result = v.generateF(tbl.getValue0(), tbl.getValue1());
+//		print(result);
+		assertTrue(compareTables(result, out.getValue0()));
+	}
+	
+	@Test
+	public void testCreateOutTest5() {
+		Viterbi v = new Viterbi();
+		
+		Pair<long[], Integer> tbl = loadSquareTableLong("border2Tbl");
+		Pair<int[],  Integer> out = loadSquareTableInt ("border2Out");
+		int[] result = v.generateF(tbl.getValue0(), tbl.getValue1());
+//		print(result);
+		assertTrue(compareTables(result, out.getValue0()));
+	}
+	
+	@Test
+	public void testCreateOutTest6() {
+		Viterbi v = new Viterbi();
+		
+		Pair<long[], Integer> tbl = loadSquareTableLong("verticalTbl");
+		Pair<int[],  Integer> out = loadSquareTableInt ("verticalOut");
 		int[] result = v.generateF(tbl.getValue0(), tbl.getValue1());
 		print(result);
 		assertTrue(compareTables(result, out.getValue0()));
