@@ -377,7 +377,7 @@
       <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="120" height="70" x="429" y="82">
         <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="120" height="70" style="/0/@styles.1" cornerHeight="20" cornerWidth="20"/>
         <graphicsAlgorithmChildren xsi:type="al:Image" lineWidth="1" transparency="0.0" width="44" height="44" x="38" y="13" id="IMG_JAVATASK_DIAGRAM" stretchH="false" stretchV="false" proportional="false"/>
-        <graphicsAlgorithmChildren xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" width="120" height="26" y="44" style="/0/@styles.1" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="JoinHistogram">
+        <graphicsAlgorithmChildren xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" width="120" height="26" y="44" style="/0/@styles.1" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" value="JointHistogram">
           <properties key="icon-description" value="true"/>
         </graphicsAlgorithmChildren>
       </graphicsAlgorithm>
@@ -1094,7 +1094,7 @@
       <outputPort id="IdxF" parent="/1/@task.2">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
-      <outputPort id="MeanCtrl" parent="/1/@task.2">
+      <outputPort id="MeanCtrl" parent="/1/@task.2" waitFor="/1/@task.8/@outputPort.0" skipFirst="true">
         <dataType xsi:type="dt:Control"/>
       </outputPort>
       <outputPort id="Dmx" parent="/1/@task.2" waitFor="/1/@task.4/@inputPort.0" skipFirst="true">
@@ -1115,7 +1115,7 @@
       <parameters key="size" value="${size}"/>
       <defaultParameters key="size" value="15"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Joint histogram" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.removal.JoinHistogram">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Joint histogram" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.removal.JointHistogram">
       <outputPort id="Out" parent="/1/@task.3">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -1126,7 +1126,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="sipo_0_1_0:Sipo" id="fs" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.0" index="true" sizeOut="true">
+    <task xsi:type="sipo_0_1_0:Sipo" id="fs" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.0" size="${size}*${size}+${size}" index="true" sizeOut="true">
       <outputPort id="Out" parent="/1/@task.4"/>
       <outputPort id="N" parent="/1/@task.4">
         <dataType xsi:type="dt:Int32"/>

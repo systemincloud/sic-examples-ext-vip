@@ -85,7 +85,7 @@ public class Core extends JavaTask {
 		if(asynchIn == end) {
 			
 		} else if(asynchIn == f) {
-			
+			log().debug("f: {}", asynchIn.getData(Int32.class).getValue());
 		}
 	}
 }
