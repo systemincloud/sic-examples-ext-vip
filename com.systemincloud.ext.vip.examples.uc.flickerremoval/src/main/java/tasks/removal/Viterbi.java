@@ -14,6 +14,7 @@ import com.systemincloud.modeler.tasks.javatask.api.data.Int32;
 public class Viterbi extends JavaTask {
 
 	private static final int MAX_LINE = 2;
+	
 	@InputPortInfo(name = "In", dataType = Int32.class)
 	public InputPort in;
 	@OutputPortInfo(name = "Out", dataType = Int32.class)
@@ -80,5 +81,4 @@ public class Viterbi extends JavaTask {
 		out[0] = 0;
 		return out;
 	}
-
 }

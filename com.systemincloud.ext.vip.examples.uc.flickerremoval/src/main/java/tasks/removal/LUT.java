@@ -20,6 +20,16 @@ public class LUT extends JavaTask {
 
 	@Override
 	public void execute() {
+		Int32 yData = y.getData(Int32.class);
+		int[] inValues = yData.getValues();
+		
+		int[] lut = table.getData(Int32.class).getValues();
+		
+		int[] outValues = new int[yData.getNumberOfElements()];
+		
+		for(int i = 0; i < outValues.length; i++)
+			outValues[i] = lut[inValues[i]];
+		
+		yout.putData(new Int32(yData.getDimensions(), outValues));
 	}
-
 }

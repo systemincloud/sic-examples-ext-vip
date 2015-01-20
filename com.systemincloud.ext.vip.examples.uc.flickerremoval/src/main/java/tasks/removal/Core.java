@@ -25,8 +25,6 @@ public class Core extends JavaTask {
 	public InputPort idxn;
 	@InputPortInfo(name = "End", dataType = Control.class, asynchronous = true)
 	public InputPort end;
-	@InputPortInfo(name = "F", dataType = Int32.class, asynchronous = true)
-	public InputPort f;
 	
 	@OutputPortInfo(name = "ImgIdx", dataType = Int32.class)
 	public OutputPort imgidx;
@@ -36,8 +34,6 @@ public class Core extends JavaTask {
 	public OutputPort dmx;
 	@OutputPortInfo(name = "IdxF", dataType = Int32.class)
 	public OutputPort idxF;
-	@OutputPortInfo(name = "MeanCtrl", dataType = Control.class)
-	public OutputPort mc;
 	
 	private int size;
 	
@@ -65,16 +61,12 @@ public class Core extends JavaTask {
 				imgidx.putData(new Int32(i));
 			}
 
+			for(int i = 0; i < size; i++)
+				idxF.putData(new Int32(i));
 
-
-//			std::list<util::SP<Library::Data> >::iterator it = elements.begin();
-//			for(unsigned int i = 0; i < core->imageToRestore; ++i ) ++it;
-//
-//			core->putData("ImageToRestore", &core->imageToRestore, sizeof(core->imageToRestore),1, 1);
-//			core->putData("IdxOut", *(it));
-//			core->putData("IdxRegOut", core->getData("IdxRegIn"));
-//			core->putData("ImgRegOut", core->getData("ImgRegIn"));
-
+			for(int i = 0; i < size; i++)
+				idxF.putData(new Int32(2*size - 1 + i*(size-1)));
+			
 			idxidx.putData(new Int32(size));
 		}
 	}
@@ -83,9 +75,9 @@ public class Core extends JavaTask {
 	@Override
 	public void executeAsync(InputPort asynchIn) {
 		if(asynchIn == end) {
-			
-		} else if(asynchIn == f) {
-			log().debug("f: {}", asynchIn.getData(Int32.class).getValue());
+			for(int j = size + 1; j > 0; j--) {
+				
+			}
 		}
 	}
 }
