@@ -1152,7 +1152,7 @@
     </task>
     <task xsi:type="sipo_0_1_0:Sipo" id="fs" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.0" size="${size}*${size}+${size}" index="true">
       <outputPort id="Out" parent="/1/@task.4"/>
-      <inputPort id="In" parent="/1/@task.4"/>
+      <inputPort id="In" parent="/1/@task.4" queueSize="inf"/>
       <inputPort id="Idx" parent="/1/@task.4" asynchronous="true">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
