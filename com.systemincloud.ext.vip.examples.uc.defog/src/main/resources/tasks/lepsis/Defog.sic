@@ -36,7 +36,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.4.1">
+  <sic:MainTask initialized="true" version="0.4.2">
     <inputPort id="In"/>
     <outputPort id="Out"/>
   </sic:MainTask>

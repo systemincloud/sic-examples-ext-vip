@@ -197,7 +197,7 @@
     </children>
     <styles background="/0/@colors.1" foreground="/0/@colors.2" id="TASK"/>
     <styles background="/0/@colors.1" foreground="/0/@colors.2" id="INTERNAL_PORT_STYLE"/>
-    <styles background="/0/@colors.2" foreground="/0/@colors.2" lineWidth="1" id="BPMN-POLYGON-ARROW"/>
+    <styles background="/0/@colors.2" foreground="/0/@colors.2" lineWidth="1" id="POLYGON-ARROW"/>
     <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.0/@children.6/@anchors.0" end="/0/@children.8/@children.0/@anchors.0">
       <graphicsAlgorithm xsi:type="al:Polyline" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0"/>
       <link businessObjects="/1/@connection.0"/>
@@ -258,7 +258,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.4.1">
+  <sic:MainTask initialized="true" version="0.4.2">
     <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.hasselt.I_i">
       <outputPort id="I_i" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
