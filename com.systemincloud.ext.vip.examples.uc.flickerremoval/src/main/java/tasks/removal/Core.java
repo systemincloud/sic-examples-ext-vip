@@ -60,13 +60,15 @@ public class Core extends JavaTask {
 				dmx   .putData(new Int32(0));
 				imgidx.putData(new Int32(i));
 			}
-
+			
+			log().debug("Choose fs for calculation");
 			for(int i = 0; i < size; i++)
 				idxF.putData(new Int32(i));
 
 			for(int i = 0; i < size; i++)
 				idxF.putData(new Int32(2*size - 1 + i*(size-1)));
 			
+			log().debug("Send index");
 			idxidx.putData(new Int32(size));
 		}
 	}
