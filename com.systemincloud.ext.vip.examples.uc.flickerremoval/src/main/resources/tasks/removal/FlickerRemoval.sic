@@ -1153,7 +1153,7 @@
     <task xsi:type="sipo_0_1_0:Sipo" id="fs" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.0" size="${size}*${size}+${size}" index="true">
       <outputPort id="Out" parent="/1/@task.4"/>
       <inputPort id="In" parent="/1/@task.4" queueSize="inf"/>
-      <inputPort id="Idx" parent="/1/@task.4" asynchronous="true">
+      <inputPort id="Idx" parent="/1/@task.4" asynchronous="true" queueSize="inf">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
@@ -1201,8 +1201,10 @@
       <inputPort id="In" parent="/1/@task.9">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
-      <parameters key="degres" value="45"/>
+      <parameters key="degres" value="-45"/>
+      <parameters key="domain" value="361"/>
       <defaultParameters key="degres" value="0"/>
+      <defaultParameters key="domain" value="361"/>
     </task>
     <task xsi:type="javatask_0_1_0:JavaTask" id="-45°" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.removal.Rotate">
       <outputPort id="Out" parent="/1/@task.10">
@@ -1211,8 +1213,10 @@
       <inputPort id="In" parent="/1/@task.10">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
-      <parameters key="degres" value="-45"/>
+      <parameters key="degres" value="45"/>
+      <parameters key="domain" value="256"/>
       <defaultParameters key="degres" value="0"/>
+      <defaultParameters key="domain" value="361"/>
     </task>
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@inputPort.1" targetRef="/1/@task.0/@inputPort.0"/>
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@inputPort.2" targetRef="/1/@task.2/@inputPort.0"/>
