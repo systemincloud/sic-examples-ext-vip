@@ -62,8 +62,10 @@ public class Core extends JavaTask {
 			}
 			
 			log().debug("Choose fs for calculation");
-			for(int i = 0; i < size; i++)
+			for(int i = 0; i < size; i++) {
+				log().debug("XXX {}", i);
 				idxF.putData(new Int32(i));
+			}
 
 			for(int i = 0; i < size; i++)
 				idxF.putData(new Int32(2*size - 1 + i*(size-1)));

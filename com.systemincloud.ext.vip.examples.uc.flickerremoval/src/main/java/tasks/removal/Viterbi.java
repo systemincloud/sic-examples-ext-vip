@@ -55,6 +55,7 @@ public class Viterbi extends JavaTask {
 		out[size - 1] = size - 1;
 		for(int i = size - 2; i > 0; i--) {
 			int j = out[i + 1] - 1;
+			if(j == 0) break;
 			int idx = i*size + j;
 			long l = tmp[idx];
 			int m = 0;

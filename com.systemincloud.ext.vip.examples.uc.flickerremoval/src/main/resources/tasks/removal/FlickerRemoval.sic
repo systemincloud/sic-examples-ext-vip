@@ -741,8 +741,8 @@
     </children>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
       <properties key="label" value="true"/>
-      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="28" height="20" x="712" y="193">
-        <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="27" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_TOP" value="+45°"/>
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="27" height="20" x="713" y="193">
+        <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="27" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_TOP" value="-45°"/>
       </graphicsAlgorithm>
       <link businessObjects="/1/@task.9 /0/@children.29"/>
     </children>
@@ -788,8 +788,8 @@
     </children>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
       <properties key="label" value="true"/>
-      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="27" height="20" x="989" y="206">
-        <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="27" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_TOP" value="-45°"/>
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="29" height="20" x="988" y="206">
+        <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="29" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_TOP" value="+45°"/>
       </graphicsAlgorithm>
       <link businessObjects="/1/@task.10 /0/@children.31"/>
     </children>
@@ -1194,7 +1194,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="+45°" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.removal.Rotate">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="-45°" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.removal.Rotate">
       <outputPort id="Out" parent="/1/@task.9">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -1206,7 +1206,7 @@
       <defaultParameters key="degres" value="0"/>
       <defaultParameters key="domain" value="361"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="-45°" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.removal.Rotate">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="+45°" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.removal.Rotate">
       <outputPort id="Out" parent="/1/@task.10">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
