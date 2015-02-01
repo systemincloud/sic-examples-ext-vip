@@ -23,6 +23,8 @@ public class TemporalRobustMean extends JavaTask {
 
 	@InputPortInfo(name = "In", dataType = Int32.class)
 	public InputPort in;
+	@InputPortInfo(name = "N", dataType = Int32.class, hold=true)
+	public InputPort n;
 	
 	@OutputPortInfo(name = "Out", dataType = Int32.class)
 	public OutputPort out;
@@ -30,8 +32,9 @@ public class TemporalRobustMean extends JavaTask {
 	private int size;
 	
 	private List<int[]> fs = new LinkedList<>();
-	
+
 	private int i = 0;
+
 	
 	@Override
 	public void runnerStart() {
@@ -44,6 +47,7 @@ public class TemporalRobustMean extends JavaTask {
 		log().debug("Robust mean");
 		Int32 inData   = in.getData(Int32.class);
 		int[] inValues = inData.getValues();
+		int nValue = n.getData(Int32.class).getValue();
 		
 		if(i < size) {
 			fs.add(in.getData(Int32.class).getValues());
@@ -55,21 +59,21 @@ public class TemporalRobustMean extends JavaTask {
 			fs.add(in.getData(Int32.class).getValues());
 			i++;
 			log().debug("There is {} fs", i);
-			if(i == size >> 1) {
-				log().debug("Do mean");
-				int[] outValues = new int[inValues.length];
-				for(int[] f : fs)
-					for(int j = 0; j < outValues.length; j++) outValues[j] += f[j];
-				
-				for(int j = 0; j < outValues.length; j++) outValues[j] /= fs.size();
-				
-				// reset
-				fs = new LinkedList<>();
-				i = 0;
-				
-				out.putData(new Int32(inData.getDimensions(), outValues));
-			}
 		} 
+		
+		if(i - size == nValue) {
+			log().debug("Do mean");
+			int[] outValues = new int[inValues.length];
+			for(int[] f : fs)
+				for(int j = 0; j < outValues.length; j++) outValues[j] += f[j];
+			
+			for(int j = 0; j < outValues.length; j++) outValues[j] /= fs.size();
+			
+			// reset
+			fs = new LinkedList<>();
+			i = 0;
+			
+			out.putData(new Int32(inData.getDimensions(), outValues));
+		}
 	}
-
 }

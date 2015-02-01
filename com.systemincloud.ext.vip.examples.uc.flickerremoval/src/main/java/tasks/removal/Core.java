@@ -34,9 +34,13 @@ public class Core extends JavaTask {
 	public OutputPort dmx;
 	@OutputPortInfo(name = "IdxF", dataType = Int32.class)
 	public OutputPort idxF;
+	@OutputPortInfo(name = "Mean", dataType = Int32.class)
+	public OutputPort mean;
 	
 	private int size;
 	
+	private int j = 0;
+
 	@Override
 	public void runnerStart() {
 		this.size = Integer.parseInt(getParameter(SIZE));
@@ -48,14 +52,17 @@ public class Core extends JavaTask {
 		int n1 = imgn.getData(Int32.class).getValue();
 		int n2 = idxn.getData(Int32.class).getValue();
 
-		log().debug("There are {} elements in Img register", n1);
-		log().debug("There are {} elements in Idx register", n2);
+		log().info("There are {} elements in Img register", n1);
+		log().info("There are {} elements in Idx register", n2);
 
 		if(n1 == size + 1) {
-			log().debug("Start processing frame");
+			log().info("Start processing frame");
+
+			j = j == size ? size : j + 1;
+			mean.putData(new Int32(j));
+
 			dmx   .putData(new Int32(1));
 			imgidx.putData(new Int32(size));
-
 			for(int i = 0; i < size; i++) {
 				dmx   .putData(new Int32(0));
 				imgidx.putData(new Int32(i));
@@ -63,15 +70,20 @@ public class Core extends JavaTask {
 			
 			log().debug("Choose fs for calculation");
 			for(int i = 0; i < size; i++) {
-				log().debug("XXX {}", i);
+				log().debug("i {}", i);
 				idxF.putData(new Int32(i));
 			}
 
-			for(int i = 0; i < size; i++)
+			for(int i = 0; i < size; i++) {
+				log().debug("AAAAAAAAAA {}", i);
+				if(i == j - 1)  break;
+				log().debug("i {}", 2*size - 1 + i*(size-1));
 				idxF.putData(new Int32(2*size - 1 + i*(size-1)));
+			}
 			
 			log().debug("Send index");
 			idxidx.putData(new Int32(size));
+			log().info("End processing frame");
 		}
 	}
 	

@@ -15,7 +15,7 @@ public class Viterbi extends JavaTask {
 
 	private static final int MAX_LINE = 2;
 	
-	@InputPortInfo(name = "In", dataType = Int32.class)
+	@InputPortInfo(name = "In", dataType = Int32.class, queue=-1)
 	public InputPort in;
 	@OutputPortInfo(name = "Out", dataType = Int32.class)
 	public OutputPort out;

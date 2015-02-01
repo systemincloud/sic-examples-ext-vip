@@ -60,7 +60,7 @@ public class Rotate extends JavaTask {
 
 		int[] outValues = new int[domain];
 
-		for(int i = 0; i < inValues.length; i++) {
+		for(int i = 0; i < outValues.length; i++) {
 			double sum = 0;
 			int    n   = 0;
 			for(int k = 0; k < x.length; k++) {
