@@ -57,7 +57,7 @@ public class Core extends JavaTask {
 
 		if(n1 == size + 1) {
 			log().info("Start processing frame");
-
+			log().warn("START");
 			j = j == size ? size : j + 1;
 			mean.putData(new Int32(j));
 
@@ -75,12 +75,10 @@ public class Core extends JavaTask {
 			}
 
 			for(int i = 0; i < size; i++) {
-				log().debug("AAAAAAAAAA {}", i);
 				if(i == j - 1)  break;
 				log().debug("i {}", 2*size - 1 + i*(size-1));
 				idxF.putData(new Int32(2*size - 1 + i*(size-1)));
 			}
-			
 			log().debug("Send index");
 			idxidx.putData(new Int32(size));
 			log().info("End processing frame");

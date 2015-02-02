@@ -30,6 +30,7 @@ public class LUT extends JavaTask {
 		for(int i = 0; i < outValues.length; i++)
 			outValues[i] = lut[inValues[i]];
 		
+		log().error("STOP");
 		yout.putData(new Int32(yData.getDimensions(), outValues));
 	}
 }

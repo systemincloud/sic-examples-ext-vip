@@ -569,7 +569,7 @@
     <inputPort id="In1"/>
     <inputPort id="In2"/>
     <task xsi:type="javatask_0_1_0:JavaTask" id="Core" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.removal.Core">
-      <outputPort id="ImgIdx" parent="/1/@task.0" waitFor="/1/@task.4/@inputPort.1">
+      <outputPort id="ImgIdx" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
       <outputPort id="IdxIdx" parent="/1/@task.0">
@@ -578,7 +578,7 @@
       <outputPort id="IdxF" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
-      <outputPort id="Dmx" parent="/1/@task.0" waitFor="/1/@task.4/@outputPort.0" skipFirst="1">
+      <outputPort id="Dmx" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
       <inputPort id="ImgN" parent="/1/@task.0">

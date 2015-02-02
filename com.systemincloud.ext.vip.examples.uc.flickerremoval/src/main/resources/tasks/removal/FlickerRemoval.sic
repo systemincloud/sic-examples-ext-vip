@@ -1226,8 +1226,9 @@
       </inputPort>
     </task>
     <task xsi:type="javatask_0_1_0:JavaTask" id="Temporal Robust Mean" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.removal.TemporalRobustMean">
-      <outputPort id="Out" parent="/1/@task.7">
+      <outputPort id="Out" parent="/1/@task.7" resetPort="/1/@task.8/@outputPort.0">
         <dataType xsi:type="dt:Int32"/>
+        <synchronization waitForPort="/1/@task.10/@inputPort.0" skipFirst="1" loop="true" parent="/1/@task.7/@outputPort.0"/>
       </outputPort>
       <inputPort id="In" parent="/1/@task.7">
         <dataType xsi:type="dt:Int32"/>
@@ -1262,8 +1263,9 @@
       <defaultParameters key="domain" value="361"/>
     </task>
     <task xsi:type="javatask_0_1_0:JavaTask" id="+45°" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.removal.Rotate">
-      <outputPort id="Out" parent="/1/@task.10">
+      <outputPort id="Out" parent="/1/@task.10" resetPort="/1/@task.8/@outputPort.0">
         <dataType xsi:type="dt:Int32"/>
+        <synchronization waitForPort="/1/@task.8/@inputPort.1" skipFirst="1" loop="true" parent="/1/@task.10/@outputPort.0"/>
       </outputPort>
       <inputPort id="In" parent="/1/@task.10">
         <dataType xsi:type="dt:Int32"/>

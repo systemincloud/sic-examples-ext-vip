@@ -341,7 +341,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="randomgenerator_0_1_0:RandomGenerator" id="Ticks" bundleName="com.systemincloud.modeler.tasks.randomgenerator" version="0.2.1" dimensions="1" interval="200ms">
+    <task xsi:type="randomgenerator_0_1_0:RandomGenerator" id="Ticks" bundleName="com.systemincloud.modeler.tasks.randomgenerator" version="0.2.1" dimensions="1" interval="${interval}">
       <outputPort id="Out" parent="/1/@task.3">
         <dataType xsi:type="dt:Control"/>
       </outputPort>
