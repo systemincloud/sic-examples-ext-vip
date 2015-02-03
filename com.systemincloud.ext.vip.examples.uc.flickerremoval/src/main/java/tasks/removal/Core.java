@@ -57,7 +57,6 @@ public class Core extends JavaTask {
 
 		if(n1 == size + 1) {
 			log().info("Start processing frame");
-			log().warn("START");
 			j = j == size ? size : j + 1;
 			mean.putData(new Int32(j));
 

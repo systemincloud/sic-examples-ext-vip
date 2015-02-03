@@ -339,9 +339,10 @@
       <parameters key="size" value="3"/>
       <defaultParameters key="size" value=""/>
     </task>
-    <task xsi:type="randomgenerator_0_1_0:RandomGenerator" id="My Random Generator" bundleName="com.systemincloud.modeler.tasks.randomgenerator" version="0.2.1" dimensions="512, 512" interval="1000ms">
+    <task xsi:type="randomgenerator_0_1_0:RandomGenerator" id="My Random Generator" bundleName="com.systemincloud.modeler.tasks.randomgenerator" version="0.2.1" dimensions="512, 512" interval="100ms">
       <outputPort id="Out" parent="/1/@task.1">
         <dataType xsi:type="dt:Int32"/>
+        <synchronization waitForPort="/1/@task.2/@inputPort.0" skipFirst="1" loop="true" parent="/1/@task.1/@outputPort.0"/>
       </outputPort>
       <dataType xsi:type="dt:Int32"/>
       <specific key="NUMERIC_DISTRIBUTION" value="%u[0,255]"/>

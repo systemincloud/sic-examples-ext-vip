@@ -23,7 +23,7 @@ public class JointHistogram extends JavaTask {
 	
 	@Override
 	public void execute() {
-		log().debug("Count joint historgram");
+		log().debug("Count joint histogram");
 		
 		Int32 in1Data = in1.getData(Int32.class);
 		Int32 in2Data = in2.getData(Int32.class);

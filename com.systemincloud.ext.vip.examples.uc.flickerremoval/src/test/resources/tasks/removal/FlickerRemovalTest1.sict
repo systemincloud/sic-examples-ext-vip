@@ -697,7 +697,7 @@
       <parameters key="cp-speed" value="10"/>
       <parameters key="bl-color" value="10"/>
       <parameters key="fl-period" value="2"/>
-      <parameters key="interval" value="200ms"/>
+      <parameters key="interval" value="150ms"/>
       <defaultParameters key="zm-speed" value=""/>
       <defaultParameters key="camera-pan" value=""/>
       <defaultParameters key="flicker" value=""/>

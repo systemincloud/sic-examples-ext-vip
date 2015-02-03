@@ -1243,7 +1243,7 @@
       <outputPort id="YOut" parent="/1/@task.8">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
-      <inputPort id="Y" parent="/1/@task.8">
+      <inputPort id="Y" parent="/1/@task.8" queueSize="inf">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
       <inputPort id="table" parent="/1/@task.8">
