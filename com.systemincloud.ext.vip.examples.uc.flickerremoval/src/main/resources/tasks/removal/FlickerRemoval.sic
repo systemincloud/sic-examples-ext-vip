@@ -1258,7 +1258,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
       <parameters key="degres" value="-45"/>
-      <parameters key="domain" value="361"/>
+      <parameters key="domain" value="362"/>
       <defaultParameters key="degres" value="0"/>
       <defaultParameters key="domain" value="361"/>
     </task>

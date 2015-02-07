@@ -685,8 +685,8 @@
       <parameters key="ho-color" value="10"/>
       <parameters key="zm-max" value="3"/>
       <parameters key="lm-number" value="20"/>
-      <parameters key="fl-nonlinearity" value="0"/>
-      <parameters key="local-motions" value="false"/>
+      <parameters key="fl-nonlinearity" value="1"/>
+      <parameters key="local-motions" value="true"/>
       <parameters key="blotches" value="false"/>
       <parameters key="bl-size" value="10"/>
       <parameters key="lm-speed" value="20"/>
@@ -696,8 +696,8 @@
       <parameters key="fl-magnitude" value="1"/>
       <parameters key="cp-speed" value="10"/>
       <parameters key="bl-color" value="10"/>
-      <parameters key="fl-period" value="2"/>
-      <parameters key="interval" value="150ms"/>
+      <parameters key="fl-period" value="14"/>
+      <parameters key="interval" value="200ms"/>
       <defaultParameters key="zm-speed" value=""/>
       <defaultParameters key="camera-pan" value=""/>
       <defaultParameters key="flicker" value=""/>

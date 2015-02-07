@@ -72,19 +72,19 @@ public class Rotate extends JavaTask {
 			outValues[i] = n > 0 ? (int) Math.round(sum / n) : 0;
 		}
 		outValues[0] = 0;
-		outValues[outValues.length - 1] = 0;
 
-		for(int i = 1; i < outValues.length - 1; i++) {
+		for(int i = 1; i < outValues.length; i++) {
 			if(outValues[i] == 0) {
 				int n = 1;
 				int v = 0;
 				while(true)
-					if(i + n == outValues.length - 1) break;
+					if(i + n >= outValues.length - 1) break;
 					else if(outValues[i + n] != 0) {
 						v = outValues[i + n] - outValues[i - 1];
 						n++;
 						break;
 					} else n++;
+				
 				for(int j = 1; j <= n; j++)
 					outValues[i + n  - j - 1]  = outValues[i + n - 1] - (int) Math.ceil(j * (double) v / (double) n);
 				i += n - 1;

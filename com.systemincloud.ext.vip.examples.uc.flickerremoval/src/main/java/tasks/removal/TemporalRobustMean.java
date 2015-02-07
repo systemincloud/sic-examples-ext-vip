@@ -50,13 +50,13 @@ public class TemporalRobustMean extends JavaTask {
 		int nValue = n.getData(Int32.class).getValue();
 		
 		if(i < size) {
-			fs.add(in.getData(Int32.class).getValues());
+			fs.add(inValues);
 			i++;
 			log().debug("There is {} fs", i);
 		} else if(i <= size << 1) {
 			int[] tmp = new int[inValues.length];
-			for(int j = 0; j < tmp.length; j++) tmp[j] = inValues[inValues.length - 1 - j];
-			fs.add(in.getData(Int32.class).getValues());
+			for(int j = 0; j < tmp.length; j++) tmp[j] = -inValues[j];
+			fs.add(tmp);
 			i++;
 			log().debug("There is {} fs", i);
 		}
