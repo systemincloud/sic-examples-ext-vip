@@ -25,8 +25,6 @@ public class Core extends JavaTask {
 	public InputPort idxn;
 	@InputPortInfo(name = "End", dataType = Control.class, asynchronous = true)
 	public InputPort end;
-	@InputPortInfo(name = "F", dataType = Int32.class, asynchronous = true)
-	public InputPort f;
 	
 	@OutputPortInfo(name = "ImgIdx", dataType = Int32.class)
 	public OutputPort imgidx;
@@ -36,11 +34,13 @@ public class Core extends JavaTask {
 	public OutputPort dmx;
 	@OutputPortInfo(name = "IdxF", dataType = Int32.class)
 	public OutputPort idxF;
-	@OutputPortInfo(name = "MeanCtrl", dataType = Control.class)
-	public OutputPort mc;
+	@OutputPortInfo(name = "Mean", dataType = Int32.class)
+	public OutputPort mean;
 	
 	private int size;
 	
+	private int j = 0;
+
 	@Override
 	public void runnerStart() {
 		this.size = Integer.parseInt(getParameter(SIZE));
@@ -52,30 +52,35 @@ public class Core extends JavaTask {
 		int n1 = imgn.getData(Int32.class).getValue();
 		int n2 = idxn.getData(Int32.class).getValue();
 
-		log().debug("There are {} elements in Img register", n1);
-		log().debug("There are {} elements in Idx register", n2);
+		log().info("There are {} elements in Img register", n1);
+		log().info("There are {} elements in Idx register", n2);
 
 		if(n1 == size + 1) {
-			log().debug("Start processing frame");
+			log().info("Start processing frame");
+			j = j == size ? size : j + 1;
+			mean.putData(new Int32(j));
+
 			dmx   .putData(new Int32(1));
 			imgidx.putData(new Int32(size));
-
 			for(int i = 0; i < size; i++) {
 				dmx   .putData(new Int32(0));
 				imgidx.putData(new Int32(i));
 			}
+			
+			log().debug("Choose fs for calculation");
+			for(int i = 0; i < size; i++) {
+				log().debug("i {}", i);
+				idxF.putData(new Int32(i));
+			}
 
-
-
-//			std::list<util::SP<Library::Data> >::iterator it = elements.begin();
-//			for(unsigned int i = 0; i < core->imageToRestore; ++i ) ++it;
-//
-//			core->putData("ImageToRestore", &core->imageToRestore, sizeof(core->imageToRestore),1, 1);
-//			core->putData("IdxOut", *(it));
-//			core->putData("IdxRegOut", core->getData("IdxRegIn"));
-//			core->putData("ImgRegOut", core->getData("ImgRegIn"));
-
+			for(int i = 0; i < size; i++) {
+				if(i == j - 1)  break;
+				log().debug("i {}", 2*size - 1 + i*(size-1));
+				idxF.putData(new Int32(2*size - 1 + i*(size-1)));
+			}
+			log().debug("Send index");
 			idxidx.putData(new Int32(size));
+			log().info("End processing frame");
 		}
 	}
 	
@@ -83,9 +88,9 @@ public class Core extends JavaTask {
 	@Override
 	public void executeAsync(InputPort asynchIn) {
 		if(asynchIn == end) {
-			
-		} else if(asynchIn == f) {
-			
+			for(int j = size + 1; j > 0; j--) {
+				
+			}
 		}
 	}
 }

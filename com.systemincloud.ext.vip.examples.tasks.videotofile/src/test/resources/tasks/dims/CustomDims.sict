@@ -140,7 +140,7 @@
     </children>
     <styles background="/0/@colors.1" foreground="/0/@colors.2" id="TASK"/>
     <styles background="/0/@colors.1" foreground="/0/@colors.2" id="INTERNAL_PORT_STYLE"/>
-    <styles background="/0/@colors.2" foreground="/0/@colors.2" lineWidth="1" id="BPMN-POLYGON-ARROW"/>
+    <styles background="/0/@colors.2" foreground="/0/@colors.2" lineWidth="1" id="POLYGON-ARROW"/>
     <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.2/@children.0/@anchors.0" end="/0/@children.8/@anchors.0">
       <graphicsAlgorithm xsi:type="al:Polyline" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0"/>
       <link businessObjects="/1/@connection.0 /1/@connection.2"/>
@@ -192,7 +192,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.4.1">
+  <sic:MainTask initialized="true" version="0.4.2">
     <task xsi:type="vip_videotofile_0_1_0:VideoToFile" id="My Video To File" bundleName="com.systemincloud.ext.vip.modeler.tasks.videotofile" version="0.1.2" directory="workspace:/com.systemincloud.ext.vip.examples.tasks.videotofile/target" filename="out.mp4" dimensions="300x100" videoCodec="mpeg4">
       <inputPort id="In" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>

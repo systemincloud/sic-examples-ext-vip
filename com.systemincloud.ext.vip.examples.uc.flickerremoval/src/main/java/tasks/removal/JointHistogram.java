@@ -13,9 +13,9 @@ import com.systemincloud.modeler.tasks.javatask.api.data.Int32;
 @JavaTaskInfo
 public class JointHistogram extends JavaTask {
 
-	@InputPortInfo(name = "In1", dataType = Int32.class)
+	@InputPortInfo(name = "In1", dataType = Int32.class, hold=true)
 	public InputPort in1;
-	@InputPortInfo(name = "In0", dataType = Int32.class)
+	@InputPortInfo(name = "In0", dataType = Int32.class, queue=-1)
 	public InputPort in2;
 	
 	@OutputPortInfo(name = "Out", dataType = Int32.class)
@@ -23,7 +23,7 @@ public class JointHistogram extends JavaTask {
 	
 	@Override
 	public void execute() {
-		log().debug("Count joint historgram");
+		log().debug("Count joint histogram");
 		
 		Int32 in1Data = in1.getData(Int32.class);
 		Int32 in2Data = in2.getData(Int32.class);

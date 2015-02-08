@@ -1394,8 +1394,8 @@
     </children>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
       <properties key="label" value="true"/>
-      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="37" height="20" x="1073" y="241">
-        <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="37" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_TOP" value="mux-b"/>
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="39" height="20" x="1072" y="241">
+        <graphicsAlgorithmChildren xsi:type="al:MultiText" lineWidth="1" filled="false" transparency="0.0" width="39" height="19" font="/0/@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_TOP" value="mux-bl"/>
       </graphicsAlgorithm>
       <link businessObjects="/1/@task.23 /0/@children.55"/>
     </children>
@@ -1406,7 +1406,7 @@
     </children>
     <styles background="/0/@colors.1" foreground="/0/@colors.2" id="TASK"/>
     <styles background="/0/@colors.1" foreground="/0/@colors.2" id="PORT"/>
-    <styles background="/0/@colors.2" foreground="/0/@colors.2" lineWidth="1" id="BPMN-POLYGON-ARROW"/>
+    <styles background="/0/@colors.2" foreground="/0/@colors.2" lineWidth="1" id="POLYGON-ARROW"/>
     <styles background="/0/@colors.1" foreground="/0/@colors.2" id="INTERNAL_PORT_STYLE"/>
     <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.16/@children.0/@anchors.0" end="/0/@children.26/@anchors.0">
       <graphicsAlgorithm xsi:type="al:Polyline" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0"/>
@@ -1984,7 +1984,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.4.1">
+  <sic:MainTask initialized="true" version="0.4.2">
     <inputPort id="In"/>
     <outputPort id="Out"/>
     <task xsi:type="javatask_0_1_0:JavaTask" id="Local Motions" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.generator.LocalMotions">
@@ -2173,7 +2173,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="mux_0_1_0:Mux" id="mux-b" bundleName="com.systemincloud.modeler.tasks.mux" version="0.1.0">
+    <task xsi:type="mux_0_1_0:Mux" id="mux-bl" bundleName="com.systemincloud.modeler.tasks.mux" version="0.1.0">
       <outputPort id="Out" parent="/1/@task.23"/>
       <inputPort id="Idx" parent="/1/@task.23">
         <dataType xsi:type="dt:Int32"/>
