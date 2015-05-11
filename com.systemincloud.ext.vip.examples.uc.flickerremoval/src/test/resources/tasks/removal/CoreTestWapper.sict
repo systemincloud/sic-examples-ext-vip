@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="ASCII"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:dt="http://systemincloud.com/dt" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic">
+<xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:dt="http://systemincloud.com/dt" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmi:version="2.0">
   <pi:Diagram visible="true" gridUnit="-1" diagramTypeId="SystemInCloud" name="CoreTestWapper" pictogramLinks="/0/@link /0/@children.2/@link /0/@children.3/@link /0/@children.2/@children.0/@link /0/@children.2/@children.1/@link /0/@children.2/@children.2/@link /0/@children.2/@children.3/@link /0/@connections.0/@link /0/@connections.1/@link" version="0.11.0">
     <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
     <link businessObjects="/1"/>
@@ -116,15 +115,15 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.4.2">
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Sipo Mock" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.removal.SipoMock">
+  <sic:MainTask initialized="true" version="0.5.0">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Sipo Mock" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.removal.SipoMock">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
       <parameters key="size" value="${size}+1"/>
       <defaultParameters key="size" value="3"/>
     </task>
-    <task xsi:type="sic:EmbeddedTask" id="My Embedded Task" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.2.2" implementationTask="src/test/resources/tasks/removal/CoreTest.sict">
+    <task xsi:type="sic:EmbeddedTask" id="My Embedded Task" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.2.3" implementationTask="src/test/resources/tasks/removal/CoreTest.sict">
       <inputPort id="In1" parent="/1/@task.1">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:constant_0_1_0="http://modeler.systemincloud.com/tasks/constant/0_1_0" xmlns:dt="http://systemincloud.com/dt" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:mux_0_1_0="http://modeler.systemincloud.com/tasks/mux/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:sipo_0_1_0="http://modeler.systemincloud.com/tasks/sipo/0_1_0" xmi:version="2.0">
+<xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:constant_0_1_0="http://modeler.systemincloud.com/tasks/constant/0_1_0" xmlns:dt="http://systemincloud.com/dt" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:mux_0_1_0="http://modeler.systemincloud.com/tasks/mux/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:sipo_0_1_0="http://modeler.systemincloud.com/tasks/sipo/0_1_0" xmi:version="2.0">
   <pi:Diagram visible="true" gridUnit="-1" diagramTypeId="SystemInCloud" name="Delay" pictogramLinks="/0/@link /0/@children.8/@link /0/@children.9/@link /0/@children.10/@link /0/@children.11/@link /0/@connections.4/@link /0/@connections.5/@link /0/@connections.6/@link /0/@children.13/@link /0/@children.14/@link /0/@children.13/@children.0/@link /0/@children.13/@children.1/@link /0/@children.13/@children.2/@link /0/@children.13/@children.3/@link /0/@connections.7/@link /0/@connections.8/@link" version="0.11.0">
     <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
     <link businessObjects="/1"/>
@@ -524,16 +524,16 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.4.2">
+  <sic:MainTask initialized="true" version="0.5.0">
     <inputPort id="In"/>
     <outputPort id="Out"/>
-    <task xsi:type="constant_0_1_0:Constant" id="D" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.1" value="${delay}">
+    <task xsi:type="constant_0_1_0:Constant" id="D" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.2" value="${delay}">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
       <dataType xsi:type="dt:Int32"/>
     </task>
-    <task xsi:type="sipo_0_1_0:Sipo" id="My Sipo" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.0" size="${delay}" index="true" sizeOut="true">
+    <task xsi:type="sipo_0_1_0:Sipo" id="My Sipo" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.1" size="${delay}" index="true" sizeOut="true">
       <outputPort id="Out" parent="/1/@task.1"/>
       <outputPort id="N" parent="/1/@task.1">
         <dataType xsi:type="dt:Int32"/>
@@ -543,7 +543,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="mux_0_1_0:Mux" id="My Mux" bundleName="com.systemincloud.modeler.tasks.mux" version="0.1.0">
+    <task xsi:type="mux_0_1_0:Mux" id="My Mux" bundleName="com.systemincloud.modeler.tasks.mux" version="0.1.1">
       <outputPort id="Out" parent="/1/@task.2"/>
       <inputPort id="Idx" parent="/1/@task.2">
         <dataType xsi:type="dt:Int32"/>
@@ -551,7 +551,7 @@
       <inputPort id="In 0" parent="/1/@task.2" asynchronous="true"/>
       <inputPort id="In 1" parent="/1/@task.2" asynchronous="true"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task 1" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.Equal">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task 1" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.Equal">
       <outputPort id="o" parent="/1/@task.3">
         <dataType xsi:type="dt:Bool"/>
       </outputPort>
@@ -562,7 +562,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.4" implementationClass="tasks.Decr">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.Decr">
       <outputPort id="Out" parent="/1/@task.4">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>

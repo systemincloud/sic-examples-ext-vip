@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_tv_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/tv/0_1_0" xmlns:vip_videofromurl_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/videofromurl/0_1_0" xmi:version="2.0">
+<xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_tv_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/tv/0_1_0" xmlns:vip_videofromurl_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/videofromurl/0_1_0" xmi:version="2.0">
   <pi:Diagram visible="true" gridUnit="-1" diagramTypeId="SystemInCloud" name="FrameRateCustom" pictogramLinks="/0/@link /0/@children.0/@link /0/@children.1/@link /0/@children.0/@children.0/@link /0/@children.0/@children.1/@link /0/@children.2/@link /0/@children.3/@link /0/@children.2/@children.0/@link /0/@children.2/@children.1/@link /0/@connections.0/@link" version="0.11.0">
     <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
     <link businessObjects="/1"/>
@@ -81,13 +81,13 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.4.2">
-    <task xsi:type="vip_tv_0_1_0:Tv" id="My Tv" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.2">
+  <sic:MainTask initialized="true" version="0.5.0">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="My Tv" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.3">
       <inputPort id="In" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_videofromurl_0_1_0:VideoFromUrl" id="My Video From Url" bundleName="com.systemincloud.ext.vip.modeler.tasks.videofromurl" version="0.1.1" url="https://ia700504.us.archive.org/13/items/CEP146/CEP146_512kb.mp4" inCircle="true" frameRate="10" frameRateAsInput="false" frameRateCustom="true" cachedVideoCodecInfo="H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10" cachedResolutionInfo="240x320" cachedFrameRateInfo="29.97" cachedAudioCodecInfo="Advanced Audio Coding" cachedChannelsInfo="2" cachedSampleRateInfo="48000" cachedBitrateInfo="3384" cachedDurationInfo="00:00:14">
+    <task xsi:type="vip_videofromurl_0_1_0:VideoFromUrl" id="My Video From Url" bundleName="com.systemincloud.ext.vip.modeler.tasks.videofromurl" version="0.1.2" url="https://ia700504.us.archive.org/13/items/CEP146/CEP146_512kb.mp4" inCircle="true" frameRate="10" frameRateAsInput="false" frameRateCustom="true" cachedVideoCodecInfo="H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10" cachedResolutionInfo="240x320" cachedFrameRateInfo="29.97" cachedAudioCodecInfo="Advanced Audio Coding" cachedChannelsInfo="2" cachedSampleRateInfo="48000" cachedBitrateInfo="3384" cachedDurationInfo="00:00:14">
       <outputPort id="Out" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
