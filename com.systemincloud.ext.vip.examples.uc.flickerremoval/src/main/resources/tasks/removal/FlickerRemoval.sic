@@ -1132,7 +1132,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.5.0">
+  <sic:MainTask initialized="true" version="0.5.1">
     <inputPort id="YIn"/>
     <inputPort id="IdxIn"/>
     <inputPort id="End" asynchronous="true"/>
