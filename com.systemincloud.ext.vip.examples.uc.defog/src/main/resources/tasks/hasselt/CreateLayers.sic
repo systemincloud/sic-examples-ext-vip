@@ -435,7 +435,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.5.1">
+  <sic:MainTask initialized="true" version="0.5.2">
     <inputPort id="In"/>
     <inputPort id="Ack" asynchronous="true"/>
     <inputPort id="A8"/>
