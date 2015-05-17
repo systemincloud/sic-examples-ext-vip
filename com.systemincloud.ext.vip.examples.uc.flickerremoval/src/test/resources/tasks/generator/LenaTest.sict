@@ -84,7 +84,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.5.1">
+  <sic:MainTask initialized="true" version="0.5.2">
     <task xsi:type="sic:EmbeddedTask" id="My Embedded Task" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.2.3" implementationTask="src/test/resources/tasks/generator/Lena.sict">
       <outputPort id="Out" parent="/1/@task.0"/>
       <parameters key="zm-speed" value="10"/>

@@ -81,7 +81,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.5.1">
+  <sic:MainTask initialized="true" version="0.5.2">
     <task xsi:type="vip_videofromfile_0_1_0:VideoFromFile" id="My Video From File" bundleName="com.systemincloud.ext.vip.modeler.tasks.videofromfile" version="0.1.2" path="workspace:/com.systemincloud.ext.vip.examples.tasks.videofromfile/src/test/resources/video/CEP146_512kb.mp4" inCircle="true">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
