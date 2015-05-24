@@ -6,13 +6,15 @@ import com.systemincloud.modeler.tasks.javatask.api.OutputPort;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.InputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.JavaTaskInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
+import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameter;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameters;
 import com.systemincloud.modeler.tasks.javatask.api.data.Bool;
 import com.systemincloud.modeler.tasks.javatask.api.data.Float64;
-import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameter;
 
 @JavaTaskInfo
-@SicParameters({}) public class CreateMask extends JavaTask {
+@SicParameters({
+	@SicParameter(name=CreateMask.TAU)
+}) public class CreateMask extends JavaTask {
 
 	protected final static String TAU = "tau";
 	
