@@ -84,7 +84,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.5.2">
+  <sic:MainTask initialized="true" version="0.5.3">
     <task xsi:type="sic:EmbeddedTask" id="My Embedded Task" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.2.3" implementationTask="src/test/resources/tasks/generator/Lena.sict">
       <outputPort id="Out" parent="/1/@task.0"/>
       <parameters key="zm-speed" value="10"/>
@@ -130,7 +130,7 @@
       <defaultParameters key="fl-period" value=""/>
       <defaultParameters key="interval" value=""/>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="My Tv" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.3">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="My Tv" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.4">
       <inputPort id="In" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>

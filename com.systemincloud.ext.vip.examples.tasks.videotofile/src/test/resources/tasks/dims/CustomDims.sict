@@ -192,8 +192,8 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.5.2">
-    <task xsi:type="vip_videotofile_0_1_0:VideoToFile" id="My Video To File" bundleName="com.systemincloud.ext.vip.modeler.tasks.videotofile" version="0.1.3" directory="workspace:/com.systemincloud.ext.vip.examples.tasks.videotofile/target" filename="out.mp4" dimensions="300x100" videoCodec="mpeg4">
+  <sic:MainTask initialized="true" version="0.5.3">
+    <task xsi:type="vip_videotofile_0_1_0:VideoToFile" id="My Video To File" bundleName="com.systemincloud.ext.vip.modeler.tasks.videotofile" version="0.1.4" directory="workspace:/com.systemincloud.ext.vip.examples.tasks.videotofile/target" filename="out.mp4" dimensions="300x100" videoCodec="mpeg4">
       <inputPort id="In" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
@@ -201,17 +201,17 @@
         <dataType xsi:type="dt:Control"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_webcam_0_1_0:Webcam" id="My Webcam" bundleName="com.systemincloud.ext.vip.modeler.tasks.webcam" version="0.1.3" cameraName="Laptop_Integrated_Webcam_2HDM /dev/video0" resolution="640x480" interval="200">
+    <task xsi:type="vip_webcam_0_1_0:Webcam" id="My Webcam" bundleName="com.systemincloud.ext.vip.modeler.tasks.webcam" version="0.1.4" cameraName="Laptop_Integrated_Webcam_2HDM /dev/video0" resolution="640x480" interval="200">
       <outputPort id="Out" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
     </task>
-    <task xsi:type="console_0_1_0:Console" id="My Console" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.3" consoleType="OUT">
+    <task xsi:type="console_0_1_0:Console" id="My Console" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.4" consoleType="OUT">
       <outputPort id="Out" parent="/1/@task.2">
         <dataType xsi:type="dt:Text"/>
       </outputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="My Tv" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.3">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="My Tv" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.4">
       <inputPort id="In" parent="/1/@task.3">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>

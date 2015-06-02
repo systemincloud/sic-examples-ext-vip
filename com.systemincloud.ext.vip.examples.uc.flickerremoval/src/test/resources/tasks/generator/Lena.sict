@@ -300,7 +300,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.5.2">
+  <sic:MainTask initialized="true" version="0.5.3">
     <outputPort id="Out"/>
     <task xsi:type="sic:EmbeddedTask" id="Gen" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.2.3" implementationTask="src/test/resources/tasks/generator/ImageGenerator.sict">
       <outputPort id="Out" parent="/1/@task.0">
@@ -332,7 +332,7 @@
       <parameters key="bl-color" value="${bl-color}"/>
       <parameters key="lm-number" value="${lm-number}"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="to Grey" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.generator.ToGrey">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="to Grey" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.generator.ToGrey">
       <outputPort id="Out" parent="/1/@task.2">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -340,7 +340,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="randomgenerator_0_1_0:RandomGenerator" id="Ticks" bundleName="com.systemincloud.modeler.tasks.randomgenerator" version="0.2.2" dimensions="1" interval="${interval}">
+    <task xsi:type="randomgenerator_0_1_0:RandomGenerator" id="Ticks" bundleName="com.systemincloud.modeler.tasks.randomgenerator" version="0.2.3" dimensions="1" interval="${interval}">
       <outputPort id="Out" parent="/1/@task.3">
         <dataType xsi:type="dt:Control"/>
       </outputPort>

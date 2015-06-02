@@ -1132,13 +1132,13 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.5.2">
+  <sic:MainTask initialized="true" version="0.5.3">
     <inputPort id="YIn"/>
     <inputPort id="IdxIn"/>
     <inputPort id="End" asynchronous="true"/>
     <outputPort id="IdxOut"/>
     <outputPort id="YOut"/>
-    <task xsi:type="sipo_0_1_0:Sipo" id="Indexes" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.1" size="${size}+1" index="true" sizeOut="true">
+    <task xsi:type="sipo_0_1_0:Sipo" id="Indexes" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.2" size="${size}+1" index="true" sizeOut="true">
       <outputPort id="Out" parent="/1/@task.0"/>
       <outputPort id="N" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
@@ -1148,7 +1148,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="sipo_0_1_0:Sipo" id="Images" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.1" size="${size}+1" index="true" sizeOut="true">
+    <task xsi:type="sipo_0_1_0:Sipo" id="Images" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.2" size="${size}+1" index="true" sizeOut="true">
       <outputPort id="Out" parent="/1/@task.1"/>
       <outputPort id="N" parent="/1/@task.1">
         <dataType xsi:type="dt:Int32"/>
@@ -1158,7 +1158,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Core" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.removal.Core">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Core" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.removal.Core">
       <outputPort id="ImgIdx" parent="/1/@task.2" resetPort="/1/@task.8/@outputPort.0">
         <dataType xsi:type="dt:Int32"/>
         <synchronization waitForPort="/1/@task.5/@inputPort.1" loop="true" parent="/1/@task.2/@outputPort.0"/>
@@ -1190,7 +1190,7 @@
       <parameters key="size" value="${size}"/>
       <defaultParameters key="size" value="15"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Joint histogram" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.removal.JointHistogram">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Joint histogram" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.removal.JointHistogram">
       <outputPort id="Out" parent="/1/@task.3">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -1201,14 +1201,14 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="sipo_0_1_0:Sipo" id="fs" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.1" size="${size}*${size}+${size}" index="true">
+    <task xsi:type="sipo_0_1_0:Sipo" id="fs" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.2" size="${size}*${size}+${size}" index="true">
       <outputPort id="Out" parent="/1/@task.4"/>
       <inputPort id="In" parent="/1/@task.4" queueSize="inf"/>
       <inputPort id="Idx" parent="/1/@task.4" asynchronous="true" queueSize="inf">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="demux_0_1_0:Demux" id="Dmx" bundleName="com.systemincloud.modeler.tasks.demux" version="0.1.1">
+    <task xsi:type="demux_0_1_0:Demux" id="Dmx" bundleName="com.systemincloud.modeler.tasks.demux" version="0.1.2">
       <outputPort id="Out 0" parent="/1/@task.5"/>
       <outputPort id="Out 1" parent="/1/@task.5"/>
       <inputPort id="In" parent="/1/@task.5" asynchronous="true" queueSize="inf"/>
@@ -1216,7 +1216,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Viterbi" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.removal.Viterbi">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Viterbi" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.removal.Viterbi">
       <outputPort id="Out" parent="/1/@task.6">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -1224,7 +1224,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Temporal Robust Mean" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.removal.TemporalRobustMean">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Temporal Robust Mean" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.removal.TemporalRobustMean">
       <outputPort id="Out" parent="/1/@task.7" resetPort="/1/@task.8/@outputPort.0">
         <dataType xsi:type="dt:Int32"/>
         <synchronization waitForPort="/1/@task.10/@inputPort.0" skipFirst="1" loop="true" parent="/1/@task.7/@outputPort.0"/>
@@ -1238,7 +1238,7 @@
       <parameters key="size" value="${size}"/>
       <defaultParameters key="size" value="7"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="LUT" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.removal.LUT">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="LUT" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.removal.LUT">
       <outputPort id="YOut" parent="/1/@task.8">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -1249,7 +1249,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="-45°" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.removal.Rotate">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="-45°" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.removal.Rotate">
       <outputPort id="Out" parent="/1/@task.9">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -1261,7 +1261,7 @@
       <defaultParameters key="degres" value="0"/>
       <defaultParameters key="domain" value="361"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="+45°" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.removal.Rotate">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="+45°" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.removal.Rotate">
       <outputPort id="Out" parent="/1/@task.10" resetPort="/1/@task.8/@outputPort.0">
         <dataType xsi:type="dt:Int32"/>
         <synchronization waitForPort="/1/@task.8/@inputPort.1" skipFirst="1" loop="true" parent="/1/@task.10/@outputPort.0"/>
