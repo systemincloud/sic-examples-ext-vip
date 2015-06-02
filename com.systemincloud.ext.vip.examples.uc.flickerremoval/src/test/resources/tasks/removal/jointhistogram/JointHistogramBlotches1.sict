@@ -344,8 +344,8 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.5.2">
-    <task xsi:type="javatask_0_1_0:JavaTask" id="JH" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.removal.JointHistogram">
+  <sic:MainTask initialized="true" version="0.5.3">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="JH" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.removal.JointHistogram">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -356,7 +356,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="Joint histogram" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.3">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="Joint histogram" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.4">
       <inputPort id="In" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
@@ -412,12 +412,12 @@
       <defaultParameters key="fl-period" value=""/>
       <defaultParameters key="interval" value=""/>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.3">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.4">
       <inputPort id="In" parent="/1/@task.4">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_colormap_0_1_0:ColorMap" id="Color Map" bundleName="com.systemincloud.ext.vip.modeler.tasks.colormap" version="0.1.1" type="JET" max="200">
+    <task xsi:type="vip_colormap_0_1_0:ColorMap" id="Color Map" bundleName="com.systemincloud.ext.vip.modeler.tasks.colormap" version="0.1.2" type="JET" max="200">
       <outputPort id="Out" parent="/1/@task.5">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>

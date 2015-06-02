@@ -1984,10 +1984,10 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.5.2">
+  <sic:MainTask initialized="true" version="0.5.3">
     <inputPort id="In"/>
     <outputPort id="Out"/>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Local Motions" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.generator.LocalMotions">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Local Motions" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.generator.LocalMotions">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -1998,7 +1998,7 @@
       <parameters key="number" value="${lm-number}"/>
       <parameters key="size" value="${lm-size}"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Huge Object" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.generator.HugeObject">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Huge Object" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.generator.HugeObject">
       <outputPort id="Out" parent="/1/@task.1">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -2008,7 +2008,7 @@
       <parameters key="speed" value="${ho-speed}"/>
       <parameters key="color" value="${ho-color}"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Camera Pan" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.generator.CameraPan">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Camera Pan" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.generator.CameraPan">
       <outputPort id="Out" parent="/1/@task.2">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -2017,7 +2017,7 @@
       </inputPort>
       <parameters key="speed" value="${cp-speed}"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Zoom" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.generator.Zoom">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Zoom" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.generator.Zoom">
       <outputPort id="Out" parent="/1/@task.3">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -2027,7 +2027,7 @@
       <parameters key="max" value="${zm-max}"/>
       <parameters key="speed" value="${zm-speed}"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Flicker" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.generator.Flicker">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Flicker" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.generator.Flicker">
       <outputPort id="Out" parent="/1/@task.4">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -2038,7 +2038,7 @@
       <parameters key="magnitude" value="${fl-magnitude}"/>
       <parameters key="period" value="${fl-period}"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Blotches" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.generator.Blotches">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Blotches" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.generator.Blotches">
       <outputPort id="Out" parent="/1/@task.5">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -2049,19 +2049,19 @@
       <parameters key="number" value="${bl-number}"/>
       <parameters key="size" value="${bl-size}"/>
     </task>
-    <task xsi:type="constant_0_1_0:Constant" id="lm" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.2" value="${local-motions}">
+    <task xsi:type="constant_0_1_0:Constant" id="lm" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.3" value="${local-motions}">
       <outputPort id="Out" parent="/1/@task.6">
         <dataType xsi:type="dt:Bool"/>
       </outputPort>
       <dataType xsi:type="dt:Bool"/>
     </task>
-    <task xsi:type="constant_0_1_0:Constant" id="ho" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.2" value="${huge-object}">
+    <task xsi:type="constant_0_1_0:Constant" id="ho" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.3" value="${huge-object}">
       <outputPort id="Out" parent="/1/@task.7">
         <dataType xsi:type="dt:Bool"/>
       </outputPort>
       <dataType xsi:type="dt:Bool"/>
     </task>
-    <task xsi:type="demux_0_1_0:Demux" id="demux-lm" bundleName="com.systemincloud.modeler.tasks.demux" version="0.1.1">
+    <task xsi:type="demux_0_1_0:Demux" id="demux-lm" bundleName="com.systemincloud.modeler.tasks.demux" version="0.1.2">
       <outputPort id="Out 0" parent="/1/@task.8"/>
       <outputPort id="Out 1" parent="/1/@task.8"/>
       <inputPort id="In" parent="/1/@task.8" asynchronous="true"/>
@@ -2069,7 +2069,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="mux_0_1_0:Mux" id="mux-lm" bundleName="com.systemincloud.modeler.tasks.mux" version="0.1.1">
+    <task xsi:type="mux_0_1_0:Mux" id="mux-lm" bundleName="com.systemincloud.modeler.tasks.mux" version="0.1.2">
       <outputPort id="Out" parent="/1/@task.9"/>
       <inputPort id="Idx" parent="/1/@task.9">
         <dataType xsi:type="dt:Int32"/>
@@ -2077,7 +2077,7 @@
       <inputPort id="In 0" parent="/1/@task.9" asynchronous="true"/>
       <inputPort id="In 1" parent="/1/@task.9" asynchronous="true"/>
     </task>
-    <task xsi:type="demux_0_1_0:Demux" id="demux-ho" bundleName="com.systemincloud.modeler.tasks.demux" version="0.1.1">
+    <task xsi:type="demux_0_1_0:Demux" id="demux-ho" bundleName="com.systemincloud.modeler.tasks.demux" version="0.1.2">
       <outputPort id="Out 0" parent="/1/@task.10"/>
       <outputPort id="Out 1" parent="/1/@task.10"/>
       <inputPort id="In" parent="/1/@task.10" asynchronous="true"/>
@@ -2085,7 +2085,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="mux_0_1_0:Mux" id="mux-ho" bundleName="com.systemincloud.modeler.tasks.mux" version="0.1.1">
+    <task xsi:type="mux_0_1_0:Mux" id="mux-ho" bundleName="com.systemincloud.modeler.tasks.mux" version="0.1.2">
       <outputPort id="Out" parent="/1/@task.11"/>
       <inputPort id="Idx" parent="/1/@task.11">
         <dataType xsi:type="dt:Int32"/>
@@ -2093,13 +2093,13 @@
       <inputPort id="In 0" parent="/1/@task.11" asynchronous="true"/>
       <inputPort id="In 1" parent="/1/@task.11" asynchronous="true"/>
     </task>
-    <task xsi:type="constant_0_1_0:Constant" id="cp" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.2" value="${camera-pan}">
+    <task xsi:type="constant_0_1_0:Constant" id="cp" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.3" value="${camera-pan}">
       <outputPort id="Out" parent="/1/@task.12">
         <dataType xsi:type="dt:Bool"/>
       </outputPort>
       <dataType xsi:type="dt:Bool"/>
     </task>
-    <task xsi:type="demux_0_1_0:Demux" id="demux-cp" bundleName="com.systemincloud.modeler.tasks.demux" version="0.1.1">
+    <task xsi:type="demux_0_1_0:Demux" id="demux-cp" bundleName="com.systemincloud.modeler.tasks.demux" version="0.1.2">
       <outputPort id="Out 0" parent="/1/@task.13"/>
       <outputPort id="Out 1" parent="/1/@task.13"/>
       <inputPort id="In" parent="/1/@task.13" asynchronous="true"/>
@@ -2107,7 +2107,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="mux_0_1_0:Mux" id="mux-cp" bundleName="com.systemincloud.modeler.tasks.mux" version="0.1.1">
+    <task xsi:type="mux_0_1_0:Mux" id="mux-cp" bundleName="com.systemincloud.modeler.tasks.mux" version="0.1.2">
       <outputPort id="Out" parent="/1/@task.14"/>
       <inputPort id="Idx" parent="/1/@task.14">
         <dataType xsi:type="dt:Int32"/>
@@ -2115,13 +2115,13 @@
       <inputPort id="In 0" parent="/1/@task.14" asynchronous="true"/>
       <inputPort id="In 1" parent="/1/@task.14" asynchronous="true"/>
     </task>
-    <task xsi:type="constant_0_1_0:Constant" id="zm" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.2" value="${zoom}">
+    <task xsi:type="constant_0_1_0:Constant" id="zm" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.3" value="${zoom}">
       <outputPort id="Out" parent="/1/@task.15">
         <dataType xsi:type="dt:Bool"/>
       </outputPort>
       <dataType xsi:type="dt:Bool"/>
     </task>
-    <task xsi:type="demux_0_1_0:Demux" id="demux-zm" bundleName="com.systemincloud.modeler.tasks.demux" version="0.1.1">
+    <task xsi:type="demux_0_1_0:Demux" id="demux-zm" bundleName="com.systemincloud.modeler.tasks.demux" version="0.1.2">
       <outputPort id="Out 0" parent="/1/@task.16"/>
       <outputPort id="Out 1" parent="/1/@task.16"/>
       <inputPort id="In" parent="/1/@task.16" asynchronous="true"/>
@@ -2129,7 +2129,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="mux_0_1_0:Mux" id="mux-zm" bundleName="com.systemincloud.modeler.tasks.mux" version="0.1.1">
+    <task xsi:type="mux_0_1_0:Mux" id="mux-zm" bundleName="com.systemincloud.modeler.tasks.mux" version="0.1.2">
       <outputPort id="Out" parent="/1/@task.17"/>
       <inputPort id="Idx" parent="/1/@task.17">
         <dataType xsi:type="dt:Int32"/>
@@ -2137,13 +2137,13 @@
       <inputPort id="In 0" parent="/1/@task.17" asynchronous="true"/>
       <inputPort id="In 1" parent="/1/@task.17" asynchronous="true"/>
     </task>
-    <task xsi:type="constant_0_1_0:Constant" id="fl" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.2" value="${flicker}">
+    <task xsi:type="constant_0_1_0:Constant" id="fl" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.3" value="${flicker}">
       <outputPort id="Out" parent="/1/@task.18">
         <dataType xsi:type="dt:Bool"/>
       </outputPort>
       <dataType xsi:type="dt:Bool"/>
     </task>
-    <task xsi:type="mux_0_1_0:Mux" id="mux-fl" bundleName="com.systemincloud.modeler.tasks.mux" version="0.1.1">
+    <task xsi:type="mux_0_1_0:Mux" id="mux-fl" bundleName="com.systemincloud.modeler.tasks.mux" version="0.1.2">
       <outputPort id="Out" parent="/1/@task.19"/>
       <inputPort id="Idx" parent="/1/@task.19">
         <dataType xsi:type="dt:Int32"/>
@@ -2151,7 +2151,7 @@
       <inputPort id="In 0" parent="/1/@task.19" asynchronous="true"/>
       <inputPort id="In 1" parent="/1/@task.19" asynchronous="true"/>
     </task>
-    <task xsi:type="demux_0_1_0:Demux" id="demux-fl" bundleName="com.systemincloud.modeler.tasks.demux" version="0.1.1">
+    <task xsi:type="demux_0_1_0:Demux" id="demux-fl" bundleName="com.systemincloud.modeler.tasks.demux" version="0.1.2">
       <outputPort id="Out 0" parent="/1/@task.20"/>
       <outputPort id="Out 1" parent="/1/@task.20"/>
       <inputPort id="In" parent="/1/@task.20" asynchronous="true"/>
@@ -2159,13 +2159,13 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="constant_0_1_0:Constant" id="bl" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.2" value="${blotches}">
+    <task xsi:type="constant_0_1_0:Constant" id="bl" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.3" value="${blotches}">
       <outputPort id="Out" parent="/1/@task.21">
         <dataType xsi:type="dt:Bool"/>
       </outputPort>
       <dataType xsi:type="dt:Bool"/>
     </task>
-    <task xsi:type="demux_0_1_0:Demux" id="demux-bl" bundleName="com.systemincloud.modeler.tasks.demux" version="0.1.1">
+    <task xsi:type="demux_0_1_0:Demux" id="demux-bl" bundleName="com.systemincloud.modeler.tasks.demux" version="0.1.2">
       <outputPort id="Out 0" parent="/1/@task.22"/>
       <outputPort id="Out 1" parent="/1/@task.22"/>
       <inputPort id="In" parent="/1/@task.22" asynchronous="true"/>
@@ -2173,7 +2173,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="mux_0_1_0:Mux" id="mux-bl" bundleName="com.systemincloud.modeler.tasks.mux" version="0.1.1">
+    <task xsi:type="mux_0_1_0:Mux" id="mux-bl" bundleName="com.systemincloud.modeler.tasks.mux" version="0.1.2">
       <outputPort id="Out" parent="/1/@task.23"/>
       <inputPort id="Idx" parent="/1/@task.23">
         <dataType xsi:type="dt:Int32"/>

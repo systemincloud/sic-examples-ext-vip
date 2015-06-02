@@ -469,7 +469,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.5.2">
+  <sic:MainTask initialized="true" version="0.5.3">
     <inputPort id="In"/>
     <outputPort id="Out"/>
     <task xsi:type="sic:EmbeddedTask" id="A8" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.2.3" implementationTask="src/main/resources/tasks/hasselt/A8.sic">
@@ -480,7 +480,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Defog" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.hasselt.Defog">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Defog" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.hasselt.Defog">
       <outputPort id="Out" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>

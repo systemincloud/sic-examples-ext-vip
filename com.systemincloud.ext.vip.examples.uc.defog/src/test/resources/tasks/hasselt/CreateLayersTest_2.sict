@@ -410,7 +410,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.5.2">
+  <sic:MainTask initialized="true" version="0.5.3">
     <task xsi:type="sic:EmbeddedTask" id="My Embedded Task" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.2.3" implementationTask="src/main/resources/tasks/hasselt/CreateLayers.sic">
       <outputPort id="Masks" parent="/1/@task.0">
         <dataType xsi:type="dt:Bool"/>
@@ -432,17 +432,17 @@
       </inputPort>
       <parameters key="nb-of-layers" value="10"/>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="Out" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.3">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="Out" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.4">
       <inputPort id="In" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="console_0_1_0:Console" id="c_i" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.3">
+    <task xsi:type="console_0_1_0:Console" id="c_i" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.4">
       <inputPort id="In" parent="/1/@task.2">
         <dataType xsi:type="dt:Text"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_imagefromfile_0_1_0:ImageFromFile" id="Img" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagefromfile" version="0.1.2" path="workspace:/com.systemincloud.ext.vip.examples.uc.defog/src/test/resources/imgs/4_flickr_CC.jpg">
+    <task xsi:type="vip_imagefromfile_0_1_0:ImageFromFile" id="Img" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagefromfile" version="0.1.3" path="workspace:/com.systemincloud.ext.vip.examples.uc.defog/src/test/resources/imgs/4_flickr_CC.jpg">
       <outputPort id="Out" parent="/1/@task.3">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -455,7 +455,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Delay" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.5" implementationClass="tasks.hasselt.Delay">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Delay" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.hasselt.Delay">
       <outputPort id="Out" parent="/1/@task.5">
         <dataType xsi:type="dt:Control"/>
       </outputPort>

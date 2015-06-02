@@ -6,12 +6,14 @@ import com.systemincloud.modeler.tasks.javatask.api.OutputPort;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.InputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.JavaTaskInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
+import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameter;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameters;
 import com.systemincloud.ext.vip.modeler.api.javatask.data.Image;
-import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameter;
 
 @JavaTaskInfo
-@SicParameters({}) public class IntensityGain extends JavaTask {
+@SicParameters({
+	@SicParameter(name=IntensityGain.XI)
+}) public class IntensityGain extends JavaTask {
 
 	protected static final String XI = "Xi";
 	
