@@ -210,10 +210,10 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.5.3">
+  <sic:MainTask initialized="true" version="0.6.0">
     <inputPort id="In"/>
     <outputPort id="Out"/>
-    <task xsi:type="sic:EmbeddedTask" id="Detection" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.2.3" implementationTask="src/main/resources/tasks/hasselt/detection/Detection.sic">
+    <task xsi:type="sic:EmbeddedTask" id="Detection" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.0" implementationTask="src/main/resources/tasks/hasselt/detection/Detection.sic">
       <outputPort id="Mask" parent="/1/@task.0">
         <dataType xsi:type="dt:Bool"/>
       </outputPort>
@@ -222,7 +222,7 @@
       </inputPort>
       <parameters key="Xi" value="0.3"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="A8" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.hasselt.A8">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="A8" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.hasselt.A8">
       <outputPort id="Out" parent="/1/@task.1">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>

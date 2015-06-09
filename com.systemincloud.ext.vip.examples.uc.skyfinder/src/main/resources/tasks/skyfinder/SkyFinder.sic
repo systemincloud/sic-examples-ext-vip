@@ -112,10 +112,10 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.5.3">
+  <sic:MainTask initialized="true" version="0.6.0">
     <inputPort id="In"/>
     <outputPort id="Out"/>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="SkyFinder" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.skyfinder.SkyFinder">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="SkyFinder" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.skyfinder.SkyFinder">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="dt:Bool"/>
       </outputPort>

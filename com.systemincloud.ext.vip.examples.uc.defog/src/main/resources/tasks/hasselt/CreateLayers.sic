@@ -435,14 +435,14 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.5.3">
+  <sic:MainTask initialized="true" version="0.6.0">
     <inputPort id="In"/>
     <inputPort id="Ack" asynchronous="true"/>
     <inputPort id="A8"/>
     <outputPort id="Masks"/>
     <outputPort id="end"/>
     <outputPort id="c_i"/>
-    <task xsi:type="sic:EmbeddedTask" id="Detection" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.2.3" implementationTask="src/main/resources/tasks/hasselt/detection/Detection.sic">
+    <task xsi:type="sic:EmbeddedTask" id="Detection" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.0" implementationTask="src/main/resources/tasks/hasselt/detection/Detection.sic">
       <outputPort id="Mask" parent="/1/@task.0">
         <dataType xsi:type="dt:Bool"/>
       </outputPort>
@@ -451,7 +451,7 @@
       </inputPort>
       <parameters key="Xi" value="0"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Core" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.hasselt.Core">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Core" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.hasselt.Core">
       <outputPort id="c_i" parent="/1/@task.1">
         <dataType xsi:type="dt:Float32"/>
       </outputPort>
@@ -466,7 +466,7 @@
       </inputPort>
       <parameters key="nb-of-layers" value="${nb-of-layers}"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="I - c_i * A8" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.2.6" implementationClass="tasks.hasselt.I_i">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="I - c_i * A8" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.hasselt.I_i">
       <outputPort id="I_i" parent="/1/@task.2">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
