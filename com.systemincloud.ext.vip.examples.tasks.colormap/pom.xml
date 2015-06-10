@@ -17,7 +17,7 @@
     <dependency>
       <groupId>com.systemincloud.modeler.tasks.javatask</groupId>
       <artifactId>com.systemincloud.modeler.tasks.javatask.api</artifactId>
-      <version>0.3.1</version>
+      <version>0.4.0</version>
     </dependency>
   </dependencies>
   <repositories>
