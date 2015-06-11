@@ -324,7 +324,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.0">
+  <sic:MainTask initialized="true" version="0.6.1">
     <task xsi:type="sic:EmbeddedTask" id="FlickerRemoval" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.0" implementationTask="src/main/resources/tasks/removal/FlickerRemoval.sic">
       <outputPort id="IdxOut" parent="/1/@task.0"/>
       <outputPort id="YOut" parent="/1/@task.0">

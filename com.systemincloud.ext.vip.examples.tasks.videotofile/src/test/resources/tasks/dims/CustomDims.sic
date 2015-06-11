@@ -192,7 +192,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.0">
+  <sic:MainTask initialized="true" version="0.6.1">
     <task onlyLocal="true" xsi:type="vip_videotofile_0_1_0:VideoToFile" id="My Video To File" bundleName="com.systemincloud.ext.vip.modeler.tasks.videotofile" version="0.1.5" directory="workspace:/com.systemincloud.ext.vip.examples.tasks.videotofile/target" filename="out.mp4" dimensions="300x100" videoCodec="mpeg4">
       <inputPort id="In" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
