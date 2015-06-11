@@ -81,7 +81,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.0">
+  <sic:MainTask initialized="true" version="0.6.1">
     <task onlyLocal="true" xsi:type="vip_imagefromfile_0_1_0:ImageFromFile" id="My Image From File" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagefromfile" version="0.1.4" path="workspace:/com.systemincloud.ext.vip.examples.tasks.imagefromfile/src/test/resources/tasks/banner.png">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
