@@ -389,7 +389,7 @@
       <inputPort id="background" parent="/1/@task.1">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
-      <parameters key="DiffThreshold" value="20"/>
+      <parameters key="DiffThreshold" value="${DiffThreshold}"/>
       <defaultParameters key="DiffThreshold" value="10"/>
     </task>
     <task xsi:type="vip_tv_0_1_0:Tv" id="input" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5" onlyLocal="true">
@@ -404,7 +404,7 @@
       <inputPort id="video" parent="/1/@task.3">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
-      <parameters key="LearningConstant" value="0.1"/>
+      <parameters key="LearningConstant" value="${LearningConstant}"/>
       <defaultParameters key="LearningConstant" value="0.1"/>
     </task>
     <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="com.systemincloud.example.backgroundsubtraction.common.ToGrey">

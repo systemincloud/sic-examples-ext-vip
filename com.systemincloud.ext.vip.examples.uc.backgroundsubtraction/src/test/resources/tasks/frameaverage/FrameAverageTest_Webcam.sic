@@ -162,6 +162,10 @@
       <inputPort id="In" parent="/1/@task.2">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
+      <parameters key="LearningConstant" value="0.1"/>
+      <parameters key="DiffThreshold" value="20"/>
+      <defaultParameters key="LearningConstant" value=""/>
+      <defaultParameters key="DiffThreshold" value=""/>
     </task>
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.0/@outputPort.0" targetRef="/1/@task.2/@inputPort.0"/>
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.2/@outputPort.0" targetRef="/1/@task.1/@inputPort.0"/>
