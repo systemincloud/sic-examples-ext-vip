@@ -18,7 +18,7 @@ public class DataInt32 extends JavaTask {
 	private int h = 200;
 	
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		int[] values = new int[w*h];
 		int k = 0;
 		for(int i = 0; i < h; i++)
