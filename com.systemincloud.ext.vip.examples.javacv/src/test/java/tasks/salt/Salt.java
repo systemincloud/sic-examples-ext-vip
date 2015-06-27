@@ -23,7 +23,7 @@ public class Salt extends JavaTask {
     public OutputPort out;
 
     @Override
-    public void execute() {
+    public void execute(int grp) {
         Image inData = in.getData(Image.class);
         CvMat img = Util.toCvMat(inData);
         salt(img, 2000);
