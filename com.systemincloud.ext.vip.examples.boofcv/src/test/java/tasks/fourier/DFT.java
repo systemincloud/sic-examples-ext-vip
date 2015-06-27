@@ -38,7 +38,7 @@ public class DFT extends JavaTask {
     private DiscreteFourierTransform<ImageFloat32, InterleavedF32> dft = DiscreteFourierTransformOps.createTransformF32();
     
     @Override
-    public void execute() {
+    public void execute(int grp) {
         Image inImg = in.getData(Image.class);
         int w = inImg.getW();
         int h = inImg.getH();

@@ -1154,13 +1154,13 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.1">
-    <task onlyLocal="true" xsi:type="vip_webcam_0_1_0:Webcam" id="Webcam" bundleName="com.systemincloud.ext.vip.modeler.tasks.webcam" version="0.1.5" cameraName="Laptop_Integrated_Webcam_2HDM /dev/video0" resolution="640x480" interval="100">
+  <sic:MainTask initialized="true" version="0.7.0">
+    <task onlyLocal="true" xsi:type="vip_webcam_0_1_0:Webcam" id="Webcam" bundleName="com.systemincloud.ext.vip.modeler.tasks.webcam" version="0.1.6" cameraName="Laptop_Integrated_Webcam_2HDM /dev/video0" resolution="640x480" interval="100">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="DFT Image" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.fourier.DFT">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="DFT Image" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.fourier.DFT">
       <outputPort id="Magnitude" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -1174,27 +1174,27 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.2">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="In Phase" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="In Phase" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.3">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="In Magnitude" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="In Magnitude" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.4">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="Box View" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.5">
+    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="Box View" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.6">
       <inputPort id="In" parent="/1/@task.5">
         <dataType xsi:type="dt:Text"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="DFT Filter" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.fourier.DFT">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="DFT Filter" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.fourier.DFT">
       <outputPort id="Magnitude" parent="/1/@task.6">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -1208,7 +1208,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="IDTF" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.fourier.IDFT">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="IDTF" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.fourier.IDFT">
       <outputPort id="Out" parent="/1/@task.7">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -1216,12 +1216,12 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Filter" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.fourier.Box">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Filter" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.fourier.Box">
       <outputPort id="Out" parent="/1/@task.8">
         <dataType xsi:type="dt:Float32"/>
       </outputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Prepare Filter Image" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.fourier.PrepareFilterImage">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Prepare Filter Image" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.fourier.PrepareFilterImage">
       <outputPort id="Out" parent="/1/@task.9">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -1235,7 +1235,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Size" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.fourier.Sizes">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Size" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.fourier.Sizes">
       <outputPort id="H" parent="/1/@task.10">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -1246,7 +1246,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Multiply" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.fourier.MultiplyDFTs">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Multiply" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.fourier.MultiplyDFTs">
       <outputPort id="Out" parent="/1/@task.11">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -1263,38 +1263,38 @@
         <dataType xsi:type="dt:Float32"/>
       </inputPort>
     </task>
-    <task xsi:type="constant_0_1_0:Constant" id="Triger" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.4" value="*">
+    <task xsi:type="constant_0_1_0:Constant" id="Triger" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.5" value="*">
       <outputPort id="Out" parent="/1/@task.12">
         <dataType xsi:type="dt:Control"/>
       </outputPort>
       <dataType xsi:type="dt:Control"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="And" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.fourier.Trigged">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="And" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.fourier.Trigged">
       <outputPort id="Out" parent="/1/@task.13"/>
       <inputPort id="In2" parent="/1/@task.13"/>
       <inputPort id="Trigger" parent="/1/@task.13"/>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Filter Phase" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Filter Phase" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.14">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Filter Magnitude" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Filter Magnitude" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.15">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Out" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Out" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.16">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Out Magnitude" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Out Magnitude" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.17">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Out Phase" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Out Phase" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.18">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>

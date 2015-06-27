@@ -19,7 +19,7 @@ public class Trigged extends JavaTask {
     public OutputPort out;
 
     @Override
-    public void execute() {
+    public void execute(int grp) {
         out.putData(in2.getData(Data.class));
     }
 

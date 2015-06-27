@@ -27,7 +27,7 @@ public class HSV extends JavaTask {
     public OutputPort outV;
 
     @Override
-    public void execute() {
+    public void execute(int grp) {
         Image inImg = in.getData(Image.class);
         MultiSpectral<ImageFloat32> hsv = Util.toMultiSpectralHSVImageFloat32(inImg);
         

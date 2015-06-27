@@ -45,7 +45,7 @@ public class MultiplyDFTs extends JavaTask {
     }
     
     @Override
-    public void execute() {
+    public void execute(int grp) {
         if(transformFilter == null) return;
         
         Float32 in1Data = in1.getData(Float32.class);

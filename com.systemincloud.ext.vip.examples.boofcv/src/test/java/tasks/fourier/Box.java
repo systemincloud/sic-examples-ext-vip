@@ -17,7 +17,7 @@ public class Box extends JavaTask {
     public OutputPort out;
 
     @Override
-    public void execute() {
+    public void execute(int grp) {
         float[] outData = new float[SIZE*SIZE];
         
         int k = 0;
