@@ -24,7 +24,7 @@ import com.systemincloud.ext.vip.modeler.api.javatask.data.Image;
 	public OutputPort out;
 
 	@Override
-	public void execute() {
+	public void execute(int grp) {
         Image img = in.getData(Image.class);
         float gain = Float.parseFloat(getParameter(XI));
         if(gain == 0) out.putData(img);

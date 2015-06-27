@@ -40,7 +40,7 @@ import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameter;
 	};
 	
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		this.nb_ack = 0;
 		this.nb_lay = Integer.parseInt(getParameter(NB_OF_LAYERS));
 		this.dc = 1 / (float) (nb_lay);

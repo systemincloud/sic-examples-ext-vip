@@ -25,7 +25,7 @@ public class Hue extends JavaTask {
     private static final double th   = .008856;
 	
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		Image img = in.getData(Image.class);
         int[] inValues = img.getValues();
         double[] aValues = new double[img.getNumberOfElements()];

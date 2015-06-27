@@ -23,7 +23,7 @@ import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameter;
 	public OutputPort out;
 
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		try {
 			Thread.sleep(1000*Integer.parseInt(getParameter(DELAY)));
 		} catch (NumberFormatException | InterruptedException e) {

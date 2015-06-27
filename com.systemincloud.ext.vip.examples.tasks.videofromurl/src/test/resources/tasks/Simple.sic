@@ -81,13 +81,13 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.1">
-    <task onlyLocal="true" xsi:type="vip_videofromurl_0_1_0:VideoFromUrl" id="My Video From Url" bundleName="com.systemincloud.ext.vip.modeler.tasks.videofromurl" version="0.1.4" url="https://ia700504.us.archive.org/13/items/CEP146/CEP146_512kb.mp4" frameRate="29.97" cachedVideoCodecInfo="H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10" cachedResolutionInfo="240x320" cachedFrameRateInfo="29.97" cachedAudioCodecInfo="Advanced Audio Coding" cachedChannelsInfo="2" cachedSampleRateInfo="48000" cachedBitrateInfo="3384" cachedDurationInfo="00:00:14">
+  <sic:MainTask initialized="true" version="0.7.0">
+    <task onlyLocal="true" xsi:type="vip_videofromurl_0_1_0:VideoFromUrl" id="My Video From Url" bundleName="com.systemincloud.ext.vip.modeler.tasks.videofromurl" version="0.1.5" url="https://ia700504.us.archive.org/13/items/CEP146/CEP146_512kb.mp4" frameRate="29.97" cachedVideoCodecInfo="H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10" cachedResolutionInfo="240x320" cachedFrameRateInfo="29.97" cachedAudioCodecInfo="Advanced Audio Coding" cachedChannelsInfo="2" cachedSampleRateInfo="48000" cachedBitrateInfo="3384" cachedDurationInfo="00:00:14">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="My Tv" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="My Tv" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>

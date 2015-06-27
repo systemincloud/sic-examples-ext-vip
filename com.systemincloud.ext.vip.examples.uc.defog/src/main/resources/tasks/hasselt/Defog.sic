@@ -469,10 +469,10 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.1">
+  <sic:MainTask initialized="true" version="0.7.0">
     <inputPort id="In"/>
     <outputPort id="Out"/>
-    <task xsi:type="sic:EmbeddedTask" id="A8" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.0" implementationTask="src/main/resources/tasks/hasselt/A8.sic">
+    <task xsi:type="sic:EmbeddedTask" id="A8" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/main/resources/tasks/hasselt/A8.sic">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -480,7 +480,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Defog" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.hasselt.Defog">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Defog" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.hasselt.Defog">
       <outputPort id="Out" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -503,7 +503,7 @@
         <dataType xsi:type="dt:Float32"/>
       </inputPort>
     </task>
-    <task xsi:type="sic:EmbeddedTask" id="My Embedded Task" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.0" implementationTask="src/main/resources/tasks/hasselt/CreateLayers.sic">
+    <task xsi:type="sic:EmbeddedTask" id="My Embedded Task" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/main/resources/tasks/hasselt/CreateLayers.sic">
       <outputPort id="Masks" parent="/1/@task.2">
         <dataType xsi:type="dt:Bool"/>
       </outputPort>

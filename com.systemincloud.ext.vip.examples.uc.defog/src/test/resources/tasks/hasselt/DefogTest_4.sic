@@ -193,8 +193,8 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.1">
-    <task xsi:type="sic:EmbeddedTask" id="Tested" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.0" implementationTask="src/main/resources/tasks/hasselt/Defog.sic">
+  <sic:MainTask initialized="true" version="0.7.0">
+    <task xsi:type="sic:EmbeddedTask" id="Tested" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/main/resources/tasks/hasselt/Defog.sic">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -203,17 +203,17 @@
       </inputPort>
       <parameters key="nb-of-layers" value="${nb-of-layers}"/>
     </task>
-    <task onlyLocal="true" xsi:type="vip_imagefromfile_0_1_0:ImageFromFile" id="Img in" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagefromfile" version="0.1.4" path="workspace:/com.systemincloud.ext.vip.examples.uc.defog/src/test/resources/imgs/4_flickr_CC.jpg">
+    <task onlyLocal="true" xsi:type="vip_imagefromfile_0_1_0:ImageFromFile" id="Img in" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagefromfile" version="0.1.5" path="workspace:/com.systemincloud.ext.vip.examples.uc.defog/src/test/resources/imgs/4_flickr_CC.jpg">
       <outputPort id="Out" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Out" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Out" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.2">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.3">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
