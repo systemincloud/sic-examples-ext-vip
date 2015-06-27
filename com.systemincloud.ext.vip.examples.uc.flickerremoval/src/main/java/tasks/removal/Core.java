@@ -48,7 +48,7 @@ public class Core extends JavaTask {
 	}
 	
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		int n1 = imgn.getData(Int32.class).getValue();
 		int n2 = idxn.getData(Int32.class).getValue();
 

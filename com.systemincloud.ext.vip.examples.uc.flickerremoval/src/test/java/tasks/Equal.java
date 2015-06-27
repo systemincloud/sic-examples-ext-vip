@@ -20,7 +20,7 @@ public class Equal extends JavaTask {
 	public OutputPort o;
 
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		if(a.getData(Int32.class).getValue() == b.getData(Int32.class).getValue())
 			o.putData(new Bool(true));
 		else o.putData(new Bool(false));

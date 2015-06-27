@@ -20,7 +20,7 @@ public class AddViterbi extends JavaTask {
 	public OutputPort out;
 
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		Image colormapData = colormap.getData(Image.class);
 		int[] colormapValues = colormapData.getValues();
 		int w = colormapData.getW();

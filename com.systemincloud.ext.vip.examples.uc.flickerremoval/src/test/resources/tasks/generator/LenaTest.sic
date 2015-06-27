@@ -84,8 +84,8 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.1">
-    <task xsi:type="sic:EmbeddedTask" id="My Embedded Task" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.0" implementationTask="src/test/resources/tasks/generator/Lena.sic">
+  <sic:MainTask initialized="true" version="0.7.0">
+    <task xsi:type="sic:EmbeddedTask" id="My Embedded Task" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/test/resources/tasks/generator/Lena.sic">
       <outputPort id="Out" parent="/1/@task.0"/>
       <parameters key="zm-speed" value="10"/>
       <parameters key="camera-pan" value="false"/>
@@ -130,7 +130,7 @@
       <defaultParameters key="fl-period" value=""/>
       <defaultParameters key="interval" value=""/>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="My Tv" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="My Tv" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>

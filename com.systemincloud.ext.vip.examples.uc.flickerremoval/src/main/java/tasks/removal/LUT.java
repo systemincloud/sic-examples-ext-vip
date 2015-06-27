@@ -19,7 +19,7 @@ public class LUT extends JavaTask {
 	public OutputPort yout;
 
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		Int32 yData = y.getData(Int32.class);
 		int[] inValues = yData.getValues();
 		

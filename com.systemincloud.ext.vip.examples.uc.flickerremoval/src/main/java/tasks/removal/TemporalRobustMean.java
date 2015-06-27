@@ -43,7 +43,7 @@ public class TemporalRobustMean extends JavaTask {
 	}
 
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		log().debug("Robust mean");
 		Int32 inData   = in.getData(Int32.class);
 		int[] inValues = inData.getValues();

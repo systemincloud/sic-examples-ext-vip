@@ -205,8 +205,8 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.1">
-    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.removal.Idx">
+  <sic:MainTask initialized="true" version="0.7.0">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.Idx">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -217,18 +217,18 @@
         <dataType xsi:type="dt:Control"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="My Console" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.5">
+    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="My Console" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.6">
       <inputPort id="In" parent="/1/@task.1">
         <dataType xsi:type="dt:Text"/>
       </inputPort>
     </task>
-    <task xsi:type="randomgenerator_0_1_0:RandomGenerator" id="My Random Generator" bundleName="com.systemincloud.modeler.tasks.randomgenerator" version="0.2.4" dimensions="1">
+    <task xsi:type="randomgenerator_0_1_0:RandomGenerator" id="My Random Generator" bundleName="com.systemincloud.modeler.tasks.randomgenerator" version="0.2.5" dimensions="1">
       <outputPort id="Out" parent="/1/@task.2">
         <dataType xsi:type="dt:Control"/>
       </outputPort>
       <dataType xsi:type="dt:Control"/>
     </task>
-    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="My Console 1" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.5" consoleType="OUT">
+    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="My Console 1" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.6" consoleType="OUT">
       <outputPort id="Out" parent="/1/@task.3">
         <dataType xsi:type="dt:Text"/>
       </outputPort>

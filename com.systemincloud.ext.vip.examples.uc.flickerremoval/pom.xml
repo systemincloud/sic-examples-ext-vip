@@ -12,7 +12,7 @@
   
   <dependencies>
     <dependency><groupId>junit</groupId>                                           <artifactId>junit</artifactId><version>4.11</version></dependency>
-    <dependency><groupId>com.systemincloud.modeler.tasks.javatask</groupId>        <artifactId>com.systemincloud.modeler.tasks.javatask.api</artifactId>        <version>0.4.0</version></dependency>
+    <dependency><groupId>com.systemincloud.modeler.tasks.javatask</groupId>        <artifactId>com.systemincloud.modeler.tasks.javatask.api</artifactId>        <version>0.5.0</version></dependency>
     <dependency><groupId>com.systemincloud.ext.vip.modeler.tasks.javatask</groupId><artifactId>com.systemincloud.ext.vip.modeler.tasks.javatask.api</artifactId><version>0.1.1</version></dependency>
 	<dependency><groupId>org.javatuples</groupId>                                  <artifactId>javatuples</artifactId>                                          <version>1.2</version>  </dependency>
   </dependencies>
