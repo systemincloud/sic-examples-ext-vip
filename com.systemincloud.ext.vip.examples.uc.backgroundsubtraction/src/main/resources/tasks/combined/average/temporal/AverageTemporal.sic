@@ -157,7 +157,7 @@
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="internal-port" value="true"/>
         <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="10" height="10" y="12" cornerHeight="5" cornerWidth="5">
-          <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" lineStyle="DOT" transparency="0.0" width="10" height="10" style="/0/@styles.3" cornerHeight="5" cornerWidth="5"/>
+          <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="10" height="10" style="/0/@styles.3" cornerHeight="5" cornerWidth="5"/>
         </graphicsAlgorithm>
         <link businessObjects="/1/@task.2/@inputPort.1 /0/@children.9/@children.3"/>
         <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.16"/>
@@ -621,7 +621,7 @@
     <colors red="220" green="220" blue="220"/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.7.0">
+  <sic:MainTask initialized="true" version="0.7.0" preventLosts="false">
     <inputPort id="In"/>
     <outputPort id="Out"/>
     <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="com.systemincloud.example.backgroundsubtraction.common.ToGrey">
@@ -646,10 +646,10 @@
       <outputPort id="background" parent="/1/@task.2">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
-      <inputPort id="video" parent="/1/@task.2">
+      <inputPort id="video" parent="/1/@task.2" group="1">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
-      <inputPort id="feedback" parent="/1/@task.2" asynchronous="true">
+      <inputPort id="feedback" parent="/1/@task.2" group="2">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
       <parameters key="LearningConstant" value="0.05"/>

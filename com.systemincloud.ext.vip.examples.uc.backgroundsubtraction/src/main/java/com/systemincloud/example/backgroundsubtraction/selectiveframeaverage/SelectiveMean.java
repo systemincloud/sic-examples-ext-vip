@@ -14,9 +14,9 @@ import com.systemincloud.modeler.tasks.javatask.api.data.Int32;
 @SicParameters({ @SicParameter(name = SelectiveMean.LEARNING_CONSTANT, defaultValue = "0.1") })
 public class SelectiveMean extends JavaTask {
 
-	@InputPortInfo(name = "video", dataType = Int32.class)
+	@InputPortInfo(name = "video", dataType = Int32.class, group = 1)
 	public InputPort video;
-	@InputPortInfo(name = "feedback", dataType = Int32.class, asynchronous = true)
+	@InputPortInfo(name = "feedback", dataType = Int32.class, group = 2)
 	public InputPort feedback;
 	@OutputPortInfo(name = "background", dataType = Int32.class)
 	public OutputPort background;
@@ -33,29 +33,27 @@ public class SelectiveMean extends JavaTask {
 	}
 	
 	@Override
-	public void executeAsync(InputPort feedback) {
-		Int32 frame = feedback.getData(Int32.class);
-		feedbackFrame = frame.getValues();
-		
-	}
-
-	@Override
 	public void execute(int grp) {
-		Int32 frame = video.getData(Int32.class);
-		int[] frameData = frame.getValues();
-
-		if (feedbackFrame == null) {
-			feedbackFrame = new int[frame.getNumberOfElements()];// first run with no feedback, initialized by default with zeroes
-		}
-		if (averageBackground == null) {
-			averageBackground = frameData;
-		} else {
-			for (int i = 0; i < frame.getNumberOfElements(); i++) {
-				if (feedbackFrame[i] == 0x00) {//do not add foreground pixels to background model
-					averageBackground[i] = (int) (learningConstant * frameData[i] + (1 - learningConstant) * averageBackground[i]);
-				}
+		if(grp == 1) {
+			Int32 frame = video.getData(Int32.class);
+			int[] frameData = frame.getValues();
+	
+			if (feedbackFrame == null) {
+				feedbackFrame = new int[frame.getNumberOfElements()];// first run with no feedback, initialized by default with zeroes
 			}
-			background.putData(new Int32(frame.getDimensions(),	averageBackground));
+			if (averageBackground == null) {
+				averageBackground = frameData;
+			} else {
+				for (int i = 0; i < frame.getNumberOfElements(); i++) {
+					if (feedbackFrame[i] == 0x00) {//do not add foreground pixels to background model
+						averageBackground[i] = (int) (learningConstant * frameData[i] + (1 - learningConstant) * averageBackground[i]);
+					}
+				}
+				background.putData(new Int32(frame.getDimensions(),	averageBackground));
+			}
+		} else if(grp == 2) {
+			Int32 frame = feedback.getData(Int32.class);
+			feedbackFrame = frame.getValues();
 		}
 	}
 
