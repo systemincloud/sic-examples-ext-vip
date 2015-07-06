@@ -19,7 +19,7 @@ public class LogicalAnd extends JavaTask {
 	public OutputPort out;
 
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		Int32 frame1 = in1.getData(Int32.class);
 		int[] frameData1 = frame1.getValues();
 		

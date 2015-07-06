@@ -40,7 +40,7 @@ public class SelectiveMean extends JavaTask {
 	}
 
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		Int32 frame = video.getData(Int32.class);
 		int[] frameData = frame.getValues();
 

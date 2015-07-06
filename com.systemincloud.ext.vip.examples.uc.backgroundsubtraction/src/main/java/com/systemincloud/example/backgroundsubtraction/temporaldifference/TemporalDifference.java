@@ -32,7 +32,7 @@ public class TemporalDifference extends JavaTask {
 	}
 	
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		Int32 frame = in.getData(Int32.class);
 		int[] frameData = frame.getValues();
 		if (previousFrame != null) {
