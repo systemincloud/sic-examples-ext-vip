@@ -564,10 +564,10 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.1">
+  <sic:MainTask initialized="true" version="0.7.0">
     <inputPort id="In1"/>
     <inputPort id="In2"/>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Core" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.removal.Core">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Core" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.Core">
       <outputPort id="ImgIdx" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -592,22 +592,22 @@
       <parameters key="size" value="${size}"/>
       <defaultParameters key="size" value="7"/>
     </task>
-    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="DmxIn" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.5">
+    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="DmxIn" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.6">
       <inputPort id="In" parent="/1/@task.1">
         <dataType xsi:type="dt:Text"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="IdxOut" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.5">
+    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="IdxOut" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.6">
       <inputPort id="In" parent="/1/@task.2">
         <dataType xsi:type="dt:Text"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="DmxIdx" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.5">
+    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="DmxIdx" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.6">
       <inputPort id="In" parent="/1/@task.3">
         <dataType xsi:type="dt:Text"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Dmx Mock" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.removal.DmxMock">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Dmx Mock" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.DmxMock">
       <outputPort id="Out" parent="/1/@task.4">
         <dataType xsi:type="dt:Text"/>
       </outputPort>
@@ -618,12 +618,12 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="Out" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.5">
+    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="Out" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.6">
       <inputPort id="In" parent="/1/@task.5">
         <dataType xsi:type="dt:Text"/>
       </inputPort>
     </task>
-    <task xsi:type="sipo_0_1_0:Sipo" id="My Sipo" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.3" size="${size}*${size}+${size}" index="true" sizeOut="true">
+    <task xsi:type="sipo_0_1_0:Sipo" id="My Sipo" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.4" size="${size}*${size}+${size}" index="true" sizeOut="true">
       <outputPort id="Out" parent="/1/@task.6"/>
       <outputPort id="N" parent="/1/@task.6">
         <dataType xsi:type="dt:Int32"/>

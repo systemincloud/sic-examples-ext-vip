@@ -23,7 +23,7 @@ public class I_i extends JavaTask {
 	public OutputPort i_i;
 
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		float c = c_i.getData(Float32.class).getValue();
 		int[] a8Values = a8.getData(Int32.class).getValues();
 		Image iData = i.getData(Image.class);

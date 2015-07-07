@@ -26,7 +26,7 @@ public class PrepareFilterImage extends JavaTask {
     public OutputPort out;
 
     @Override
-    public void execute() {
+    public void execute(int grp) {
         Float32 inData = in.getData(Float32.class);
         float[] inValues = inData.getValues();
         

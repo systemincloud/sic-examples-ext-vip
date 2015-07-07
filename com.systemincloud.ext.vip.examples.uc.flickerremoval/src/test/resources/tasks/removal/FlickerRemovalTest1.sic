@@ -660,8 +660,8 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.1">
-    <task xsi:type="sic:EmbeddedTask" id="FlickerRemoval" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.0" implementationTask="src/main/resources/tasks/removal/FlickerRemoval.sic">
+  <sic:MainTask initialized="true" version="0.7.0">
+    <task xsi:type="sic:EmbeddedTask" id="FlickerRemoval" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/main/resources/tasks/removal/FlickerRemoval.sic">
       <outputPort id="IdxOut" parent="/1/@task.0"/>
       <outputPort id="YOut" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
@@ -676,7 +676,7 @@
       <parameters key="size" value="${size}"/>
       <defaultParameters key="size" value=""/>
     </task>
-    <task xsi:type="sic:EmbeddedTask" id="Lena" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.0" implementationTask="src/test/resources/tasks/generator/Lena.sic">
+    <task xsi:type="sic:EmbeddedTask" id="Lena" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/test/resources/tasks/generator/Lena.sic">
       <outputPort id="Out" parent="/1/@task.1"/>
       <parameters key="zm-speed" value="10"/>
       <parameters key="camera-pan" value="false"/>
@@ -721,7 +721,7 @@
       <defaultParameters key="fl-period" value=""/>
       <defaultParameters key="interval" value=""/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Idx" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.removal.Idx">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Idx" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.Idx">
       <outputPort id="Out" parent="/1/@task.2">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -732,12 +732,12 @@
         <dataType xsi:type="dt:Control"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="End" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.5" consoleType="OUT">
+    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="End" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.6" consoleType="OUT">
       <outputPort id="Out" parent="/1/@task.3">
         <dataType xsi:type="dt:Text"/>
       </outputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.removal.Demo">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.Demo">
       <outputPort id="Out" parent="/1/@task.4">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -748,12 +748,12 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Demo out" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Demo out" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.5">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_videotofile_0_1_0:VideoToFile" id="Register" bundleName="com.systemincloud.ext.vip.modeler.tasks.videotofile" version="0.1.5" dimensionsAsInput="true" videoCodec="mpeg4">
+    <task onlyLocal="true" xsi:type="vip_videotofile_0_1_0:VideoToFile" id="Register" bundleName="com.systemincloud.ext.vip.modeler.tasks.videotofile" version="0.1.6" dimensionsAsInput="true" videoCodec="mpeg4">
       <inputPort id="In" parent="/1/@task.6">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
@@ -761,17 +761,17 @@
         <dataType xsi:type="dt:Control"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.7">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="IdxOut" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.5">
+    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="IdxOut" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.6">
       <inputPort id="In" parent="/1/@task.8">
         <dataType xsi:type="dt:Text"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Out" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Out" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.9">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>

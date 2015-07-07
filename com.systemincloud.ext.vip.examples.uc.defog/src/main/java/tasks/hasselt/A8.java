@@ -23,7 +23,7 @@ public class A8 extends JavaTask {
 	public OutputPort out;
 
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		Image img = in.getData(Image.class);
         int[]     inValues   = img.getValues();
         boolean[] maskValues = mask.getData(Bool.class).getValues();

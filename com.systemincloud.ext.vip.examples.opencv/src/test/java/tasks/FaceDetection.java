@@ -52,7 +52,7 @@ public class FaceDetection extends JavaTask {
     }
 
     @Override
-    public void execute() {
+    public void execute(int grp) {
         Image inImg = in.getData(Image.class);
         this.image = Util.toMat(inImg);
         

@@ -18,7 +18,7 @@ public class SkyFinder extends JavaTask {
 	public OutputPort out;
 
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		
 	}
 

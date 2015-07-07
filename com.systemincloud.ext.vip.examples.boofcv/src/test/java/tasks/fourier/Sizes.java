@@ -20,7 +20,7 @@ public class Sizes extends JavaTask {
     public OutputPort w;
 
     @Override
-    public void execute() {
+    public void execute(int grp) {
         Image img = in.getData(Image.class);
         h.putData(new Int32(img.getH()));
         w.putData(new Int32(img.getW()));

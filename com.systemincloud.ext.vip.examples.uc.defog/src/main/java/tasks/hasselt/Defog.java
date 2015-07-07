@@ -48,7 +48,7 @@ public class Defog extends JavaTask {
 	private int     ab;
 	
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		if(!initialized) init();
 		masks.add(m.getData(Bool.class));
 		cs   .add(c_i.getData(Float32.class).getValue());

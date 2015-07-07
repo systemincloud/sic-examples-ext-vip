@@ -41,7 +41,7 @@ public class Binary extends JavaTask {
     public OutputPort outContour;
 
     @Override
-    public void execute() {
+    public void execute(int grp) {
         Image inImg = in.getData(Image.class);
         ImageUInt8 img = Util.toImageUInt8(inImg);
         

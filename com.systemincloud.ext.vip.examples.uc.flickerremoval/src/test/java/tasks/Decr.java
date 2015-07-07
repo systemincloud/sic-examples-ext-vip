@@ -17,7 +17,7 @@ public class Decr extends JavaTask {
 	public OutputPort out;
 
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		out.putData(new Int32(in.getData(Int32.class).getValue() - 1));
 	}
 

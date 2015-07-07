@@ -28,7 +28,7 @@ public class DmxMock extends JavaTask {
 	}
 
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		log().debug("execute");
 		i = idx.getData(Int32.class).getValue();
 		log().debug("change i to {}", i);

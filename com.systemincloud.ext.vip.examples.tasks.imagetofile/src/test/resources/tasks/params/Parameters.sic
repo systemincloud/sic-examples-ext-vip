@@ -81,13 +81,13 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.1">
-    <task onlyLocal="true" xsi:type="vip_imagetofile_0_1_0:ImageToFile" id="My Image To File" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagetofile" version="0.1.4" directory="workspace:/com.systemincloud.ext.vip.examples.tasks.imagetofile/target" filename="${name}" format="PNG">
+  <sic:MainTask initialized="true" version="0.7.0">
+    <task onlyLocal="true" xsi:type="vip_imagetofile_0_1_0:ImageToFile" id="My Image To File" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagetofile" version="0.1.5" directory="workspace:/com.systemincloud.ext.vip.examples.tasks.imagetofile/target" filename="${name}" format="PNG">
       <inputPort id="In" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_imagefromfile_0_1_0:ImageFromFile" id="My Image From File" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagefromfile" version="0.1.4" path="workspace:/com.systemincloud.ext.vip.examples.tasks.imagetofile/src/test/resources/tasks/params/banner.png">
+    <task onlyLocal="true" xsi:type="vip_imagefromfile_0_1_0:ImageFromFile" id="My Image From File" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagefromfile" version="0.1.5" path="workspace:/com.systemincloud.ext.vip.examples.tasks.imagetofile/src/test/resources/tasks/params/banner.png">
       <outputPort id="Out" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>

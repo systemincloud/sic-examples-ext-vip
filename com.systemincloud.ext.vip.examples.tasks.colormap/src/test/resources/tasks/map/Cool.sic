@@ -141,13 +141,13 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.1">
-    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.data.DataInt32">
+  <sic:MainTask initialized="true" version="0.7.0">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.data.DataInt32">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
     </task>
-    <task xsi:type="vip_colormap_0_1_0:ColorMap" id="My Color Map" bundleName="com.systemincloud.ext.vip.modeler.tasks.colormap" version="0.1.3" type="COOL" adjustToMax="true">
+    <task xsi:type="vip_colormap_0_1_0:ColorMap" id="My Color Map" bundleName="com.systemincloud.ext.vip.modeler.tasks.colormap" version="0.1.4" type="COOL" adjustToMax="true">
       <outputPort id="Out" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -159,7 +159,7 @@
         <dataType xsi:type="dt:Decimal"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="My Tv" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="My Tv" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.2">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>

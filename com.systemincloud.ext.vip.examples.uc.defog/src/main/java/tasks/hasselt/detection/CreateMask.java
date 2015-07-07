@@ -38,7 +38,7 @@ import com.systemincloud.modeler.tasks.javatask.api.data.Float64;
 	};
 	
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		Float64 a1data = a1.getData(Float64.class);
 		Float64 b1data = b1.getData(Float64.class);
 		Float64 a2data = a2.getData(Float64.class);

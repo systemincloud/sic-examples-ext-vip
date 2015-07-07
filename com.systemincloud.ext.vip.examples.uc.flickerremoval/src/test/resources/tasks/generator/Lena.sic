@@ -300,15 +300,15 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.1">
+  <sic:MainTask initialized="true" version="0.7.0">
     <outputPort id="Out"/>
-    <task xsi:type="sic:EmbeddedTask" id="Gen" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.0" implementationTask="src/test/resources/tasks/generator/ImageGenerator.sic">
+    <task xsi:type="sic:EmbeddedTask" id="Gen" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/test/resources/tasks/generator/ImageGenerator.sic">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
       <inputPort id="Trigger" parent="/1/@task.0"/>
     </task>
-    <task xsi:type="sic:EmbeddedTask" id="FG" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.0" implementationTask="src/main/resources/tasks/generator/FlickerGenerator.sic">
+    <task xsi:type="sic:EmbeddedTask" id="FG" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/main/resources/tasks/generator/FlickerGenerator.sic">
       <outputPort id="Out" parent="/1/@task.1"/>
       <inputPort id="In" parent="/1/@task.1"/>
       <parameters key="local-motions" value="${local-motions}"/>
@@ -332,7 +332,7 @@
       <parameters key="bl-color" value="${bl-color}"/>
       <parameters key="lm-number" value="${lm-number}"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="to Grey" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.generator.ToGrey">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="to Grey" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.generator.ToGrey">
       <outputPort id="Out" parent="/1/@task.2">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -340,7 +340,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="randomgenerator_0_1_0:RandomGenerator" id="Ticks" bundleName="com.systemincloud.modeler.tasks.randomgenerator" version="0.2.4" dimensions="1" interval="${interval}">
+    <task xsi:type="randomgenerator_0_1_0:RandomGenerator" id="Ticks" bundleName="com.systemincloud.modeler.tasks.randomgenerator" version="0.2.5" dimensions="1" interval="${interval}">
       <outputPort id="Out" parent="/1/@task.3">
         <dataType xsi:type="dt:Control"/>
       </outputPort>

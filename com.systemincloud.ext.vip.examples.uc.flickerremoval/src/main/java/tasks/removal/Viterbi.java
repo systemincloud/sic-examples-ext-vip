@@ -21,7 +21,7 @@ public class Viterbi extends JavaTask {
 	public OutputPort out;
 
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		log().debug("Viterbi");
 		Int32 inData = in.getData(Int32.class);
 		int size = inData.getDimensions().get(0);

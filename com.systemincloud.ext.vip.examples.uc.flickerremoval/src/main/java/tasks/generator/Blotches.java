@@ -43,7 +43,7 @@ public class Blotches extends JavaTask {
 	}
 	
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		Int32 inData    = in.getData(Int32.class);
 		int[] inValues  = inData.getValues();
 		int   ne        = inData.getNumberOfElements();

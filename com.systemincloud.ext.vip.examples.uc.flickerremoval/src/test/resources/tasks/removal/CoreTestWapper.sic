@@ -115,15 +115,15 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.1">
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Sipo Mock" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.removal.SipoMock">
+  <sic:MainTask initialized="true" version="0.7.0">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Sipo Mock" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.SipoMock">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
       <parameters key="size" value="${size}+1"/>
       <defaultParameters key="size" value="3"/>
     </task>
-    <task xsi:type="sic:EmbeddedTask" id="My Embedded Task" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.0" implementationTask="src/test/resources/tasks/removal/CoreTest.sic">
+    <task xsi:type="sic:EmbeddedTask" id="My Embedded Task" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/test/resources/tasks/removal/CoreTest.sic">
       <inputPort id="In1" parent="/1/@task.1">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>

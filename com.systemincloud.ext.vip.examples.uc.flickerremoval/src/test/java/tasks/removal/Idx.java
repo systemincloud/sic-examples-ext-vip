@@ -22,7 +22,7 @@ public class Idx extends JavaTask {
 	private int idx = 0;
 	
 	@Override
-	public void execute() {
+	public void execute(int grp) {
 		out.putData(new Int32(idx));
 		idx++;
 	}

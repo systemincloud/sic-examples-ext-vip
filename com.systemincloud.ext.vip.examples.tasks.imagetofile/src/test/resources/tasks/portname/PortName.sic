@@ -142,8 +142,8 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.1">
-    <task onlyLocal="true" xsi:type="vip_imagetofile_0_1_0:ImageToFile" id="My Image To File" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagetofile" version="0.1.4" directory="workspace:/com.systemincloud.ext.vip.examples.tasks.imagetofile/target" filenameInPort="true" format="PNG">
+  <sic:MainTask initialized="true" version="0.7.0">
+    <task onlyLocal="true" xsi:type="vip_imagetofile_0_1_0:ImageToFile" id="My Image To File" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagetofile" version="0.1.5" directory="workspace:/com.systemincloud.ext.vip.examples.tasks.imagetofile/target" filenameInPort="true" format="PNG">
       <inputPort id="In" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
@@ -151,12 +151,12 @@
         <dataType xsi:type="dt:Text"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_webcam_0_1_0:Webcam" id="My Webcam" bundleName="com.systemincloud.ext.vip.modeler.tasks.webcam" version="0.1.5" cameraName="Laptop_Integrated_Webcam_2HDM /dev/video0" resolution="176x144" interval="200">
+    <task onlyLocal="true" xsi:type="vip_webcam_0_1_0:Webcam" id="My Webcam" bundleName="com.systemincloud.ext.vip.modeler.tasks.webcam" version="0.1.6" cameraName="Laptop_Integrated_Webcam_2HDM /dev/video0" resolution="176x144" interval="200">
       <outputPort id="Out" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
     </task>
-    <task xsi:type="randomgenerator_0_1_0:RandomGenerator" id="My Random Generator" bundleName="com.systemincloud.modeler.tasks.randomgenerator" version="0.2.4" dimensions="1" interval="4s">
+    <task xsi:type="randomgenerator_0_1_0:RandomGenerator" id="My Random Generator" bundleName="com.systemincloud.modeler.tasks.randomgenerator" version="0.2.5" dimensions="1" interval="4s">
       <outputPort id="Out" parent="/1/@task.2">
         <dataType xsi:type="dt:Text"/>
       </outputPort>

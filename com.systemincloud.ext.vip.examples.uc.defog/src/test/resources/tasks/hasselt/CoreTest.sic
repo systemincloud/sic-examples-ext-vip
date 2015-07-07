@@ -196,8 +196,8 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.1">
-    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.hasselt.Core">
+  <sic:MainTask initialized="true" version="0.7.0">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.hasselt.Core">
       <outputPort id="c_i" parent="/1/@task.0">
         <dataType xsi:type="dt:Float32"/>
       </outputPort>
@@ -212,12 +212,12 @@
       </inputPort>
       <parameters key="nb-of-layers" value="5"/>
     </task>
-    <task onlyLocal="true" xsi:type="vip_imagefromfile_0_1_0:ImageFromFile" id="My Image From File" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagefromfile" version="0.1.4" path="workspace:/com.systemincloud.ext.vip.examples.uc.defog/src/test/resources/imgs/1_flickr_CC.jpg">
+    <task onlyLocal="true" xsi:type="vip_imagefromfile_0_1_0:ImageFromFile" id="My Image From File" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagefromfile" version="0.1.5" path="workspace:/com.systemincloud.ext.vip.examples.uc.defog/src/test/resources/imgs/1_flickr_CC.jpg">
       <outputPort id="Out" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
     </task>
-    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="My Console" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.5">
+    <task onlyLocal="true" xsi:type="console_0_1_0:Console" id="My Console" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.6">
       <inputPort id="In" parent="/1/@task.2" queueSize="inf">
         <dataType xsi:type="dt:Text"/>
       </inputPort>

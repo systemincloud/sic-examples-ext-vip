@@ -23,7 +23,7 @@ public class Simple extends JavaTask {
     public OutputPort out;
     
     @Override
-    public void execute() {
+    public void execute(int grp) {
         Image inData = in.getData(Image.class);
         IplImage img = Util.toIplImage(inData);
         cvFlip(img, img, 0);

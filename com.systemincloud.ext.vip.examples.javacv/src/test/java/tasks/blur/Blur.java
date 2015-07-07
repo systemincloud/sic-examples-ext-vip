@@ -22,7 +22,7 @@ public class Blur extends JavaTask {
     public OutputPort out;
 
     @Override
-    public void execute() {
+    public void execute(int grp) {
         Image inData = in.getData(Image.class);
         CvMat src = Util.toCvMat(inData);
         CvMat dest = CvMat.create(src.rows(), src.cols(), src.depth(), 4);

@@ -26,7 +26,7 @@ public class YUV extends JavaTask {
     public OutputPort outV;
 
     @Override
-    public void execute() {
+    public void execute(int grp) {
         Image inImg = in.getData(Image.class);
         MultiSpectral<ImageFloat32> yuv = Util.toMultiSpectralYUVImageFloat32(inImg);
         

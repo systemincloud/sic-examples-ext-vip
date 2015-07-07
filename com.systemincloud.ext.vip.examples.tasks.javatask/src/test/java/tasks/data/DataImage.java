@@ -19,7 +19,7 @@ public class DataImage extends JavaTask {
     public OutputPort out;
 
     @Override
-    public void execute() {
+    public void execute(int grp) {
         Image img = in.getData(Image.class);
         int[] inValues = img.getValues();
         int[] outValues = new int[img.getNumberOfElements()];

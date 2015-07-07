@@ -25,7 +25,7 @@ public class RGB extends JavaTask {
     public OutputPort outB;
 
     @Override
-    public void execute() {
+    public void execute(int grp) {
         Image inImg = in.getData(Image.class);
         MultiSpectral<ImageUInt8> rgb = Util.toMultiSpectralRGBImageUInt8(inImg);
         

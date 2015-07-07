@@ -193,18 +193,18 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.1">
-    <task onlyLocal="true" xsi:type="vip_imagefromfile_0_1_0:ImageFromFile" id="Img" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagefromfile" version="0.1.4" path="workspace:/com.systemincloud.ext.vip.examples.uc.defog/src/test/resources/imgs/1_flickr_CC.jpg">
+  <sic:MainTask initialized="true" version="0.7.0">
+    <task onlyLocal="true" xsi:type="vip_imagefromfile_0_1_0:ImageFromFile" id="Img" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagefromfile" version="0.1.5" path="workspace:/com.systemincloud.ext.vip.examples.uc.defog/src/test/resources/imgs/1_flickr_CC.jpg">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Out" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Out" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="sic:EmbeddedTask" id="My Embedded Task" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.0" implementationTask="src/main/resources/tasks/hasselt/detection/SemiInverse.sic">
+    <task xsi:type="sic:EmbeddedTask" id="My Embedded Task" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/main/resources/tasks/hasselt/detection/SemiInverse.sic">
       <outputPort id="Out" parent="/1/@task.2">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -212,7 +212,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.3">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>

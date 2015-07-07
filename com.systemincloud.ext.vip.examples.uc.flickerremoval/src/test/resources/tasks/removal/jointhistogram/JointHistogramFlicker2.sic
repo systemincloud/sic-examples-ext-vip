@@ -344,8 +344,8 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.6.1">
-    <task xsi:type="javatask_0_1_0:JavaTask" id="JH" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.3.0" implementationClass="tasks.removal.JointHistogram">
+  <sic:MainTask initialized="true" version="0.7.0">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="JH" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.JointHistogram">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -356,18 +356,18 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Joint histogram" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Joint histogram" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="sic:EmbeddedTask" id="Delay" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.0" implementationTask="src/test/resources/tasks/Delay.sic">
+    <task xsi:type="sic:EmbeddedTask" id="Delay" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/test/resources/tasks/Delay.sic">
       <outputPort id="Out" parent="/1/@task.2"/>
       <inputPort id="In" parent="/1/@task.2"/>
       <parameters key="delay" value="5"/>
       <defaultParameters key="delay" value=""/>
     </task>
-    <task xsi:type="sic:EmbeddedTask" id="In Lena" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.0" implementationTask="src/test/resources/tasks/generator/Lena.sic">
+    <task xsi:type="sic:EmbeddedTask" id="In Lena" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/test/resources/tasks/generator/Lena.sic">
       <outputPort id="Out" parent="/1/@task.3"/>
       <parameters key="zm-speed" value="0.025"/>
       <parameters key="camera-pan" value="false"/>
@@ -412,12 +412,12 @@
       <defaultParameters key="fl-period" value=""/>
       <defaultParameters key="interval" value=""/>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.5">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
       <inputPort id="In" parent="/1/@task.4">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_colormap_0_1_0:ColorMap" id="Color Map" bundleName="com.systemincloud.ext.vip.modeler.tasks.colormap" version="0.1.3" type="JET" adjustToMax="true" max="200">
+    <task xsi:type="vip_colormap_0_1_0:ColorMap" id="Color Map" bundleName="com.systemincloud.ext.vip.modeler.tasks.colormap" version="0.1.4" type="JET" adjustToMax="true" max="200">
       <outputPort id="Out" parent="/1/@task.5">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
