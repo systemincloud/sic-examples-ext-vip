@@ -6,34 +6,24 @@ import com.systemincloud.modeler.tasks.javatask.api.OutputPort;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.InputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.JavaTaskInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
-import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameter;
-import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameters;
-import com.systemincloud.modeler.tasks.javatask.api.data.Control;
+import com.systemincloud.modeler.tasks.javatask.api.data.Text;
 import com.systemincloud.modeler.tasks.javatask.api.data.Int32;
 
-@JavaTaskInfo
-@SicParameters({
-	@SicParameter(name="xx")
-})
-public class Idx extends JavaTask {
+@JavaTaskInfo(onlyLocal = true)
+public class Count extends JavaTask {
 
-	@InputPortInfo(name = "In", dataType = Control.class)
+	@InputPortInfo(name = "In", dataType = Text.class)
 	public InputPort in;
-	@InputPortInfo(name = "RST", dataType = Control.class, asynchronous = true)
-	public InputPort rst;
 	@OutputPortInfo(name = "Out", dataType = Int32.class)
 	public OutputPort out;
 
-	private int idx = 0;
+	private int i = 0;
 
 	@Override
 	public void execute(int grp) {
-		out.putData(new Int32(idx));
-		idx++;
+		in.getData(Text.class);
+		i++;
+		out.putData(new Int32(i));
 	}
 
-	@Override
-	public void executeAsync(InputPort asynchIn) {
-		idx = 0;
-	}
 }

@@ -12,8 +12,8 @@ import com.systemincloud.modeler.tasks.javatask.api.data.Control;
 import com.systemincloud.modeler.tasks.javatask.api.data.Int32;
 
 @JavaTaskInfo
-@SicParameters({ 
-	@SicParameter(name = Core.SIZE, defaultValue = "7") 
+@SicParameters({
+	@SicParameter(name = Core.SIZE, defaultValue = "7")
 })
 public class Core extends JavaTask {
 
@@ -25,7 +25,7 @@ public class Core extends JavaTask {
 	public InputPort idxn;
 	@InputPortInfo(name = "End", dataType = Control.class, asynchronous = true)
 	public InputPort end;
-	
+
 	@OutputPortInfo(name = "ImgIdx", dataType = Int32.class)
 	public OutputPort imgidx;
 	@OutputPortInfo(name = "IdxIdx", dataType = Int32.class)
@@ -36,9 +36,9 @@ public class Core extends JavaTask {
 	public OutputPort idxF;
 	@OutputPortInfo(name = "Mean", dataType = Int32.class)
 	public OutputPort mean;
-	
+
 	private int size;
-	
+
 	private int j = 0;
 
 	@Override
@@ -46,7 +46,7 @@ public class Core extends JavaTask {
 		this.size = Integer.parseInt(getParameter(SIZE));
 		log().debug("Size is {}", size);
 	}
-	
+
 	@Override
 	public void execute(int grp) {
 		int n1 = imgn.getData(Int32.class).getValue();
@@ -60,13 +60,16 @@ public class Core extends JavaTask {
 			j = j == size ? size : j + 1;
 			mean.putData(new Int32(j));
 
+			log().info("Choose image to restore");
 			dmx   .putData(new Int32(1));
 			imgidx.putData(new Int32(size));
+			log().info("Start comparisons");
+			dmx   .putData(new Int32(0));
 			for(int i = 0; i < size; i++) {
-				dmx   .putData(new Int32(0));
+				log().info("Choose ImgIdx {}", i);
 				imgidx.putData(new Int32(i));
 			}
-			
+
 			log().debug("Choose fs for calculation");
 			for(int i = 0; i < size; i++) {
 				log().debug("i {}", i);
@@ -83,13 +86,13 @@ public class Core extends JavaTask {
 			log().info("End processing frame");
 		}
 	}
-	
-	
+
+
 	@Override
 	public void executeAsync(InputPort asynchIn) {
 		if(asynchIn == end) {
 			for(int j = size + 1; j > 0; j--) {
-				
+
 			}
 		}
 	}
