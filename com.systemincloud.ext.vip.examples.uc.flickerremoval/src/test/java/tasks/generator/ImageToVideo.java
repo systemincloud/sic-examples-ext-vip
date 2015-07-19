@@ -1,4 +1,4 @@
-package tasks.removal;
+package tasks.generator;
 
 import com.systemincloud.modeler.tasks.javatask.api.InputPort;
 import com.systemincloud.modeler.tasks.javatask.api.JavaTask;
@@ -8,32 +8,30 @@ import com.systemincloud.modeler.tasks.javatask.api.annotations.JavaTaskInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameter;
 import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameters;
-import com.systemincloud.modeler.tasks.javatask.api.data.Control;
-import com.systemincloud.modeler.tasks.javatask.api.data.Int32;
+import com.systemincloud.ext.vip.modeler.api.javatask.data.Image;
 
-@JavaTaskInfo
-@SicParameters({
-	@SicParameter(name="xx")
-})
-public class Idx extends JavaTask {
+@JavaTaskInfo(generator = true)
+@SicParameters({ @SicParameter(name = ImageToVideo.RATE, defaultValue = "25") })
+public class ImageToVideo extends JavaTask {
 
-	@InputPortInfo(name = "In", dataType = Control.class)
+	protected static final String RATE = "rate";
+
+	@InputPortInfo(name = "In", dataType = Image.class)
 	public InputPort in;
-	@InputPortInfo(name = "RST", dataType = Control.class, asynchronous = true)
-	public InputPort rst;
-	@OutputPortInfo(name = "Out", dataType = Int32.class)
+	@OutputPortInfo(name = "Out", dataType = Image.class)
 	public OutputPort out;
 
-	private int idx = 0;
+	@Override
+	public void runnerStart() {
+		
+	}
+	
+	@Override
+	public void generate() {
+	}
 
 	@Override
 	public void execute(int grp) {
-		out.putData(new Int32(idx));
-		idx++;
 	}
 
-	@Override
-	public void executeAsync(InputPort asynchIn) {
-		idx = 0;
-	}
 }

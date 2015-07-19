@@ -524,7 +524,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.7.0">
+  <sic:MainTask initialized="true" version="0.7.1">
     <inputPort id="In"/>
     <outputPort id="Out"/>
     <task xsi:type="constant_0_1_0:Constant" id="D" bundleName="com.systemincloud.modeler.tasks.constant" version="0.2.5" value="${delay}">
@@ -533,7 +533,7 @@
       </outputPort>
       <dataType xsi:type="dt:Int32"/>
     </task>
-    <task xsi:type="sipo_0_1_0:Sipo" id="My Sipo" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.4" size="${delay}" index="true" sizeOut="true">
+    <task xsi:type="sipo_0_1_0:Sipo" id="My Sipo" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.5" size="${delay}" index="true" sizeOut="true">
       <outputPort id="Out" parent="/1/@task.1"/>
       <outputPort id="N" parent="/1/@task.1">
         <dataType xsi:type="dt:Int32"/>

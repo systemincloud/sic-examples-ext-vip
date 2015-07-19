@@ -1,5 +1,6 @@
-<xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_tv_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/tv/0_1_0" xmlns:vip_webcam_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/webcam/0_1_0" xmi:version="2.0">
-  <pi:Diagram visible="true" gridUnit="-1" diagramTypeId="SystemInCloud" name="Binary" pictogramLinks="/0/@link /0/@children.0/@link /0/@children.1/@link /0/@children.0/@children.0/@link /0/@children.0/@children.1/@link /0/@children.2/@link /0/@children.3/@link /0/@children.2/@children.0/@link /0/@children.2/@children.1/@link /0/@children.4/@link /0/@children.5/@link /0/@children.4/@children.0/@link /0/@children.4/@children.1/@link /0/@connections.0/@link /0/@children.6/@link /0/@children.7/@link /0/@children.6/@children.0/@link /0/@children.6/@children.1/@link /0/@connections.1/@link /0/@connections.2/@link /0/@children.4/@children.2/@link /0/@children.4/@children.3/@link /0/@children.4/@children.4/@link /0/@children.4/@children.5/@link /0/@children.9/@link /0/@children.10/@link /0/@children.9/@children.0/@link /0/@children.9/@children.1/@link /0/@connections.3/@link /0/@connections.4/@link /0/@children.4/@children.6/@link /0/@children.4/@children.7/@link /0/@children.11/@link /0/@children.12/@link /0/@children.11/@children.0/@link /0/@children.11/@children.1/@link /0/@connections.5/@link /0/@children.4/@children.8/@link /0/@children.4/@children.9/@link /0/@children.4/@children.10/@link /0/@children.4/@children.11/@link /0/@children.13/@link /0/@children.14/@link /0/@children.13/@children.0/@link /0/@children.13/@children.1/@link /0/@children.15/@link /0/@children.16/@link /0/@children.15/@children.0/@link /0/@children.15/@children.1/@link /0/@connections.6/@link /0/@connections.7/@link" version="0.11.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_tv_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/tv/0_1_0" xmlns:vip_webcam_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/webcam/0_1_0">
+  <pi:Diagram visible="true" gridUnit="-1" diagramTypeId="SystemInCloud" name="Binary" pictogramLinks="/0/@link /0/@children.0/@link /0/@children.1/@link /0/@children.0/@children.0/@link /0/@children.0/@children.1/@link /0/@children.2/@link /0/@children.3/@link /0/@children.2/@children.0/@link /0/@children.2/@children.1/@link /0/@children.4/@link /0/@children.5/@link /0/@children.4/@children.0/@link /0/@children.4/@children.1/@link /0/@connections.0/@link /0/@children.6/@link /0/@children.7/@link /0/@children.6/@children.0/@link /0/@children.6/@children.1/@link /0/@connections.1/@link /0/@connections.2/@link /0/@children.4/@children.2/@link /0/@children.4/@children.3/@link /0/@children.4/@children.4/@link /0/@children.4/@children.5/@link /0/@children.9/@link /0/@children.10/@link /0/@children.9/@children.0/@link /0/@children.9/@children.1/@link /0/@connections.3/@link /0/@connections.4/@link /0/@children.4/@children.6/@link /0/@children.4/@children.7/@link /0/@children.11/@link /0/@children.12/@link /0/@children.11/@children.0/@link /0/@children.11/@children.1/@link /0/@connections.5/@link /0/@children.4/@children.8/@link /0/@children.4/@children.9/@link /0/@children.4/@children.10/@link /0/@children.4/@children.11/@link /0/@children.13/@link /0/@children.14/@link /0/@children.13/@children.0/@link /0/@children.13/@children.1/@link /0/@children.15/@link /0/@children.16/@link /0/@children.15/@children.0/@link /0/@children.15/@children.1/@link /0/@connections.6/@link /0/@connections.7/@link" version="0.12.0">
     <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
     <link businessObjects="/1"/>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
@@ -429,13 +430,13 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.7.0">
-    <task onlyLocal="true" xsi:type="vip_webcam_0_1_0:Webcam" id="Webcam" bundleName="com.systemincloud.ext.vip.modeler.tasks.webcam" version="0.1.6" cameraName="Laptop_Integrated_Webcam_2HDM /dev/video0" resolution="176x144" interval="100">
+  <sic:MainTask initialized="true" version="0.7.1">
+    <task xsi:type="vip_webcam_0_1_0:Webcam" id="Webcam" bundleName="com.systemincloud.ext.vip.modeler.tasks.webcam" version="0.1.6" onlyLocal="true" cameraName="Laptop_Integrated_Webcam_2HDM /dev/video0" resolution="176x144" interval="100">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Binary" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="Binary" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
@@ -460,27 +461,27 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.3">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Grey" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="Grey" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.4">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Filtered" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="Filtered" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.5">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Label" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="Label" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.6">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Contour" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="Contour" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.7">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>

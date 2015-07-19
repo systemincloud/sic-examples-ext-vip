@@ -1984,7 +1984,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.7.0">
+  <sic:MainTask initialized="true" version="0.7.1">
     <inputPort id="In"/>
     <outputPort id="Out"/>
     <task xsi:type="javatask_0_1_0:JavaTask" id="Local Motions" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.generator.LocalMotions">
@@ -2061,7 +2061,7 @@
       </outputPort>
       <dataType xsi:type="dt:Bool"/>
     </task>
-    <task xsi:type="demux_0_1_0:Demux" id="demux-lm" bundleName="com.systemincloud.modeler.tasks.demux" version="0.2.0">
+    <task xsi:type="demux_0_1_0:Demux" id="demux-lm" bundleName="com.systemincloud.modeler.tasks.demux" version="0.3.0">
       <outputPort id="Out 0" parent="/1/@task.8"/>
       <outputPort id="Out 1" parent="/1/@task.8"/>
       <inputPort group="1" id="In" parent="/1/@task.8"/>
@@ -2077,7 +2077,7 @@
       <inputPort group="1" id="In 0" parent="/1/@task.9"/>
       <inputPort group="2" id="In 1" parent="/1/@task.9"/>
     </task>
-    <task xsi:type="demux_0_1_0:Demux" id="demux-ho" bundleName="com.systemincloud.modeler.tasks.demux" version="0.2.0">
+    <task xsi:type="demux_0_1_0:Demux" id="demux-ho" bundleName="com.systemincloud.modeler.tasks.demux" version="0.3.0">
       <outputPort id="Out 0" parent="/1/@task.10"/>
       <outputPort id="Out 1" parent="/1/@task.10"/>
       <inputPort group="1" id="In" parent="/1/@task.10"/>
@@ -2099,7 +2099,7 @@
       </outputPort>
       <dataType xsi:type="dt:Bool"/>
     </task>
-    <task xsi:type="demux_0_1_0:Demux" id="demux-cp" bundleName="com.systemincloud.modeler.tasks.demux" version="0.2.0">
+    <task xsi:type="demux_0_1_0:Demux" id="demux-cp" bundleName="com.systemincloud.modeler.tasks.demux" version="0.3.0">
       <outputPort id="Out 0" parent="/1/@task.13"/>
       <outputPort id="Out 1" parent="/1/@task.13"/>
       <inputPort group="1" id="In" parent="/1/@task.13"/>
@@ -2121,7 +2121,7 @@
       </outputPort>
       <dataType xsi:type="dt:Bool"/>
     </task>
-    <task xsi:type="demux_0_1_0:Demux" id="demux-zm" bundleName="com.systemincloud.modeler.tasks.demux" version="0.2.0">
+    <task xsi:type="demux_0_1_0:Demux" id="demux-zm" bundleName="com.systemincloud.modeler.tasks.demux" version="0.3.0">
       <outputPort id="Out 0" parent="/1/@task.16"/>
       <outputPort id="Out 1" parent="/1/@task.16"/>
       <inputPort group="1" id="In" parent="/1/@task.16"/>
@@ -2151,7 +2151,7 @@
       <inputPort group="1" id="In 0" parent="/1/@task.19"/>
       <inputPort group="2" id="In 1" parent="/1/@task.19"/>
     </task>
-    <task xsi:type="demux_0_1_0:Demux" id="demux-fl" bundleName="com.systemincloud.modeler.tasks.demux" version="0.2.0">
+    <task xsi:type="demux_0_1_0:Demux" id="demux-fl" bundleName="com.systemincloud.modeler.tasks.demux" version="0.3.0">
       <outputPort id="Out 0" parent="/1/@task.20"/>
       <outputPort id="Out 1" parent="/1/@task.20"/>
       <inputPort group="1" id="In" parent="/1/@task.20"/>
@@ -2165,7 +2165,7 @@
       </outputPort>
       <dataType xsi:type="dt:Bool"/>
     </task>
-    <task xsi:type="demux_0_1_0:Demux" id="demux-bl" bundleName="com.systemincloud.modeler.tasks.demux" version="0.2.0">
+    <task xsi:type="demux_0_1_0:Demux" id="demux-bl" bundleName="com.systemincloud.modeler.tasks.demux" version="0.3.0">
       <outputPort id="Out 0" parent="/1/@task.22"/>
       <outputPort id="Out 1" parent="/1/@task.22"/>
       <inputPort group="1" id="In" parent="/1/@task.22"/>
