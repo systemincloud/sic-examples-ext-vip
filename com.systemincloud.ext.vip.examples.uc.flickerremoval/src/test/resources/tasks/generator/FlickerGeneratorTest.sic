@@ -438,7 +438,7 @@
       <inputPort id="In" parent="/1/@task.6">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
-      <parameters key="rate" value="25"/>
+      <parameters key="rate" value="8"/>
       <defaultParameters key="rate" value="25"/>
     </task>
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.0/@outputPort.0" targetRef="/1/@task.1/@inputPort.0"/>
