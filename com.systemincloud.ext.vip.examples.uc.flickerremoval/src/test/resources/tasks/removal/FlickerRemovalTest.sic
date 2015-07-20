@@ -719,13 +719,13 @@
       <parameters key="bl-size" value="10"/>
       <parameters key="lm-speed" value="5"/>
       <parameters key="lm-size" value="50"/>
-      <parameters key="rate" value="1"/>
+      <parameters key="rate" value="2"/>
       <parameters key="bl-number" value="5"/>
       <parameters key="ho-speed" value="20"/>
       <parameters key="fl-magnitude" value="2"/>
       <parameters key="cp-speed" value="10"/>
       <parameters key="bl-color" value="10"/>
-      <parameters key="fl-period" value="10"/>
+      <parameters key="fl-period" value="8"/>
       <defaultParameters key="zm-speed" value=""/>
       <defaultParameters key="camera-pan" value=""/>
       <defaultParameters key="flicker" value=""/>
