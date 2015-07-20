@@ -63,7 +63,7 @@
           <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="10" height="10" style="/0/@styles.1" cornerHeight="5" cornerWidth="5"/>
         </graphicsAlgorithm>
         <link businessObjects="/1/@task.0/@inputPort.2 /0/@children.0/@children.7"/>
-        <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.11"/>
+        <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.12"/>
       </children>
       <children xsi:type="pi:ContainerShape" visible="true">
         <properties key="port-label" value="true"/>
@@ -110,7 +110,7 @@
           <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="10" height="10" style="/0/@styles.1" cornerHeight="5" cornerWidth="5"/>
         </graphicsAlgorithm>
         <link businessObjects="/1/@task.1/@inputPort.0 /0/@children.2/@children.1"/>
-        <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.12"/>
+        <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.13"/>
       </children>
       <children xsi:type="pi:ContainerShape" visible="true">
         <properties key="port-label" value="true"/>
@@ -343,7 +343,7 @@
           <graphicsAlgorithmChildren xsi:type="al:RoundedRectangle" lineWidth="1" transparency="0.0" width="10" height="10" style="/0/@styles.1" cornerHeight="5" cornerWidth="5"/>
         </graphicsAlgorithm>
         <link businessObjects="/1/@task.6/@inputPort.0 /0/@children.14/@children.1"/>
-        <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.13"/>
+        <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="/0/@connections.11"/>
       </children>
       <children xsi:type="pi:ContainerShape">
         <properties key="port-label" value="true"/>
@@ -585,7 +585,7 @@
       <graphicsAlgorithm xsi:type="al:Polyline" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0"/>
       <link businessObjects="/1/@connection.8 /1/@connection.9 /1/@connection.10"/>
     </connections>
-    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.22/@anchors.0" end="/0/@children.0/@children.6/@anchors.0">
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.22/@anchors.0" end="/0/@children.14/@children.0/@anchors.0">
       <graphicsAlgorithm xsi:type="al:Polyline" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0"/>
       <link businessObjects="/1/@connection.8"/>
       <connectionDecorators visible="true" locationRelative="true" location="1.0">
@@ -597,9 +597,9 @@
           <points x="-8" before="3" after="3"/>
         </graphicsAlgorithm>
       </connectionDecorators>
-      <bendpoints x="355" y="296"/>
+      <bendpoints x="306" y="411"/>
     </connections>
-    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.22/@anchors.0" end="/0/@children.2/@children.0/@anchors.0">
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.22/@anchors.0" end="/0/@children.0/@children.6/@anchors.0">
       <graphicsAlgorithm xsi:type="al:Polyline" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0"/>
       <link businessObjects="/1/@connection.9"/>
       <connectionDecorators visible="true" locationRelative="true" location="1.0">
@@ -611,9 +611,8 @@
           <points x="-8" before="3" after="3"/>
         </graphicsAlgorithm>
       </connectionDecorators>
-      <bendpoints x="306" y="266"/>
     </connections>
-    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.22/@anchors.0" end="/0/@children.14/@children.0/@anchors.0">
+    <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="/0/@children.22/@anchors.0" end="/0/@children.2/@children.0/@anchors.0">
       <graphicsAlgorithm xsi:type="al:Polyline" foreground="/0/@colors.2" lineWidth="1" filled="false" transparency="0.0"/>
       <link businessObjects="/1/@connection.10"/>
       <connectionDecorators visible="true" locationRelative="true" location="1.0">
@@ -625,7 +624,7 @@
           <points x="-8" before="3" after="3"/>
         </graphicsAlgorithm>
       </connectionDecorators>
-      <bendpoints x="306" y="411"/>
+      <bendpoints x="306" y="266"/>
     </connections>
     <colors red="227" green="238" blue="249"/>
     <colors red="255" green="255" blue="255"/>
@@ -713,16 +712,16 @@
       <parameters key="huge-object" value="false"/>
       <parameters key="ho-color" value="240"/>
       <parameters key="zm-max" value="2"/>
-      <parameters key="lm-number" value="10"/>
+      <parameters key="lm-number" value="15"/>
       <parameters key="fl-nonlinearity" value="0"/>
-      <parameters key="local-motions" value="true"/>
-      <parameters key="blotches" value="true"/>
+      <parameters key="local-motions" value="false"/>
+      <parameters key="blotches" value="false"/>
       <parameters key="bl-size" value="10"/>
       <parameters key="lm-speed" value="5"/>
-      <parameters key="lm-size" value="40"/>
-      <parameters key="rate" value="8"/>
+      <parameters key="lm-size" value="50"/>
+      <parameters key="rate" value="1"/>
       <parameters key="bl-number" value="5"/>
-      <parameters key="ho-speed" value="10"/>
+      <parameters key="ho-speed" value="20"/>
       <parameters key="fl-magnitude" value="2"/>
       <parameters key="cp-speed" value="10"/>
       <parameters key="bl-color" value="10"/>
@@ -757,9 +756,9 @@
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.2/@outputPort.0" targetRef="/1/@task.5/@inputPort.1"/>
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.0/@outputPort.1" targetRef="/1/@task.7/@inputPort.0"/>
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.0/@outputPort.0" targetRef="/1/@task.8/@inputPort.0"/>
+    <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.9/@outputPort.0" targetRef="/1/@task.6/@inputPort.0"/>
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.9/@outputPort.0" targetRef="/1/@task.0/@inputPort.2"/>
     <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.9/@outputPort.0" targetRef="/1/@task.1/@inputPort.0"/>
-    <connection xsi:type="sic:SimpleConnection" sourceRef="/1/@task.9/@outputPort.0" targetRef="/1/@task.6/@inputPort.0"/>
     <parameters key="size" value="7"/>
   </sic:MainTask>
 </xmi:XMI>
