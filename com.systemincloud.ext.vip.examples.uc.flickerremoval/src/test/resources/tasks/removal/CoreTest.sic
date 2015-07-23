@@ -564,7 +564,7 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.7.1">
+  <sic:MainTask initialized="true" version="0.7.2">
     <inputPort id="In1"/>
     <inputPort id="In2"/>
     <task xsi:type="javatask_0_1_0:JavaTask" id="Core" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.Core">

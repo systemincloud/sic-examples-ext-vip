@@ -21,17 +21,24 @@ public class ImageToVideo extends JavaTask {
 	@OutputPortInfo(name = "Out", dataType = Image.class)
 	public OutputPort out;
 
+	private int   interval;
+	private Image img;
+	
 	@Override
 	public void runnerStart() {
-		
+		pause();
+		this.interval = (int) (1000 / Float.parseFloat(getParameter(RATE)));
 	}
 	
 	@Override
 	public void generate() {
+		sleep(interval);
+		out.putData(img);
 	}
 
 	@Override
 	public void execute(int grp) {
+		this.img = in.getData(Image.class);
+		resume();
 	}
-
 }

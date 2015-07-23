@@ -143,7 +143,7 @@
     <colors red="220" green="220" blue="220"/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.7.1">
+  <sic:MainTask initialized="true" version="0.7.2">
     <task xsi:type="sic:EmbeddedTask" id="My Embedded Task" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/main/resources/tasks/temporaldifference/TemporalDifference.sic">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
