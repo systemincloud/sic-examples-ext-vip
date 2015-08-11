@@ -9,7 +9,7 @@ import com.systemincloud.modeler.tasks.javatask.api.annotations.OutputPortInfo;
 import com.systemincloud.ext.vip.modeler.api.javatask.data.Image;
 import com.systemincloud.modeler.tasks.javatask.api.data.Int32;
 
-@JavaTaskInfo
+@JavaTaskInfo(onlyLocal=true)
 public class AddViterbi extends JavaTask {
 
 	@InputPortInfo(name = "ColorMap", dataType = Image.class)
