@@ -11,13 +11,13 @@ import com.systemincloud.modeler.tasks.javatask.api.annotations.SicParameters;
 import com.systemincloud.modeler.tasks.javatask.api.data.Int32;
 
 @JavaTaskInfo
-@SicParameters({ @SicParameter(name = BackgroundMean.LEARNING_CONSTANT, defaultValue = "0.1") })
-public class BackgroundMean extends JavaTask {
+@SicParameters({ @SicParameter(name = ExponentialMovingAverage.LEARNING_CONSTANT, defaultValue = "0.1") })
+public class ExponentialMovingAverage extends JavaTask {
 
 	@InputPortInfo(name = "video", dataType = Int32.class)
 	public InputPort video;
-	@OutputPortInfo(name = "background", dataType = Int32.class)
-	public OutputPort background;
+	@OutputPortInfo(name = "average", dataType = Int32.class)
+	public OutputPort average;
 	
 	int[] averageBackground;
 	double learningConstant;
@@ -40,7 +40,7 @@ public class BackgroundMean extends JavaTask {
 				averageBackground[i] = 	(int) (learningConstant * frameData[i] + (1 - learningConstant) * averageBackground[i]);
 			}
 		}
-		background.putData(new Int32(frame.getDimensions(), averageBackground));
+		average.putData(new Int32(frame.getDimensions(), averageBackground));
 	}
 
 }
