@@ -202,7 +202,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
     </task>
-    <task xsi:type="pythontask_0_1_0:PythonTask" id="My Python Task" bundleName="com.systemincloud.modeler.tasks.pythontask" version="0.1.0" implementation="tasks.data.DataImage">
+    <task xsi:type="pythontask_0_1_0:PythonTask" id="My Python Task" bundleName="com.systemincloud.modeler.tasks.pythontask" version="0.1.0" implementation="tasks.data.DataImage2">
       <outputPort id="out" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>

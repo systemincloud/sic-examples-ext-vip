@@ -2,7 +2,7 @@ from sicpythontask.PythonTaskInfo import PythonTaskInfo
 from sicpythontask.PythonTask import PythonTask
 from sicpythontask.InputPort import InputPort
 from sicpythontask.OutputPort import OutputPort
-from sicpythontask.data.Image import Image
+from sicpythontask_vip.data.Image import Image
 
 @PythonTaskInfo
 class DataImage(PythonTask):
@@ -12,6 +12,9 @@ class DataImage(PythonTask):
         self.out = OutputPort(name="out", data_type=Image)
      
     def execute(self, grp):
-        """ this will run when all synchronous ports 
-            from group receive data """
+        img = self.in_.get_data(Image)
+        r = img.r
+        g = img.g
+        b = img.b
+        self.out.put_data(Image.from_RGB(img.dims, r, g, b))
         
