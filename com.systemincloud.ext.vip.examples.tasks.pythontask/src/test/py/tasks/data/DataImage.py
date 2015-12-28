@@ -16,5 +16,5 @@ class DataImage(PythonTask):
         r = img.r
         g = img.g
         b = img.b
-        self.out.put_data(Image.from_RGB(img.dims, r, g, b))
+        self.out.put_data(Image.from_RGB(img.dims, b, g, r))
         

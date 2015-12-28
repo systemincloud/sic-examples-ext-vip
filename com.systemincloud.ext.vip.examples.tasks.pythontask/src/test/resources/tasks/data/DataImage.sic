@@ -197,7 +197,7 @@
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
   <sic:MainTask initialized="true" version="0.8.0">
-    <task xsi:type="vip_webcam_0_1_0:Webcam" id="My Webcam" bundleName="com.systemincloud.ext.vip.modeler.tasks.webcam" version="0.1.7" onlyLocal="true" cameraName="Laptop_Integrated_Webcam_2HDM /dev/video0" resolution="640x480" interval="200">
+    <task xsi:type="vip_webcam_0_1_0:Webcam" id="My Webcam" bundleName="com.systemincloud.ext.vip.modeler.tasks.webcam" version="0.1.7" onlyLocal="true" cameraName="Laptop_Integrated_Webcam_2HDM /dev/video0" resolution="176x144" interval="40">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -206,17 +206,17 @@
       <outputPort id="out" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
-      <inputPort id="in" parent="/1/@task.1" queueSize="inf" defaultQueueSize="inf">
+      <inputPort id="in" parent="/1/@task.1" defaultQueueSize="inf" preventLostDefault="false" preventLost="false">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
     <task xsi:type="vip_tv_0_1_0:Tv" id="My Tv" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7" onlyLocal="true">
-      <inputPort id="In" parent="/1/@task.2">
+      <inputPort id="In" parent="/1/@task.2" preventLostDefault="false" preventLost="false">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
     <task xsi:type="vip_tv_0_1_0:Tv" id="My Tv 1" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7" onlyLocal="true">
-      <inputPort id="In" parent="/1/@task.3">
+      <inputPort id="In" parent="/1/@task.3" preventLostDefault="false" preventLost="false">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
