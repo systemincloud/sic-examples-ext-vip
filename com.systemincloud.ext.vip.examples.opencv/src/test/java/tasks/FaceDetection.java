@@ -44,7 +44,7 @@ public class FaceDetection extends JavaTask {
                         if(faceDetections.toArray().length > 0) FaceDetection.this.faceDetections = faceDetections;
                         else FaceDetection.this.faceDetections = null;
                     }
-                    try { Thread.sleep(150);
+                    try { Thread.sleep(100);
                     } catch (InterruptedException e) { break; }
                 }
             }
