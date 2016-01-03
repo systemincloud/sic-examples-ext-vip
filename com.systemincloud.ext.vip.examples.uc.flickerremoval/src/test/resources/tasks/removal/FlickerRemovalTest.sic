@@ -1,4 +1,4 @@
-<xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:console_0_1_0="http://modeler.systemincloud.com/tasks/console/0_1_0" xmlns:dt="http://systemincloud.com/dt" xmlns:inspect_0_1_0="http://modeler.systemincloud.com/tasks/inspect/0_1_0" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_tv_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/tv/0_1_0" xmlns:vip_videotofile_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/videotofile/0_1_0" xmi:version="2.0">
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:console_0_1_0="http://modeler.systemincloud.com/tasks/console/0_1_0" xmlns:dt="http://systemincloud.com/dt" xmlns:inspect_0_1_0="http://modeler.systemincloud.com/tasks/inspect/0_1_0" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_tv_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/tv/0_1_0" xmlns:vip_videotofile_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/videotofile/0_1_0" xmi:version="2.0">
   <pi:Diagram visible="true" gridUnit="-1" diagramTypeId="SystemInCloud" name="FlickerRemovalTest" pictogramLinks="/0/@link /0/@children.0/@link /0/@children.1/@link /0/@children.0/@children.0/@link /0/@children.0/@children.1/@link /0/@children.0/@children.2/@link /0/@children.0/@children.3/@link /0/@children.0/@children.4/@link /0/@children.0/@children.5/@link /0/@children.2/@link /0/@children.3/@link /0/@children.4/@link /0/@children.5/@link /0/@children.4/@children.0/@link /0/@children.4/@children.1/@link /0/@connections.0/@link /0/@children.2/@children.0/@link /0/@children.2/@children.1/@link /0/@children.2/@children.2/@link /0/@children.2/@children.3/@link /0/@children.2/@children.4/@link /0/@children.2/@children.5/@link /0/@connections.1/@link /0/@connections.2/@link /0/@connections.3/@link /0/@children.7/@link /0/@children.8/@link /0/@children.9/@link /0/@children.10/@link /0/@children.9/@children.0/@link /0/@children.9/@children.1/@link /0/@children.7/@children.0/@link /0/@children.7/@children.1/@link /0/@children.7/@children.2/@link /0/@children.7/@children.3/@link /0/@children.7/@children.4/@link /0/@children.7/@children.5/@link /0/@connections.4/@link /0/@connections.5/@link /0/@children.12/@link /0/@children.13/@link /0/@children.12/@children.0/@link /0/@children.12/@children.1/@link /0/@children.12/@children.2/@link /0/@children.12/@children.3/@link /0/@connections.6/@link /0/@connections.7/@link /0/@children.14/@link /0/@children.15/@link /0/@children.14/@children.0/@link /0/@children.14/@children.1/@link /0/@children.0/@children.6/@link /0/@children.0/@children.7/@link /0/@children.0/@children.8/@link /0/@children.0/@children.9/@link /0/@connections.8/@link /0/@children.18/@link /0/@children.19/@link /0/@children.18/@children.0/@link /0/@children.18/@children.1/@link /0/@connections.9/@link /0/@children.20/@link /0/@children.21/@link /0/@children.20/@children.0/@link /0/@children.20/@children.1/@link /0/@connections.10/@link /0/@connections.11/@link /0/@connections.12/@link /0/@connections.13/@link" version="0.12.0">
     <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
     <link businessObjects="/1"/>
@@ -631,8 +631,8 @@
     <colors red="220" green="220" blue="220"/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.7.2">
-    <task xsi:type="sic:EmbeddedTask" id="FlickerRemoval" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/main/resources/tasks/removal/FlickerRemoval.sic">
+  <sic:MainTask initialized="true" version="0.8.0">
+    <task xsi:type="sic:EmbeddedTask" id="FlickerRemoval" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.2" implementationTask="src/main/resources/tasks/removal/FlickerRemoval.sic">
       <outputPort id="IdxOut" parent="/1/@task.0"/>
       <outputPort id="YOut" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
@@ -647,7 +647,7 @@
       <parameters key="size" value="${size}"/>
       <defaultParameters key="size" value=""/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Idx" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.Idx">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Idx" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="tasks.removal.Idx">
       <outputPort id="Out" parent="/1/@task.1">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -660,12 +660,12 @@
       <parameters key="xx" value=""/>
       <defaultParameters key="xx" value=""/>
     </task>
-    <task xsi:type="console_0_1_0:Console" id="End" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.7" onlyLocal="true" consoleType="OUT">
+    <task xsi:type="console_0_1_0:Console" id="End" bundleName="com.systemincloud.modeler.tasks.console" version="0.1.8" onlyLocal="true" consoleType="OUT">
       <outputPort id="Out" parent="/1/@task.2">
         <dataType xsi:type="dt:Text"/>
       </outputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.Demo">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="tasks.removal.Demo">
       <outputPort id="Out" parent="/1/@task.3">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -676,12 +676,12 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="Demo out" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="Demo out" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.4">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_videotofile_0_1_0:VideoToFile" id="Register" bundleName="com.systemincloud.ext.vip.modeler.tasks.videotofile" version="0.1.6" onlyLocal="true" directory="workspace:/com.systemincloud.ext.vip.examples.uc.flickerremoval/target" filename="out.avi" dimensionsAsInput="true" videoCodec="mpeg4">
+    <task xsi:type="vip_videotofile_0_1_0:VideoToFile" id="Register" bundleName="com.systemincloud.ext.vip.modeler.tasks.videotofile" version="0.1.7" onlyLocal="true" directory="workspace:/com.systemincloud.ext.vip.examples.uc.flickerremoval/target" filename="out.avi" dimensionsAsInput="true" videoCodec="mpeg4">
       <inputPort id="In" parent="/1/@task.5">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
@@ -689,20 +689,20 @@
         <dataType xsi:type="dt:Control"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.6">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="Out" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="Out" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.7">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="inspect_0_1_0:Inspect" id="My Inspect" bundleName="com.systemincloud.modeler.tasks.inspect" version="0.1.2" onlyLocal="true">
+    <task xsi:type="inspect_0_1_0:Inspect" id="My Inspect" bundleName="com.systemincloud.modeler.tasks.inspect" version="0.1.3" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.8"/>
     </task>
-    <task xsi:type="sic:EmbeddedTask" id="My Embedded Task" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/test/resources/tasks/generator/Lena.sic">
+    <task xsi:type="sic:EmbeddedTask" id="My Embedded Task" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.2" implementationTask="src/test/resources/tasks/generator/Lena.sic">
       <outputPort id="Out" parent="/1/@task.9"/>
       <parameters key="zm-speed" value="0.02"/>
       <parameters key="camera-pan" value="false"/>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="ASCII"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:dt="http://systemincloud.com/dt" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_tv_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/tv/0_1_0">
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:dt="http://systemincloud.com/dt" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_tv_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/tv/0_1_0" xmi:version="2.0">
   <pi:Diagram visible="true" gridUnit="-1" diagramTypeId="SystemInCloud" name="MultiGauss" pictogramLinks="/0/@link /0/@children.0/@link /0/@children.1/@link /0/@children.2/@link /0/@children.3/@link /0/@children.4/@link /0/@children.5/@link /0/@children.4/@children.0/@link /0/@children.4/@children.1/@link /0/@children.4/@children.2/@link /0/@children.4/@children.3/@link /0/@children.4/@children.4/@link /0/@children.4/@children.5/@link /0/@children.4/@children.6/@link /0/@children.4/@children.7/@link /0/@connections.0/@link /0/@children.6/@link /0/@children.7/@link /0/@children.6/@children.0/@link /0/@children.6/@children.1/@link /0/@children.6/@children.2/@link /0/@children.6/@children.3/@link /0/@connections.1/@link /0/@children.8/@link /0/@children.9/@link /0/@children.8/@children.0/@link /0/@children.8/@children.1/@link /0/@children.8/@children.2/@link /0/@children.8/@children.3/@link /0/@children.8/@children.4/@link /0/@children.8/@children.5/@link /0/@connections.2/@link /0/@children.8/@children.6/@link /0/@children.8/@children.7/@link /0/@connections.3/@link /0/@connections.4/@link /0/@connections.5/@link /0/@connections.6/@link /0/@connections.7/@link /0/@children.14/@link /0/@children.15/@link /0/@children.14/@children.0/@link /0/@children.14/@children.1/@link /0/@children.16/@link /0/@children.17/@link /0/@children.16/@children.0/@link /0/@children.16/@children.1/@link /0/@children.18/@link /0/@children.19/@link /0/@children.18/@children.0/@link /0/@children.18/@children.1/@link /0/@connections.8/@link /0/@connections.9/@link /0/@connections.10/@link /0/@connections.11/@link /0/@connections.12/@link /0/@connections.13/@link /0/@connections.14/@link /0/@connections.15/@link /0/@connections.16/@link /0/@connections.17/@link /0/@connections.18/@link /0/@connections.19/@link" version="0.12.0">
     <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
     <link businessObjects="/1"/>
@@ -758,10 +757,10 @@
     <colors red="220" green="220" blue="220"/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.7.2">
+  <sic:MainTask initialized="true" version="0.8.0">
     <inputPort id="video"/>
     <outputPort id="mask"/>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="com.systemincloud.example.backgroundsubtraction.common.YuvSeparator">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="com.systemincloud.example.backgroundsubtraction.common.YuvSeparator">
       <outputPort id="Y" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -775,7 +774,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="sic:EmbeddedTask" id="V channel" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/main/resources/tasks/gauss/OneGaussDistance.sic">
+    <task xsi:type="sic:EmbeddedTask" id="V channel" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.2" implementationTask="src/main/resources/tasks/gauss/OneGaussDistance.sic">
       <outputPort id="out" parent="/1/@task.1">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -793,7 +792,7 @@
       <defaultParameters key="sigmaLearningConst" value=""/>
       <defaultParameters key="highSigmaMultiplier" value=""/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task 1" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="com.systemincloud.example.backgroundsubtraction.gauss.Median">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task 1" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="com.systemincloud.example.backgroundsubtraction.gauss.Median">
       <outputPort id="median" parent="/1/@task.2">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -807,7 +806,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="sic:EmbeddedTask" id="U channel" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/main/resources/tasks/gauss/OneGaussDistance.sic">
+    <task xsi:type="sic:EmbeddedTask" id="U channel" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.2" implementationTask="src/main/resources/tasks/gauss/OneGaussDistance.sic">
       <outputPort id="out" parent="/1/@task.3">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -825,7 +824,7 @@
       <defaultParameters key="sigmaLearningConst" value=""/>
       <defaultParameters key="highSigmaMultiplier" value=""/>
     </task>
-    <task xsi:type="sic:EmbeddedTask" id="Y channel" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/main/resources/tasks/gauss/OneGaussDistance.sic">
+    <task xsi:type="sic:EmbeddedTask" id="Y channel" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.2" implementationTask="src/main/resources/tasks/gauss/OneGaussDistance.sic">
       <outputPort id="out" parent="/1/@task.4">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -843,32 +842,32 @@
       <defaultParameters key="sigmaLearningConst" value=""/>
       <defaultParameters key="highSigmaMultiplier" value=""/>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="U  component" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="U  component" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.5">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="V  component" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="V  component" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.6">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="Y component" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="Y component" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.7">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="V bg" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="V bg" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.8">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="Y bg" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="Y bg" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.9">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="U bg" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="U bg" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.10">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>

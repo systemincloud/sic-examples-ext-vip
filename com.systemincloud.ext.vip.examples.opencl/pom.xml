@@ -1,4 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.systemincloud.ext.vip.examples</groupId>
   <artifactId>com.systemincloud.ext.vip.examples.opencl</artifactId>
@@ -6,97 +9,107 @@
   <packaging>jar</packaging>
   <name>System in Cloud - OpenCL</name>
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.systemincloud.modeler.tasks.javatask</groupId>
-      <artifactId>com.systemincloud.modeler.tasks.javatask.api</artifactId>
-      <version>0.5.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.systemincloud.ext.vip.modeler.tasks.javatask</groupId>
-      <artifactId>com.systemincloud.ext.vip.modeler.tasks.javatask.api</artifactId>
-      <version>0.1.1</version>
-    </dependency>
-    <dependency>
-    <groupId>com.nativelibs4java</groupId>
-    <artifactId>javacl</artifactId>
-    <version>1.0.0-RC4</version>
-</dependency>
+      <dependency>
+         <groupId>junit</groupId>
+         <artifactId>junit</artifactId>
+         <version>4.11</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <groupId>com.systemincloud.modeler.tasks.javatask</groupId>
+         <artifactId>com.systemincloud.modeler.tasks.javatask.api</artifactId>
+         <version>0.6.0</version>
+      </dependency>
+      <dependency>
+         <groupId>com.systemincloud.ext.vip.modeler.tasks.javatask</groupId>
+         <artifactId>com.systemincloud.ext.vip.modeler.tasks.javatask.api</artifactId>
+         <version>0.1.1</version>
+      </dependency>
+      <dependency>
+         <groupId>com.nativelibs4java</groupId>
+         <artifactId>javacl</artifactId>
+         <version>1.0.0-RC4</version>
+      </dependency>
+      <dependency>
+         <groupId>com.systemincloud.modeler.tasks.pythontask</groupId>
+         <artifactId>com.systemincloud.modeler.tasks.pythontask.process</artifactId>
+         <version>0.1.0</version>
+      </dependency>
+      <dependency>
+         <groupId>com.systemincloud.ext.vip.modeler.tasks.pythontask</groupId>
+         <artifactId>com.systemincloud.ext.vip.modeler.tasks.pythontask.process</artifactId>
+         <version>0.1.0</version>
+      </dependency>
   </dependencies>
   <repositories>
-    <repository>
-      <id>System in Cloud</id>
-      <url>https://s3.amazonaws.com/com-systemincloud-s3-m2/releases</url>
-    </repository>
+      <repository>
+         <id>System in Cloud</id>
+         <url>https://s3.amazonaws.com/com-systemincloud-s3-m2/releases</url>
+      </repository>
   </repositories>
 
   <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.2</version>
-        <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>com.nativelibs4java</groupId>
-        <artifactId>maven-javacl-plugin</artifactId>
-        <version>1.0.0-RC4</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>compile</goal>
-            </goals>
-          </execution>
-        </executions>
-	  </plugin>
-    </plugins>
-    <pluginManagement>
-    	<plugins>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.3.2</version>
+            <configuration>
+               <source>1.7</source>
+               <target>1.7</target>
+            </configuration>
+         </plugin>
+         <plugin>
+            <groupId>com.nativelibs4java</groupId>
+            <artifactId>maven-javacl-plugin</artifactId>
+            <version>1.0.0-RC4</version>
+            <executions>
+               <execution>
+                  <goals>
+                     <goal>compile</goal>
+                  </goals>
+               </execution>
+            </executions>
+	        </plugin>
+      </plugins>
+      <pluginManagement>
+    	    <plugins>
     		<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-    		<plugin>
-    			<groupId>org.eclipse.m2e</groupId>
-    			<artifactId>lifecycle-mapping</artifactId>
-    			<version>1.0.0</version>
-    			<configuration>
-    				<lifecycleMappingMetadata>
-    					<pluginExecutions>
-    						<pluginExecution>
-    							<pluginExecutionFilter>
-    								<groupId>
+    		      <plugin>
+    			        <groupId>org.eclipse.m2e</groupId>
+    			        <artifactId>lifecycle-mapping</artifactId>
+    			        <version>1.0.0</version>
+    			        <configuration>
+    				          <lifecycleMappingMetadata>
+    					            <pluginExecutions>
+    						              <pluginExecution>
+    							                <pluginExecutionFilter>
+    								                  <groupId>
     									com.nativelibs4java
     								</groupId>
-    								<artifactId>
+    								                  <artifactId>
     									maven-javacl-plugin
     								</artifactId>
-    								<versionRange>
+    								                  <versionRange>
     									[1.0.0-RC4,)
     								</versionRange>
-    								<goals>
-    									<goal>compile</goal>
-    								</goals>
-    							</pluginExecutionFilter>
-    							<action>
-    								<ignore></ignore>
-    							</action>
-    						</pluginExecution>
-    					</pluginExecutions>
-    				</lifecycleMappingMetadata>
-    			</configuration>
-    		</plugin>
-    	</plugins>
-    </pluginManagement>
+    								                  <goals>
+    									                    <goal>compile</goal>
+    								                  </goals>
+    							                </pluginExecutionFilter>
+    							                <action>
+    								                  <ignore/>
+    							                </action>
+    						              </pluginExecution>
+    					            </pluginExecutions>
+    				          </lifecycleMappingMetadata>
+    			        </configuration>
+    		      </plugin>
+    	    </plugins>
+      </pluginManagement>
   </build>
 </project>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:dt="http://systemincloud.com/dt" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_tv_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/tv/0_1_0">
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:dt="http://systemincloud.com/dt" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_tv_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/tv/0_1_0" xmi:version="2.0">
   <pi:Diagram visible="true" gridUnit="-1" diagramTypeId="SystemInCloud" name="FrameAverageSMA" pictogramLinks="/0/@link /0/@children.11/@link /0/@children.12/@link /0/@connections.4/@link /0/@children.13/@link /0/@children.14/@link /0/@connections.5/@link /0/@children.6/@children.2/@link /0/@children.6/@children.3/@link /0/@connections.6/@link /0/@connections.7/@link /0/@connections.8/@link" version="0.12.0">
     <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
     <link businessObjects="/1"/>
@@ -370,15 +369,15 @@
     <colors red="220" green="220" blue="220"/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.7.2">
+  <sic:MainTask initialized="true" version="0.8.0">
     <inputPort id="In"/>
     <outputPort id="Out"/>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="background" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="background" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.0">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task 2" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="com.systemincloud.example.backgroundsubtraction.frameaverage.Subtractor">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task 2" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="com.systemincloud.example.backgroundsubtraction.frameaverage.Subtractor">
       <outputPort id="mask" parent="/1/@task.1">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -391,12 +390,12 @@
       <parameters key="DiffThreshold" value="${DiffThreshold}"/>
       <defaultParameters key="DiffThreshold" value="10"/>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="input" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="input" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.2">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task 1" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="com.systemincloud.example.backgroundsubtraction.frameaverage.SimpleMovingAverage">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task 1" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="com.systemincloud.example.backgroundsubtraction.frameaverage.SimpleMovingAverage">
       <outputPort id="average" parent="/1/@task.3">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -406,7 +405,7 @@
       <parameters key="WindowSize" value="${WindowSize}"/>
       <defaultParameters key="WindowSize" value="20"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="com.systemincloud.example.backgroundsubtraction.common.ToGrey">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="com.systemincloud.example.backgroundsubtraction.common.ToGrey">
       <outputPort id="Out" parent="/1/@task.4">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
