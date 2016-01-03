@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:demux_0_1_0="http://modeler.systemincloud.com/tasks/demux/0_1_0" xmlns:dt="http://systemincloud.com/dt" xmlns:inspect_0_1_0="http://modeler.systemincloud.com/tasks/inspect/0_1_0" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:sipo_0_1_0="http://modeler.systemincloud.com/tasks/sipo/0_1_0" xmlns:vip_colormap_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/colormap/0_1_0" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_tv_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/tv/0_1_0">
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:demux_0_1_0="http://modeler.systemincloud.com/tasks/demux/0_1_0" xmlns:dt="http://systemincloud.com/dt" xmlns:inspect_0_1_0="http://modeler.systemincloud.com/tasks/inspect/0_1_0" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:sipo_0_1_0="http://modeler.systemincloud.com/tasks/sipo/0_1_0" xmlns:vip_colormap_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/colormap/0_1_0" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_tv_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/tv/0_1_0" xmi:version="2.0">
   <pi:Diagram visible="true" gridUnit="-1" diagramTypeId="SystemInCloud" name="FlickerRemoval" pictogramLinks="/0/@link /0/@children.0/@link /0/@children.1/@link /0/@children.2/@link /0/@children.3/@link /0/@children.4/@link /0/@children.5/@link /0/@children.6/@link /0/@children.7/@link /0/@connections.0/@link /0/@children.8/@link /0/@children.9/@link /0/@children.8/@children.0/@link /0/@children.8/@children.1/@link /0/@children.8/@children.2/@link /0/@children.8/@children.3/@link /0/@children.8/@children.4/@link /0/@children.8/@children.5/@link /0/@children.8/@children.6/@link /0/@children.8/@children.7/@link /0/@children.8/@children.8/@link /0/@children.8/@children.9/@link /0/@connections.1/@link /0/@children.10/@link /0/@children.11/@link /0/@children.12/@link /0/@children.13/@link /0/@connections.2/@link /0/@children.12/@children.0/@link /0/@children.12/@children.1/@link /0/@children.12/@children.2/@link /0/@children.12/@children.3/@link /0/@children.12/@children.4/@link /0/@children.12/@children.5/@link /0/@children.14/@link /0/@children.15/@link /0/@children.14/@children.0/@link /0/@children.14/@children.1/@link /0/@children.14/@children.2/@link /0/@children.14/@children.3/@link /0/@connections.3/@link /0/@children.8/@children.10/@link /0/@children.8/@children.11/@link /0/@children.16/@link /0/@children.17/@link /0/@children.16/@children.0/@link /0/@children.16/@children.1/@link /0/@children.16/@children.2/@link /0/@children.16/@children.3/@link /0/@children.18/@link /0/@children.19/@link /0/@children.18/@children.0/@link /0/@children.18/@children.1/@link /0/@children.18/@children.2/@link /0/@children.18/@children.3/@link /0/@children.18/@children.4/@link /0/@children.18/@children.5/@link /0/@connections.4/@link /0/@children.8/@children.12/@link /0/@children.8/@children.13/@link /0/@children.20/@link /0/@children.21/@link /0/@children.20/@children.0/@link /0/@children.20/@children.1/@link /0/@children.20/@children.2/@link /0/@children.20/@children.3/@link /0/@connections.5/@link /0/@children.22/@children.0/@link /0/@children.22/@children.1/@link /0/@children.22/@children.2/@link /0/@children.22/@children.3/@link /0/@connections.6/@link /0/@connections.7/@link /0/@children.8/@children.14/@link /0/@children.8/@children.15/@link /0/@children.16/@children.4/@link /0/@children.16/@children.5/@link /0/@connections.8/@link /0/@children.24/@link /0/@children.25/@link /0/@children.24/@children.0/@link /0/@children.24/@children.1/@link /0/@connections.9/@link /0/@children.28/@link /0/@children.29/@link /0/@children.28/@children.0/@link /0/@children.28/@children.1/@link /0/@connections.10/@link /0/@children.30/@link /0/@children.31/@link /0/@children.30/@children.0/@link /0/@children.30/@children.1/@link /0/@children.32/@link /0/@children.33/@link /0/@children.32/@children.0/@link /0/@children.32/@children.1/@link /0/@connections.11/@link /0/@children.35/@link /0/@children.36/@link /0/@children.35/@children.0/@link /0/@children.35/@children.1/@link /0/@children.37/@link /0/@children.38/@link /0/@children.37/@children.0/@link /0/@children.37/@children.1/@link /0/@children.37/@children.2/@link /0/@children.37/@children.3/@link /0/@children.37/@children.4/@link /0/@children.37/@children.5/@link /0/@children.39/@link /0/@children.40/@link /0/@children.39/@children.0/@link /0/@children.39/@children.1/@link /0/@children.39/@children.2/@link /0/@children.39/@children.3/@link /0/@children.39/@children.4/@link /0/@children.39/@children.5/@link /0/@children.39/@children.6/@link /0/@children.39/@children.7/@link /0/@connections.12/@link /0/@children.37/@children.6/@link /0/@children.37/@children.7/@link /0/@connections.13/@link /0/@connections.14/@link /0/@connections.15/@link /0/@connections.16/@link /0/@connections.17/@link /0/@connections.18/@link /0/@connections.19/@link /0/@connections.20/@link /0/@connections.21/@link /0/@connections.22/@link /0/@children.44/@link /0/@children.45/@link /0/@children.44/@children.0/@link /0/@children.44/@children.1/@link /0/@children.44/@children.2/@link /0/@children.44/@children.3/@link /0/@children.44/@children.4/@link /0/@children.44/@children.5/@link /0/@connections.23/@link /0/@connections.24/@link /0/@connections.25/@link /0/@connections.26/@link /0/@connections.27/@link /0/@connections.28/@link /0/@connections.29/@link /0/@connections.30/@link /0/@connections.31/@link /0/@connections.32/@link /0/@connections.33/@link /0/@connections.34/@link /0/@connections.35/@link /0/@children.54/@link /0/@children.55/@link /0/@children.54/@children.0/@link /0/@children.54/@children.1/@link /0/@children.54/@children.2/@link /0/@children.54/@children.3/@link /0/@connections.36/@link /0/@connections.37/@link /0/@connections.38/@link /0/@children.57/@link /0/@children.58/@link /0/@children.57/@children.0/@link /0/@children.57/@children.1/@link /0/@children.57/@children.2/@link /0/@children.57/@children.3/@link /0/@children.57/@children.4/@link /0/@children.57/@children.5/@link /0/@connections.39/@link /0/@connections.40/@link /0/@connections.41/@link" version="0.12.0">
     <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
     <link businessObjects="/1"/>
@@ -1696,13 +1695,13 @@
     <colors red="220" green="220" blue="220"/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.7.2">
+  <sic:MainTask initialized="true" version="0.8.0">
     <inputPort id="YIn"/>
     <inputPort id="IdxIn"/>
     <inputPort id="End" asynchronous="true"/>
     <outputPort id="IdxOut"/>
     <outputPort id="YOut"/>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Core" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.Core">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Core" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="tasks.removal.Core">
       <outputPort id="ImgIdx" parent="/1/@task.0" resetPort="/1/@task.4/@outputPort.0">
         <dataType xsi:type="dt:Int32"/>
         <synchronization waitForPort="/1/@task.13/@inputPort.1" parent="/1/@task.0/@outputPort.0"/>
@@ -1734,7 +1733,7 @@
       <parameters key="size" value="${size}"/>
       <defaultParameters key="size" value="15"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Joint histogram" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.JointHistogram">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Joint histogram" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="tasks.removal.JointHistogram">
       <outputPort id="Out" parent="/1/@task.1">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -1745,7 +1744,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Viterbi" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.Viterbi">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Viterbi" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="tasks.removal.Viterbi">
       <outputPort id="Out" parent="/1/@task.2">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -1753,7 +1752,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Temporal Robust Mean" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.TemporalRobustMean">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Temporal Robust Mean" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="tasks.removal.TemporalRobustMean">
       <outputPort id="Out" parent="/1/@task.3">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -1766,7 +1765,7 @@
       <parameters key="size" value="${size}"/>
       <defaultParameters key="size" value="7"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="LUT" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.LUT">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="LUT" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="tasks.removal.LUT">
       <outputPort id="YOut" parent="/1/@task.4">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -1777,7 +1776,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="-45°" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.Rotate">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="-45°" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="tasks.removal.Rotate">
       <outputPort id="Out" parent="/1/@task.5">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -1789,7 +1788,7 @@
       <defaultParameters key="degres" value="0"/>
       <defaultParameters key="domain" value="361"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="+45°" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.Rotate">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="+45°" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="tasks.removal.Rotate">
       <outputPort id="Out" parent="/1/@task.6">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -1801,30 +1800,30 @@
       <defaultParameters key="degres" value="0"/>
       <defaultParameters key="domain" value="361"/>
     </task>
-    <task xsi:type="inspect_0_1_0:Inspect" id="Idx" bundleName="com.systemincloud.modeler.tasks.inspect" version="0.1.2" onlyLocal="true">
+    <task xsi:type="inspect_0_1_0:Inspect" id="Idx" bundleName="com.systemincloud.modeler.tasks.inspect" version="0.1.3" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.7"/>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="Y in" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="Y in" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.8">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="Left" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="Left" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.9">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="right" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="right" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.10">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="histogram" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="histogram" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.11">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="sipo_0_1_0:Sipo" id="Images" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.5" size="${size}+1" index="true" sizeOut="true">
+    <task xsi:type="sipo_0_1_0:Sipo" id="Images" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.6" size="${size}+1" index="true" sizeOut="true">
       <outputPort id="Out" parent="/1/@task.12"/>
       <outputPort id="N" parent="/1/@task.12">
         <dataType xsi:type="dt:Int32"/>
@@ -1834,7 +1833,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="demux_0_1_0:Demux" id="Dmx" bundleName="com.systemincloud.modeler.tasks.demux" version="0.3.0">
+    <task xsi:type="demux_0_1_0:Demux" id="Dmx" bundleName="com.systemincloud.modeler.tasks.demux" version="0.3.1">
       <outputPort id="Out 0" parent="/1/@task.13"/>
       <outputPort id="Out 1" parent="/1/@task.13"/>
       <inputPort id="In" parent="/1/@task.13" group="1"/>
@@ -1842,7 +1841,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="sipo_0_1_0:Sipo" id="Indexes" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.5" size="${size}+1" index="true" sizeOut="true">
+    <task xsi:type="sipo_0_1_0:Sipo" id="Indexes" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.6" size="${size}+1" index="true" sizeOut="true">
       <outputPort id="Out" parent="/1/@task.14"/>
       <outputPort id="N" parent="/1/@task.14">
         <dataType xsi:type="dt:Int32"/>
@@ -1852,20 +1851,20 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="sipo_0_1_0:Sipo" id="fs" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.5" size="${size}*${size}+${size}" index="true">
+    <task xsi:type="sipo_0_1_0:Sipo" id="fs" bundleName="com.systemincloud.modeler.tasks.sipo" version="0.1.6" size="${size}*${size}+${size}" index="true">
       <outputPort id="Out" parent="/1/@task.15"/>
       <inputPort id="In" parent="/1/@task.15" group="0"/>
       <inputPort id="Idx" parent="/1/@task.15" group="1">
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="inspect_0_1_0:Inspect" id="mean" bundleName="com.systemincloud.modeler.tasks.inspect" version="0.1.2" onlyLocal="true">
+    <task xsi:type="inspect_0_1_0:Inspect" id="mean" bundleName="com.systemincloud.modeler.tasks.inspect" version="0.1.3" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.16"/>
     </task>
-    <task xsi:type="inspect_0_1_0:Inspect" id="Idx Out" bundleName="com.systemincloud.modeler.tasks.inspect" version="0.1.2" onlyLocal="true">
+    <task xsi:type="inspect_0_1_0:Inspect" id="Idx Out" bundleName="com.systemincloud.modeler.tasks.inspect" version="0.1.3" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.17"/>
     </task>
-    <task xsi:type="vip_colormap_0_1_0:ColorMap" id="CM1" bundleName="com.systemincloud.ext.vip.modeler.tasks.colormap" version="0.1.4" onlyLocalDefault="false" onlyLocalUser="true">
+    <task xsi:type="vip_colormap_0_1_0:ColorMap" id="CM1" bundleName="com.systemincloud.ext.vip.modeler.tasks.colormap" version="0.1.5" onlyLocalDefault="false" onlyLocalUser="true">
       <outputPort id="Out" parent="/1/@task.18">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -1877,7 +1876,7 @@
         <dataType xsi:type="dt:Decimal"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" onlyLocal="true" implementationClass="tasks.removal.AddViterbi">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" onlyLocal="true" implementationClass="tasks.removal.AddViterbi">
       <outputPort id="Out" parent="/1/@task.19">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -1888,7 +1887,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_tv_0_1_0:Tv" id="(Copy) histogram" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6" onlyLocal="true">
+    <task xsi:type="vip_tv_0_1_0:Tv" id="(Copy) histogram" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7" onlyLocal="true">
       <inputPort id="In" parent="/1/@task.20">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>

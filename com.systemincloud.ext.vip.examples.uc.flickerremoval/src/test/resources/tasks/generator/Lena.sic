@@ -1,4 +1,4 @@
-<xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:dt="http://systemincloud.com/dt" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_imagefromfile_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/imagefromfile/0_1_0" xmi:version="2.0">
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:dt="http://systemincloud.com/dt" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_imagefromfile_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/imagefromfile/0_1_0" xmi:version="2.0">
   <pi:Diagram visible="true" gridUnit="-1" diagramTypeId="SystemInCloud" name="Lena" pictogramLinks="/0/@link /0/@children.8/@link /0/@children.9/@link /0/@connections.3/@link" version="0.12.0">
     <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
     <link businessObjects="/1"/>
@@ -247,9 +247,9 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.7.2">
+  <sic:MainTask initialized="true" version="0.8.0">
     <outputPort id="Out"/>
-    <task xsi:type="sic:EmbeddedTask" id="FG" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/main/resources/tasks/generator/FlickerGenerator.sic">
+    <task xsi:type="sic:EmbeddedTask" id="FG" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.2" implementationTask="src/main/resources/tasks/generator/FlickerGenerator.sic">
       <outputPort id="Out" parent="/1/@task.0"/>
       <inputPort id="In" parent="/1/@task.0"/>
       <parameters key="local-motions" value="${local-motions}"/>
@@ -273,7 +273,7 @@
       <parameters key="bl-color" value="${bl-color}"/>
       <parameters key="lm-number" value="${lm-number}"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="Image To Video" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.generator.ImageToVideo">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="Image To Video" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="tasks.generator.ImageToVideo">
       <outputPort id="Out" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -283,7 +283,7 @@
       <parameters key="rate" value="${rate}"/>
       <defaultParameters key="rate" value="25"/>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="to Grey" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.generator.ToGrey">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="to Grey" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="tasks.generator.ToGrey">
       <outputPort id="Out" parent="/1/@task.2">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -291,7 +291,7 @@
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_imagefromfile_0_1_0:ImageFromFile" id="Img" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagefromfile" version="0.1.5" onlyLocal="true" path="workspace:/com.systemincloud.ext.vip.examples.uc.flickerremoval/src/test/resources/imgs/lena.bmp">
+    <task xsi:type="vip_imagefromfile_0_1_0:ImageFromFile" id="Img" bundleName="com.systemincloud.ext.vip.modeler.tasks.imagefromfile" version="0.1.6" onlyLocal="true" path="workspace:/com.systemincloud.ext.vip.examples.uc.flickerremoval/src/test/resources/imgs/lena.bmp">
       <outputPort id="Out" parent="/1/@task.3">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>

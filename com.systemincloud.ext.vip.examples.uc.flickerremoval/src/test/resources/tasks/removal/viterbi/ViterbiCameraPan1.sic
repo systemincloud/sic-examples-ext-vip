@@ -1,4 +1,4 @@
-<xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:dt="http://systemincloud.com/dt" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:vip_colormap_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/colormap/0_1_0" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_tv_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/tv/0_1_0" xmi:version="2.0">
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:dt="http://systemincloud.com/dt" xmlns:javatask_0_1_0="http://modeler.systemincloud.com/tasks/javatask/0_1_0" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:sic="http://systemincloud.com/sic" xmlns:vip_colormap_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/colormap/0_1_0" xmlns:vip_dt="http://systemincloud.com/ext/vip/dt" xmlns:vip_tv_0_1_0="http://modeler.systemincloud.com/ext/vip/tasks/tv/0_1_0" xmi:version="2.0">
   <pi:Diagram visible="true" gridUnit="-1" diagramTypeId="SystemInCloud" name="ViterbiCameraPan1" pictogramLinks="/0/@link /0/@children.0/@link /0/@children.1/@link /0/@children.0/@children.0/@link /0/@children.0/@children.1/@link /0/@children.2/@link /0/@children.3/@link /0/@children.2/@children.0/@link /0/@children.2/@children.1/@link /0/@children.0/@children.2/@link /0/@children.0/@children.3/@link /0/@children.0/@children.4/@link /0/@children.0/@children.5/@link /0/@children.4/@link /0/@children.5/@link /0/@children.4/@children.0/@link /0/@children.4/@children.1/@link /0/@children.4/@children.2/@link /0/@children.4/@children.3/@link /0/@connections.0/@link /0/@children.6/@link /0/@children.7/@link /0/@children.6/@children.0/@link /0/@children.6/@children.1/@link /0/@connections.1/@link /0/@connections.2/@link /0/@connections.3/@link /0/@children.9/@link /0/@children.10/@link /0/@children.9/@children.0/@link /0/@children.9/@children.1/@link /0/@connections.4/@link /0/@children.11/@link /0/@children.12/@link /0/@children.11/@children.0/@link /0/@children.11/@children.1/@link /0/@children.11/@children.2/@link /0/@children.11/@children.3/@link /0/@connections.5/@link /0/@connections.6/@link /0/@children.14/@link /0/@children.15/@link /0/@children.14/@children.0/@link /0/@children.14/@children.1/@link /0/@children.14/@children.2/@link /0/@children.14/@children.3/@link /0/@connections.7/@link /0/@children.16/@link /0/@children.17/@link /0/@children.16/@children.0/@link /0/@children.16/@children.1/@link /0/@children.16/@children.2/@link /0/@children.16/@children.3/@link /0/@children.16/@children.4/@link /0/@children.16/@children.5/@link /0/@connections.8/@link /0/@connections.9/@link /0/@connections.10/@link" version="0.11.0">
     <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
     <link businessObjects="/1"/>
@@ -503,8 +503,8 @@
     <colors/>
     <fonts name="Arial" size="8"/>
   </pi:Diagram>
-  <sic:MainTask initialized="true" version="0.7.2">
-    <task xsi:type="javatask_0_1_0:JavaTask" id="JH" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.JointHistogram">
+  <sic:MainTask initialized="true" version="0.8.0">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="JH" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="tasks.removal.JointHistogram">
       <outputPort id="Out" parent="/1/@task.0">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -515,18 +515,18 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Joint histogram" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="Joint histogram" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7">
       <inputPort id="In" parent="/1/@task.1">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="sic:EmbeddedTask" id="Delay" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/test/resources/tasks/Delay.sic">
+    <task xsi:type="sic:EmbeddedTask" id="Delay" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.2" implementationTask="src/test/resources/tasks/Delay.sic">
       <outputPort id="Out" parent="/1/@task.2"/>
       <inputPort id="In" parent="/1/@task.2"/>
       <parameters key="delay" value="5"/>
       <defaultParameters key="delay" value=""/>
     </task>
-    <task xsi:type="sic:EmbeddedTask" id="In Lena" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.1" implementationTask="src/test/resources/tasks/generator/Lena.sic">
+    <task xsi:type="sic:EmbeddedTask" id="In Lena" bundleName="com.systemincloud.modeler.tasks.embeddedtask" version="0.3.2" implementationTask="src/test/resources/tasks/generator/Lena.sic">
       <outputPort id="Out" parent="/1/@task.3"/>
       <parameters key="zm-speed" value="0.025"/>
       <parameters key="camera-pan" value="true"/>
@@ -569,12 +569,12 @@
       <defaultParameters key="bl-color" value=""/>
       <defaultParameters key="fl-period" value=""/>
     </task>
-    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.6">
+    <task onlyLocal="true" xsi:type="vip_tv_0_1_0:Tv" id="In" bundleName="com.systemincloud.ext.vip.modeler.tasks.tv" version="0.1.7">
       <inputPort id="In" parent="/1/@task.4">
         <dataType xsi:type="vip_dt:Image"/>
       </inputPort>
     </task>
-    <task xsi:type="vip_colormap_0_1_0:ColorMap" id="Color Map" bundleName="com.systemincloud.ext.vip.modeler.tasks.colormap" version="0.1.4" type="JET" max="200">
+    <task xsi:type="vip_colormap_0_1_0:ColorMap" id="Color Map" bundleName="com.systemincloud.ext.vip.modeler.tasks.colormap" version="0.1.5" type="JET" max="200">
       <outputPort id="Out" parent="/1/@task.5">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
@@ -586,7 +586,7 @@
         <dataType xsi:type="dt:Decimal"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.Viterbi">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="tasks.removal.Viterbi">
       <outputPort id="Out" parent="/1/@task.6">
         <dataType xsi:type="dt:Int32"/>
       </outputPort>
@@ -594,7 +594,7 @@
         <dataType xsi:type="dt:Int32"/>
       </inputPort>
     </task>
-    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task 1" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.0" implementationClass="tasks.removal.AddViterbi">
+    <task xsi:type="javatask_0_1_0:JavaTask" id="My Java Task 1" bundleName="com.systemincloud.modeler.tasks.javatask" version="0.4.1" implementationClass="tasks.removal.AddViterbi">
       <outputPort id="Out" parent="/1/@task.7">
         <dataType xsi:type="vip_dt:Image"/>
       </outputPort>
